@@ -86,27 +86,24 @@
 
 <meta name="description" content="序言CSS2.1规范中关于定位方案分为三种:
 
-正常排版Normal flow:  框在正常排版中必然属于一个格式上下文。要么是 块格式化上下文(Block formatting contexts:BFC),要么是 行格式化上下文(Inline formatting contexts:IFC)。也有一些人把正常排版称之为文档流或者是普通流。
-浮动 Floats:  在浮动模型中，一个框先按照正常排">
+正常排版Normal flow:  框在正常排版中必然属于一个格式上下文。要么是 块格式化上下文(Block formatting contexts:BFC),要么是 行格式化上下文(Inline formatting contexts:IFC)。也有一些人把正常排版称之为文档流或者是普通流。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CSS中的定位方案以及float详解">
 <meta property="og:url" content="http://yoursite.com/2016/05/12/positioning-schemes-in-css-and-details-about-float/index.html">
 <meta property="og:site_name" content="Sance's Blog">
 <meta property="og:description" content="序言CSS2.1规范中关于定位方案分为三种:
 
-正常排版Normal flow:  框在正常排版中必然属于一个格式上下文。要么是 块格式化上下文(Block formatting contexts:BFC),要么是 行格式化上下文(Inline formatting contexts:IFC)。也有一些人把正常排版称之为文档流或者是普通流。
-浮动 Floats:  在浮动模型中，一个框先按照正常排">
+正常排版Normal flow:  框在正常排版中必然属于一个格式上下文。要么是 块格式化上下文(Block formatting contexts:BFC),要么是 行格式化上下文(Inline formatting contexts:IFC)。也有一些人把正常排版称之为文档流或者是普通流。">
 <meta property="og:image" content="http://gyiwenku-fimg.stor.sinaapp.com/1461203245.755728.png">
 <meta property="og:image" content="http://gyiwenku-fimg.stor.sinaapp.com/1461208687.481121.png">
 <meta property="og:image" content="http://gyiwenku-fimg.stor.sinaapp.com/1461215791.556164.png">
 <meta property="og:image" content="http://gyiwenku-fimg.stor.sinaapp.com/1461227583.798616.png">
-<meta property="og:updated_time" content="2016-05-12T10:43:47.308Z">
+<meta property="og:updated_time" content="2016-05-12T10:46:27.426Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS中的定位方案以及float详解">
 <meta name="twitter:description" content="序言CSS2.1规范中关于定位方案分为三种:
 
-正常排版Normal flow:  框在正常排版中必然属于一个格式上下文。要么是 块格式化上下文(Block formatting contexts:BFC),要么是 行格式化上下文(Inline formatting contexts:IFC)。也有一些人把正常排版称之为文档流或者是普通流。
-浮动 Floats:  在浮动模型中，一个框先按照正常排">
+正常排版Normal flow:  框在正常排版中必然属于一个格式上下文。要么是 块格式化上下文(Block formatting contexts:BFC),要么是 行格式化上下文(Inline formatting contexts:IFC)。也有一些人把正常排版称之为文档流或者是普通流。">
 <meta name="twitter:image" content="http://gyiwenku-fimg.stor.sinaapp.com/1461203245.755728.png">
 
 
@@ -334,10 +331,12 @@
         <h2 id="序言"><a href="#序言" class="headerlink" title="序言"></a>序言</h2><p>CSS2.1规范中关于定位方案分为三种:</p>
 <ul>
 <li><strong>正常排版Normal flow:</strong><br>  框在正常排版中必然属于一个格式上下文。要么是 <strong>块格式化上下文(Block formatting contexts:BFC)</strong>,要么是 <strong>行格式化上下文(Inline formatting contexts:IFC)</strong>。也有一些人把正常排版称之为文档流或者是普通流。</li>
+</ul>
+<a id="more"></a>
+<ul>
 <li><strong>浮动 Floats:</strong><br>  在浮动模型中，一个框先按照正常排版来摆放，再将它从排版流中取出并尽可能地向左或向右偏移。其它内容可以排在一个浮动的周围。简而言之，在当前行向左或向右偏移的框就是浮动框。浮动框最有趣的特点是其它内容可以紧挨着它的一侧来排版(也可以通过<code>clear</code>属性来禁止这样排版)。内容会紧挨着左浮动框的右侧排版，而紧挨着右浮动框的左侧排版。</li>
 <li><strong>决对定位 Absolute positioning：</strong><br>  绝对定位模型中，一个框基于它的包含块而显式地偏移。它完全从正常排版中脱离(它对后面的元素不会有影响)。一个绝对定位框为它的正常排版子元素和绝对地定位(不是fixed)后代生成一个新的包含块。不过，绝对定位元素的内容不会在其它框的周围排列。它们可能会也可能不会挡住另外一个框的内容(或者被挡住)，这取决于互相重合的框的堆叠层次。</li>
 </ul>
-<a id="more"></a>
 <h2 id="正常排版Normal-flow"><a href="#正常排版Normal-flow" class="headerlink" title="正常排版Normal flow"></a>正常排版Normal flow</h2><h3 id="块格式化上下文-BFC"><a href="#块格式化上下文-BFC" class="headerlink" title="块格式化上下文(BFC)"></a>块格式化上下文(BFC)</h3><p>在规范中的介绍是：有这几种框会为其内容创建新的块格式化上下文：浮动框、绝对定位框、非块框的块容器、<code>overflow</code>属性非<code>visible</code>的块框。</p>
 <p>其实说的就是以下这几种情况能够创建一个新的BFC：</p>
 <ul>
