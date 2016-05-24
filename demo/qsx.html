@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>To my dear</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui" />
+</head>
+<style>
+	body{
+		margin: 0px;
+		font-family: 微软雅黑,黑体,Helvetica,华文黑体;
+		font-size: 13px;
+		color: #ff0;
+		font-style: normal;
+		background-color: #333;
+	}
+	#content{
+		display:none;
+	}
+	#display{
+		line-height:18px;
+		padding-bottom:52px;
+	}
+</style>
+<body>
+	<div id="content">
+		/*#* 今天是5月24号#* 首先还是要说一句 “亲爱的，生日快乐~~”#* 依稀记得见到你的第一面#* 洗完澡的你在寝室收拾衣服，我们就破门而入了#* 没来学校之前，总是在幻想会遇到什么样子的室友？坏坏的 or 好好的#* 很幸运的是，我遇见了你--钱少熙同学#* #* 少熙#* #* 首先谢谢你陪我度过了这美好的大学时光#* 谢谢你总是在我需要你的时候，可以给我心灵支撑#* 此处无数无数的飞吻~~~#* #* 少熙#* 能够遇到一个知己，真的好难，但是幸运的，我们认识了~~#* 首先，接近一样的三观，很幸运#* 你总是可以去了解我的内心深处的感受#* 这是很神奇的一件事情#* 就好像是我遇见我的男神一样子，虽然是没有结果，但是经历过，我就很满足了#* #* 谢谢亲爱的少熙教会了我好多东西#* 学会如何去当一个吃货#* 学会了如何去关心别人#* 学会了要学会照顾好自己#* 学会了不要去想那么多，开开心心每一天#*  甚至是，你竟然发掘了我逗比的一面#* 和cp熙一起逗比的每一个日子，都是我最难忘的，最美好的时光#* #* #* 少熙，现在真的好珍惜与你在一起的每一个时光#* 不禁脑海中闪过在一起的无数个逗比并且快乐的时光#* 撒撒的，可爱的#* 不想去想什么时候就不见#* 但是，我是要去当少熙的伴娘，去美腻的云南--少熙的家乡#* 哼哼~~那时的你肯定要包我吃，包我喝，，啦啦啦~~#* #* 少熙#* 本来是想写书信#* 但是感觉可能不能很好地感受我的感受#* 所以选择以这种形式表达#* 希望你可以喜欢#* 最后，生日快乐#* 晚安了my dear#* 2016/5/24#* */
+	</div>
+	<div id="display"></div>
+	<script>
+		window.onload=function(){
+			var content=document.getElementById("content").innerHTML;
+			var display=document.getElementById("display");
+			var len=content.length;
+			var thisle=0;
+			var is_s=false;
+			var is_str='';
+			setInterval(function(){
+				if(is_s){
+					is_s=false;
+					is_str='|';
+				}else{
+					is_s=true;
+					is_str='';
+				}
+				var temchar=content.substr(0,thisle);
+				var res=temchar.replace(/#/g,"<br/>")+is_str;
+				if(!is_s){
+					thisle++;
+				}
+				if(thisle<len+10){
+					display.innerHTML=res;
+					window.scrollTo(0,document.body.scrollHeight);
+				}
+			},70);
+		}
+	</script>
+</body>
+</html>

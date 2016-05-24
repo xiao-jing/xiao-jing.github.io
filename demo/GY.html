@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>To my dear</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui" />
+</head>
+<style>
+	body{
+		margin: 0px;
+		font-family: 微软雅黑,黑体,Helvetica,华文黑体;
+		font-size: 13px;
+		color: #ff0;
+		font-style: normal;
+		background-color: #333;
+	}
+	#content{
+		display:none;
+	}
+	#display{
+		line-height:18px;
+		padding-bottom:52px;
+	}
+</style>
+<body>
+	<div id="content">
+		/*#* 今天是4月24号了#* 你是3月26号8:58分回的我的微博私信#* 如果连今天也算上已经有30天了#* #* 静儿#* #* 我一直以来都特别期待能有一个女孩#* 一个会敲代码的女孩#* 一个能和我聊到一起去的女孩#* 一个可以在说一些生活之余互相黑一下的女孩#* 一个可以相互挂念的女孩#* #* 我一直在寻找她的出现，然后喜欢上了一首歌#* 叫做《一个歌手的情书》#* 你有时间可以听一下#* ”这二十多年来我一直在唱歌#* 唱歌给我的心上人听啊#* 这个心上人#* 还不知道在哪里#* 我一直在寻觅着她“#* #* 我特别想能有这样一个女孩出现在我的身边#* 然后可以每天和她说说话#* 可以没事给她唱几首歌听#* 虽然可能会忘记一些词啊调啊#* 但是我想她会喜欢我唱的#* #* 直到你无意中出现在我的世界里#* #* 我也不清楚自己为什么会喜欢上一个从来没有见过的#* 与我相距1907公里的女孩#* 但是就是这个人一直在自己的脑海里浮现#* #* 一直在想什么时候能见到她#* 和她说一下我心里的话#* 记得和你做过约定 如果见了面 就一起#* 不知道这个约定你有没有当真 #* 但是我是认真的#* #* 之前我特别不喜欢别人叫我羔羊。#* 但是不知为什么你说出来却有一种不同的感觉#* 然后在你面前我也开始自称羊了#* #* 以前经常听一首歌#* 李宗盛的《我终于失去了你》#* 但是我现在却特别害怕#* 会在拥挤的人群中突然失去了你#* #* 静儿#* 希望你可以给我个机会#* 让我能带着期待 去往你所在的地方#* #* #* 说好的给你写信#* 但是我觉得写信的话不能让你感受的清楚#* 然后就做了这个页面 #* 希望你可以喜欢吧#* 晚安了my dear#* #* */
+	</div>
+	<div id="display"></div>
+	<script>
+		window.onload=function(){
+			var content=document.getElementById("content").innerHTML;
+			var display=document.getElementById("display");
+			var len=content.length;
+			var thisle=0;
+			var is_s=false;
+			var is_str='';
+			setInterval(function(){
+				if(is_s){
+					is_s=false;
+					is_str='|';
+				}else{
+					is_s=true;
+					is_str='';
+				}
+				var temchar=content.substr(0,thisle);
+				var res=temchar.replace(/#/g,"<br/>")+is_str;
+				if(!is_s){
+					thisle++;
+				}
+				if(thisle<len+10){
+					display.innerHTML=res;
+					window.scrollTo(0,document.body.scrollHeight);
+				}
+			},70);
+		}
+	</script>
+</body>
+</html>
