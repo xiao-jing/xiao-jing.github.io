@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- 使用最高的IE内核进行页面渲染 -->
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Learn the bootstrap grid</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<style>
+		.row{
+			margin-bottom: 50px;
+		}
+		.row .col-xs-6{
+			background-color: #2196F3;
+			border: 1px solid #fff;
+			height: 125px;
+			padding: 15px;
+			color: #fff;
+		}
+		.row .tall-column{
+			height: 300px;
+		}
+	</style>
+</head>
+<body>
+	<div class="menu">
+		<header>
+			<h1>Learn the bootstrap grid </h1>
+		</header><!-- /header -->
+		<ul>
+			<li><a href="index.html">Columns and Rows</a></li>
+			<li><a href="divided.html">Divided</a></li>
+			<li><a href="wrapping.html">Wrapping</a></li>
+			<li><a href="responsiveness.html">responsiveness</a></li>
+			<li><a href="clearfix.html" class="active">Clearfix</a></li>
+			<li><a href="offsets.html">Offsets</a></li>
+			<li><a href="push and pull.html">Push and pull</a></li>
+		</ul>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-6 tall-column">All columns are 6 units wide, but this one is too tall!</div>
+			<div class="col-xs-6"></div>
+			<div class="col-xs-6">This column shoudln't be here.</div>
+			<div class="col-xs-6">This column shoudln't be here.</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-6 tall-column">By adding a clearfix between the second and third columns, everything will go where it should.</div>
+			<div class="col-xs-6"></div>
+			<div class="clearfix"></div>
+			<div class="col-xs-6">All better now.</div>
+			<div class="col-xs-6"></div>
+		</div>
+	</div>
+</body>
+</html>

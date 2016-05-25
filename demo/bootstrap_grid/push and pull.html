@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- 使用最高的IE内核进行页面渲染 -->
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Learn the bootstrap grid</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+	<div class="menu">
+		<header>
+			<h1>Learn the bootstrap grid </h1>
+		</header><!-- /header -->
+		<ul>
+			<li><a href="index.html">Columns and Rows</a></li>
+			<li><a href="divided.html">Divided</a></li>
+			<li><a href="wrapping.html">Wrapping</a></li>
+			<li><a href="responsiveness.html">responsiveness</a></li>
+			<li><a href="clearfix.html">Clearfix</a></li>
+			<li><a href="offsets.html">Offsets</a></li>
+			<li><a href="push and pull.html" class="active">Push and pull</a></li>
+		</ul>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-4 col-md-push-8">On laptop and desktop screens this text will go to the right and the image will go to the left, changing places.</div>
+			<div class="col-xs-8 col-md-pull-4"><img src="city.jpg" class="img-responsive"></div>
+		</div>
+	</div>
+</body>
+</html>

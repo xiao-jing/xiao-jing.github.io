@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- 使用最高的IE内核进行页面渲染 -->
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Learn the bootstrap grid</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+	<div class="menu">
+		<header>
+			<h1>Learn the bootstrap grid </h1>
+		</header><!-- /header -->
+		<ul>
+			<li><a href="index.html">Columns and Rows</a></li>
+			<li><a href="divided.html">Divided</a></li>
+			<li><a href="wrapping.html">Wrapping</a></li>
+			<li><a href="responsiveness.html" class="active">responsiveness</a></li>
+			<li><a href="clearfix.html">Clearfix</a></li>
+			<li><a href="offsets.html">Offsets</a></li>
+			<li><a href="push and pull.html">Push and pull</a></li>
+		</ul>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-md-6">
+				<p>Try resizing the browser to see this text and the image rearrange for optimal viewing.</p>
+				<p> On extra small screens both the text and the image take up the whole width of the row. </p>
+				<p> When the browser size gets into the medium category, they can move in together and share a single row. They only need half of the row, since there is more space horizontally on the screen.</p>
+			</div>
+			<div class="col-xs-12 col-md-6"><img src="city.jpg" class="img-responsive"></div>
+		</div>
+	</div>
+</body>
+</html>
