@@ -92,7 +92,7 @@
 <meta property="og:site_name" content="Sance's Blog">
 <meta property="og:description" content="不知道大家的布局水平怎么样，我的水平一般般，所以最近在恶补。。。今天想要和大家分享一下bootstrap grid布局的学习，一个超级实用并简单操作的前端框架，，不仅如此响应式也特别特别的好！！总之一个字就是赞！赞！！赞！！！
 如果大家对bootstrap感兴趣请点击这里.">
-<meta property="og:updated_time" content="2016-05-25T12:40:55.837Z">
+<meta property="og:updated_time" content="2016-05-25T12:47:22.161Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Bootstrap grid">
 <meta name="twitter:description" content="不知道大家的布局水平怎么样，我的水平一般般，所以最近在恶补。。。今天想要和大家分享一下bootstrap grid布局的学习，一个超级实用并简单操作的前端框架，，不仅如此响应式也特别特别的好！！总之一个字就是赞！赞！！赞！！！
@@ -337,13 +337,13 @@
 <a id="more"></a>
 <h3 id="行和列"><a href="#行和列" class="headerlink" title="行和列"></a>行和列</h3><p>网格是由行(row)和列(column)组成的，使我们能够自由的在水平和垂直方向定位元素。</p>
 <p><strong>行</strong>表示一个块级别，意味着当你声明一个<code>row</code>时，它包含的元素默认会占据整行。网格是通过列进行水平对齐的，你只可以通过 <strong>列</strong>进行行子元素以及内容的放置，如果直接放置的话就会打破布局。</p>
-<p><a href="https://xiao-jing.giyhub.io/demo/bootstrap_grid/index.html" target="_blank" rel="external">Demo</a></p>
+<p><a href="https://xiao-jing.github.io/demo/bootstrap_grid/index.html" target="_blank" rel="external">Demo</a></p>
 <p><strong>Note:</strong>行和列是有联系存在的。列之间存在一个15px的<code>padding</code>以保证其排列有序整齐。这时你就会发现第一个以及最后一个列的内容会与父元素留有一个15px的间隙。为了进行弥补，行有一个负值的左右15px的<code>margin</code>。这就是为什么你要在行内放置列的原因。</p>
 <h3 id="行-–-等分12份"><a href="#行-–-等分12份" class="headerlink" title="行 – 等分12份"></a>行 – 等分12份</h3><p>行在水平方向被等分了12份，当我们在其内部放置列的时候不得不指出其占据了行的多少份。</p>
 <p>这是通过<code>.col-md-NUMBER</code>类实现的，这里<code>NUMBER</code>的取值为<code>1~12</code>。根据<code>NUMBER</code>值就可以算出列占据行的百分比，如6占据50%(6/12),3占据25%(3/12)等等。</p>
-<p><a href="https://xiao-jing.giyhub.io/demo/bootstrap_grid/divided.html" target="_blank" rel="external">Demo</a></p>
+<p><a href="https://xiao-jing.github.io/demo/bootstrap_grid/divided.html" target="_blank" rel="external">Demo</a></p>
 <h3 id="列将自动换行"><a href="#列将自动换行" class="headerlink" title="列将自动换行"></a>列将自动换行</h3><p>这时我们就要考虑一行只有12个可用空间，如果我们在一行中指定的列的份数超出了12，这时结果会怎样呢？嘿嘿，对于这种情况大家点击下面的demo，一看就会明白了。。</p>
-<p><a href="https://xiao-jing.giyhub.io/demo/bootstrap_grid/wrapping.html" target="_blank" rel="external">Demo</a></p>
+<p><a href="https://xiao-jing.github.io/demo/bootstrap_grid/wrapping.html" target="_blank" rel="external">Demo</a></p>
 <h3 id="屏幕大小分类"><a href="#屏幕大小分类" class="headerlink" title="屏幕大小分类"></a>屏幕大小分类</h3><p>在第二步骤中我们是不是书写了<code>col-md-2</code>，这里<code>-md-</code>代表中等大小。Bootstrap关于屏幕大小有明确的分类，如下所示:</p>
 <ul>
 <li><strong>xs</strong> –格外小的屏幕，如智能手机。其类为<code>.col-xs-NUMBER</code>.</li>
@@ -355,13 +355,13 @@
 <p><a href="https://xiao-jing.giyhub.io/demo/bootstrap_grid/responsiveness.html" target="_blank" rel="external">Demo</a></p>
 <h3 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h3><p>在一些场景中如果一列的高度高于其后列的高度，这时布局也会被打破。列会一次排列，而不会另起一行在其原先应在的位置。</p>
 <p>为了解决这个问题我们添加了一个使用了<code>clearfix</code>类的空<code>div</code>，这可以有效的解决上述出现的问题。</p>
-<p><a href="https://xiao-jing.giyhub.io/demo/bootstrap_grid/clearfix.html" target="_blank" rel="external">Demo</a></p>
+<p><a href="https://xiao-jing.github.io/demo/bootstrap_grid/clearfix.html" target="_blank" rel="external">Demo</a></p>
 <h3 id="列偏移"><a href="#列偏移" class="headerlink" title="列偏移"></a>列偏移</h3><p>默认情况下，列会左浮动，紧凑的排列在一起。行的空余空间都会保留在右边。</p>
 <p>这时使用<code>.col-SIZE-offset-NUMBER</code>,<code>SIZE</code>取值为<code>xs/sm/md/lg</code>,<code>NUMBER</code>取值为<code>1~12</code>。这时就可以实现列向右<code>NUMBER</code>个空间的偏移。</p>
-<p><a href="https://xiao-jing.giyhub.io/demo/bootstrap_grid/offset.html" target="_blank" rel="external">Demo</a></p>
+<p><a href="https://xiao-jing.github.io/demo/bootstrap_grid/offset.html" target="_blank" rel="external">Demo</a></p>
 <h3 id="Push-amp-Pull"><a href="#Push-amp-Pull" class="headerlink" title="Push &amp; Pull"></a>Push &amp; Pull</h3><p><strong>push</strong>和 <strong>pull</strong>可以允许我们根据屏幕的大小对列进行重新布局，<strong>push</strong>将列转向右边，<code>pull</code>反之。这与上面所讲的偏移是不一样的，<code>push</code>和<code>pull</code><br>的实现是基于<code>position:relative</code>，对其它列没有影响。</p>
 <p>其书写形式为<code>.col-SIZE-push-NUMBER</code>和<code>.col-SIZE-pull-NUMBER</code>。其中<code>SIZE</code>和<code>NUMBER</code>的取值和上述偏移一样。请点击下面的Demo，缩放屏幕大小查看效果。</p>
-<p><a href="https://xiao-jing.giyhub.io/demo/bootstrap%20grid/push%20and%20pull.html" target="_blank" rel="external">Demo</a></p>
+<p><a href="https://xiao-jing.github.io/demo/bootstrap%20grid/push%20and%20pull.html" target="_blank" rel="external">Demo</a></p>
 <h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>好了，今天的分享就先到这里，希望大家喜欢并且希望大家可以亲自动手实践一下，这样子才可以更好的进步奥~~~</p>
 
       
