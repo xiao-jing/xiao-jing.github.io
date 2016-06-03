@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Tabs using javascript</title>
+	<style>
+		ul{
+			list-style-type: none;
+		}
+		a{
+			text-decoration: none;
+		}
+		article.tabs{
+			position: relative;
+			width: 40em;
+			height: 15em;
+			top:5em;
+			margin:0 auto;
+			display: block;
+		}
+		article.tabs nav ul{
+			position: absolute;
+			text-align: center;
+			padding-left: 10px;
+			margin:0;
+		}
+		article.tabs nav ul li{
+			background-color: #ddd;
+			color: #999;
+			border-radius: 5px 5px 0 0;
+			float: left;
+			width:120px;
+			margin-right: 2px;
+			height: 1.8em;
+		}
+		article.tabs nav ul .active,
+		article.tabs section.active{
+			color: #333;
+			background-color: #fff;
+		}
+		article.tabs section.active{
+			display: block;
+		}
+		article.tabs nav ul li a{
+			width: 100%;
+			line-height: 1.8em;
+			font-size: 1em;
+			display: block;
+			font-weight: 700;
+		}
+		article.tabs section{
+			position: absolute;
+			top:1.8em;
+			left: 0;
+			right: 0;
+			height: 12em;
+			padding: 10px 20px;
+			border-radius: 5px;
+			box-shadow: 0 3px 3px rgba(0,0,0,0.1);
+			background-color: #ddd;
+			display: none;
+		}
+	</style>
+</head>
+
+<body>
+	<article class="tabs">
+		<nav>
+			<ul id="nav">
+				<li class="active"><a href="#tab1">Tab1</a></li>
+				<li><a href="#tab2">Tab2</a></li>
+				<li><a href="#tab3">Tab3</a></li>
+			</ul>
+		</nav>
+		<section id="tab1" class="active">
+			<p>Tab1 content ~~~</p>
+		</section>
+		<section id="tab2">
+			<p>Tab2 content ~~~</p>
+		</section>
+		<section id="tab3">
+			<p>Tab3 content ~~~</p>
+		</section>
+	</article>	
+	<script>
+		(function(){
+			function onTabClick(event){
+				var oActive = document.querySelectorAll('.active');
+				for (var i=0; i < oActive.length; i++){
+					oActive[i].className = oActive[i].className.replace('active', '');
+				}
+				event.target.parentElement.className += 'active';
+				document.getElementById(event.target.href.split('#')[1]).className += 'active';
+			}
+			var el = document.getElementById('nav');
+			el.addEventListener('click', onTabClick, false);
+		})();
+	</script>
+</body>
+</html>

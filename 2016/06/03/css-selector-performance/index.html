@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="css selector," />
 
 
 
@@ -84,15 +84,16 @@
 
 
 
-<meta name="description" content="一个爱笑，喜欢前端，喜欢分享的女生~">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Sance's Blog">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+<meta name="description" content="才发现css选择器方面也存在性能优化问题，用好css选择器也是有讲究的。今天想要写一下css选择器方面的性能优化问题。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于CSS选择器的优化问题">
+<meta property="og:url" content="http://yoursite.com/2016/06/03/css-selector-performance/index.html">
 <meta property="og:site_name" content="Sance's Blog">
-<meta property="og:description" content="一个爱笑，喜欢前端，喜欢分享的女生~">
+<meta property="og:description" content="才发现css选择器方面也存在性能优化问题，用好css选择器也是有讲究的。今天想要写一下css选择器方面的性能优化问题。">
+<meta property="og:updated_time" content="2016-06-03T09:12:54.303Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Sance's Blog">
-<meta name="twitter:description" content="一个爱笑，喜欢前端，喜欢分享的女生~">
+<meta name="twitter:title" content="关于CSS选择器的优化问题">
+<meta name="twitter:description" content="才发现css选择器方面也存在性能优化问题，用好css选择器也是有讲究的。今天想要写一下css选择器方面的性能优化问题。">
 
 
 
@@ -110,7 +111,7 @@
   };
 </script>
 
-  <title> 归档 | Sance's Blog </title>
+  <title> 关于CSS选择器的优化问题 | Sance's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -131,7 +132,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-right  page-archive  ">
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -229,399 +230,178 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
-
-    <span class="archive-page-counter">
-      
-      
-      
-        
-      
-      嗯..! 目前共计 10 篇日志。 继续努力。
-    </span>
-
+  <div id="posts" class="posts-expand">
     
-
-      
-      
-      
-
-      
-        
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2016">2016</h2>
-        </div>
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/06/03/css-selector-performance/" itemprop="url">
-              
-                <span itemprop="name">关于CSS选择器的优化问题</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-06-03T16:35:29+08:00"
-              content="2016-06-03" >
-          06-03
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/05/30/quicksort/" itemprop="url">
-              
-                <span itemprop="name">[算法系列]- 快速排序的Javascript实现</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-05-30T10:19:15+08:00"
-              content="2016-05-30" >
-          05-30
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/05/28/graceful-degradation-and-progressive-enhancement/" itemprop="url">
-              
-                <span itemprop="name">优雅降级 && 渐进增强</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-05-28T19:12:16+08:00"
-              content="2016-05-28" >
-          05-28
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/05/15/return-largest-numbers-in-arrays/" itemprop="url">
-              
-                <span itemprop="name">[算法系列]-关于返回多维数组中最大数值问题</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-05-15T18:15:02+08:00"
-              content="2016-05-15" >
-          05-15
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/05/12/positioning-schemes-in-css-and-details-about-float/" itemprop="url">
-              
-                <span itemprop="name">CSS中的定位方案以及float详解</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-05-12T16:55:37+08:00"
-              content="2016-05-12" >
-          05-12
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/05/11/a-problem-of-logical-thinking/" itemprop="url">
-              
-                <span itemprop="name">一个有关于逻辑思维的问题</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-05-11T19:56:37+08:00"
-              content="2016-05-11" >
-          05-11
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/05/09/title-case-a-sentence/" itemprop="url">
-              
-                <span itemprop="name">[算法系列]-关于字符串中每个单词的首字母大写化问题</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-05-09T09:14:05+08:00"
-              content="2016-05-09" >
-          05-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/05/08/reverse a String/" itemprop="url">
-              
-                <span itemprop="name">[算法系列]-反转字符串</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-05-08T14:47:55+08:00"
-              content="2016-05-08" >
-          05-08
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/05/03/bootstrap-grid/" itemprop="url">
-              
-                <span itemprop="name">Bootstrap grid</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-05-03T14:47:55+08:00"
-              content="2016-05-03" >
-          05-03
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/03/25/the world of jingzi/" itemprop="url">
-              
-                <span itemprop="name">静子的小天地</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-03-25T00:28:00+08:00"
-              content="2016-03-25" >
-          03-25
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-  </section>
 
   
+  
 
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                关于CSS选择器的优化问题
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-03T16:35:29+08:00" content="2016-06-03">
+              2016-06-03
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/css/" itemprop="url" rel="index">
+                    <span itemprop="name">css</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/06/03/css-selector-performance/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/03/css-selector-performance/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>才发现css选择器方面也存在性能优化问题，用好css选择器也是有讲究的。今天想要写一下css选择器方面的性能优化问题。</p>
+<a id="more"></a>
+<h4 id="浏览器对选择器的读取"><a href="#浏览器对选择器的读取" class="headerlink" title="浏览器对选择器的读取"></a>浏览器对选择器的读取</h4><p>首先，我们要了解浏览器读取我们书写的选择器时遵循的原则– <strong>从右向左进行读取</strong>。选择器最右边的部分被称为 <strong>关键选择器</strong>，它决定了选择器的效率如何。这里，还有一个规则– <strong>越具体的关键选择器，其性能越高。</strong>那么如何判断选择器的性能高低呢？？？请接着往下看 ~ ~ ~</p>
+<h4 id="css选择器的效率"><a href="#css选择器的效率" class="headerlink" title="css选择器的效率"></a>css选择器的效率</h4><p>关于css选择器有一个固有的效率，如下所示:</p>
+<ul>
+<li>id选择器(#container)</li>
+<li>类选择器(.msg)</li>
+<li>标签选择器(p,span)</li>
+<li>相邻选择器(h1+p)</li>
+<li>子选择器(ul&gt;li)</li>
+<li>后代选择器(li a)</li>
+<li>通配符选择器(*)</li>
+<li>属性选择器(input[type=”email”])</li>
+<li>伪类选择器(a:hover)</li>
+</ul>
+<p>从上面的排序我们就可以看出，id选择器的效率最高，伪类选择器的效率最低。虽然CSS3伪类选择器和属性选择器使用十分方便，但是效率却最低。</p>
+<h4 id="使用建议"><a href="#使用建议" class="headerlink" title="使用建议"></a>使用建议</h4><p>这里有几点CSS选择器的使用建议，大家可以参考一下:</p>
+<ul>
+<li>避免普遍规则</li>
+<li>不在id选择器前加标签名和类名</li>
+<li>不在类名选择器前加标签名</li>
+<li>尽可能使用具体的类别</li>
+<li>避免使用后代选择器</li>
+<li>标签分类规则中不应该包含一个子选择器</li>
+<li>子选择器的问题</li>
+<li>借助相关继承关系</li>
+<li>使用范围内的样式表</li>
+</ul>
+<p>如果大家不是很清楚，可以点击 <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Writing_efficient_CSS#Rely_on_inheritance.21" target="_blank" rel="external"> <strong>这里</strong></a></p>
+<h4 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h4><p>个人感觉，对CSS选择器使用进行优化的时候，尽量避免多层嵌套(<strong>建议不要大于3层</strong>)，选择器前面不要出现多余的标签名，选择器使用尽量具体化 ~ ~ 不知道这篇文章对于你的学习是否有所帮助，大家快快优化自己的CSS吧 ~</p>
+<p><strong>参考文章</strong></p>
+<p><a href="http://www.w3cplus.com/css/css-selector-performance" target="_blank" rel="external">CSS选择器的优化</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/css-selector/" rel="tag">#css selector</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/05/30/quicksort/" rel="next" title="[算法系列]- 快速排序的Javascript实现">
+                <i class="fa fa-chevron-left"></i> [算法系列]- 快速排序的Javascript实现
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -629,6 +409,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/06/03/css-selector-performance/"
+           data-title="关于CSS选择器的优化问题" data-url="http://yoursite.com/2016/06/03/css-selector-performance/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -648,8 +436,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/jingzi.png"
@@ -719,6 +516,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#浏览器对选择器的读取"><span class="nav-number">1.</span> <span class="nav-text">浏览器对选择器的读取</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#css选择器的效率"><span class="nav-number">2.</span> <span class="nav-text">css选择器的效率</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用建议"><span class="nav-number">3.</span> <span class="nav-text">使用建议</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#小结"><span class="nav-number">4.</span> <span class="nav-text">小结</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -815,11 +623,9 @@
   
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
 
 
   
