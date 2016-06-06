@@ -84,16 +84,16 @@
 
 
 
-<meta name="description" content="才发现css选择器方面也存在性能优化问题，用好css选择器也是有讲究的。今天想要写一下css选择器方面的性能优化问题。">
+<meta name="description" content="才发现css选择器方面也存在性能优化问题，用好css选择器也是有讲究的，我们要学会 规则过滤。今天想要写一下css选择器方面的性能优化问题。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于CSS选择器的优化问题">
 <meta property="og:url" content="http://yoursite.com/2016/06/03/css-selector-performance/index.html">
 <meta property="og:site_name" content="Sance's Blog">
-<meta property="og:description" content="才发现css选择器方面也存在性能优化问题，用好css选择器也是有讲究的。今天想要写一下css选择器方面的性能优化问题。">
-<meta property="og:updated_time" content="2016-06-03T09:12:54.303Z">
+<meta property="og:description" content="才发现css选择器方面也存在性能优化问题，用好css选择器也是有讲究的，我们要学会 规则过滤。今天想要写一下css选择器方面的性能优化问题。">
+<meta property="og:updated_time" content="2016-06-03T11:59:45.128Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于CSS选择器的优化问题">
-<meta name="twitter:description" content="才发现css选择器方面也存在性能优化问题，用好css选择器也是有讲究的。今天想要写一下css选择器方面的性能优化问题。">
+<meta name="twitter:description" content="才发现css选择器方面也存在性能优化问题，用好css选择器也是有讲究的，我们要学会 规则过滤。今天想要写一下css选择器方面的性能优化问题。">
 
 
 
@@ -317,9 +317,9 @@
       
 
       
-        <p>才发现css选择器方面也存在性能优化问题，用好css选择器也是有讲究的。今天想要写一下css选择器方面的性能优化问题。</p>
+        <p>才发现css选择器方面也存在性能优化问题，用好css选择器也是有讲究的，我们要学会 <strong>规则过滤</strong>。今天想要写一下css选择器方面的性能优化问题。</p>
 <a id="more"></a>
-<h4 id="浏览器对选择器的读取"><a href="#浏览器对选择器的读取" class="headerlink" title="浏览器对选择器的读取"></a>浏览器对选择器的读取</h4><p>首先，我们要了解浏览器读取我们书写的选择器时遵循的原则– <strong>从右向左进行读取</strong>。选择器最右边的部分被称为 <strong>关键选择器</strong>，它决定了选择器的效率如何。这里，还有一个规则– <strong>越具体的关键选择器，其性能越高。</strong>那么如何判断选择器的性能高低呢？？？请接着往下看 ~ ~ ~</p>
+<h4 id="浏览器对选择器的读取"><a href="#浏览器对选择器的读取" class="headerlink" title="浏览器对选择器的读取"></a>浏览器对选择器的读取</h4><p>首先，我们要了解浏览器读取我们书写的选择器时遵循的原则– <strong>从右向左进行读取</strong>。选择器最右边的部分被称为 <strong>关键选择器</strong>，它决定了选择器的效率如何。对于一个给定的元素，需要匹配的规则越少，样式的解析就会越快，性能就会有所提升。这里，还有一个规则– <strong>越具体的关键选择器，其性能越高。</strong>那么如何判断选择器的性能高低呢？？？请接着往下看 ~ ~ ~</p>
 <h4 id="css选择器的效率"><a href="#css选择器的效率" class="headerlink" title="css选择器的效率"></a>css选择器的效率</h4><p>关于css选择器有一个固有的效率，如下所示:</p>
 <ul>
 <li>id选择器(#container)</li>
@@ -345,7 +345,8 @@
 <li>借助相关继承关系</li>
 <li>使用范围内的样式表</li>
 </ul>
-<p>如果大家不是很清楚，可以点击 <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Writing_efficient_CSS#Rely_on_inheritance.21" target="_blank" rel="external"> <strong>这里</strong></a></p>
+<p>这里我想强调一点，<strong>后代选择器是 CSS 中性能耗用最大的选择器。</strong> 它是性能开销相当大的——特别是当选择器在标签或通用类别中。所以需要格外注意尽量减少后代选择器的使用。</p>
+<p>每一条建议后面都有大大的小技巧，如果大家不是很清楚，可以点击 <a href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Writing_efficient_CSS#Rely_on_inheritance.21" target="_blank" rel="external"> <strong>这里</strong></a></p>
 <h4 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h4><p>个人感觉，对CSS选择器使用进行优化的时候，尽量避免多层嵌套(<strong>建议不要大于3层</strong>)，选择器前面不要出现多余的标签名，选择器使用尽量具体化 ~ ~ 不知道这篇文章对于你的学习是否有所帮助，大家快快优化自己的CSS吧 ~</p>
 <p><strong>参考文章</strong></p>
 <p><a href="http://www.w3cplus.com/css/css-selector-performance" target="_blank" rel="external">CSS选择器的优化</a></p>
@@ -386,6 +387,10 @@
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/06/06/inherited-property-and-reset-property-in-css/" rel="prev" title="CSS中的继承属性与非继承属性">
+                CSS中的继承属性与非继承属性 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -457,7 +462,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-count">12</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
