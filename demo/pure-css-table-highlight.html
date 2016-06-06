@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>pure css table highlight</title>
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic">
+	<style>
+		html,body{height: 100%;}
+		body{
+			margin: 0;
+			font-family: "Lato",sans-serif;
+			font-weight: 300;
+			background: -webkit-linear-gradient(45deg,#CC99FF,#CCCCFF);
+			background: linear-gradient(45deg,#CC99FF,#CCCCFF);
+		}
+		.container{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			-webkit-transform:translate(-50%,-50%);
+			        transform:translate(-50%,-50%);
+		}
+		table{
+			width: 800px;
+			border-collapse: collapse;
+			box-shadow:0 0 20px rgba(0,0,0,0.1);
+			overflow: hidden;
+		}
+		th,td{
+			padding: 15px;
+			background-color: rgba(255,255,255,0.2);
+			color:#fff;
+		}
+		th{text-align: left;}
+		thead th{background-color: #CC99CC;}
+		tbody tr:hover{background-color: rgba(255,255,255,0.3);}
+		tbody td{position: relative;}
+		tbody td:hover:before{
+			content: "";
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: -9999px;
+			bottom: -9999px;
+			z-index: -1;
+			background-color: rgba(255,255,255,0.2);
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<table>
+			<thead>
+				<tr>
+					<th>Column 1</th>
+					<th>Column 2</th>
+					<th>Column 3</th>
+					<th>Column 4</th>
+					<th>Column 5</th>
+					<th>Column 6</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>cell 1</td>
+					<td>cell 2</td>
+					<td>cell 3</td>
+					<td>cell 4</td>
+					<td>cell 5</td>
+					<td>cell 6</td>
+				</tr>
+				<tr>
+					<td>cell 1</td>
+					<td>cell 2</td>
+					<td>cell 3</td>
+					<td>cell 4</td>
+					<td>cell 5</td>
+					<td>cell 6</td>
+				</tr>
+				<tr>
+					<td>cell 1</td>
+					<td>cell 2</td>
+					<td>cell 3</td>
+					<td>cell 4</td>
+					<td>cell 5</td>
+					<td>cell 6</td>
+				</tr>
+				<tr>
+					<td>cell 1</td>
+					<td>cell 2</td>
+					<td>cell 3</td>
+					<td>cell 4</td>
+					<td>cell 5</td>
+					<td>cell 6</td>
+				</tr>
+				<tr>
+					<td>cell 1</td>
+					<td>cell 2</td>
+					<td>cell 3</td>
+					<td>cell 4</td>
+					<td>cell 5</td>
+					<td>cell 6</td>
+				</tr>
+				<tr>
+					<td>cell 1</td>
+					<td>cell 2</td>
+					<td>cell 3</td>
+					<td>cell 4</td>
+					<td>cell 5</td>
+					<td>cell 6</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
