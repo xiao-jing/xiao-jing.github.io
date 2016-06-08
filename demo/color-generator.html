@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Color Generator</title>
+	<style>
+		input{
+			position: absolute;
+			left: 0;
+			top: 40%;
+			transform:translateY(-50%);
+			width: 100%;
+			font-size: 48px;
+			font-family: "Helvetica Neue",Helvetica;
+			font-weight: bold;
+			background-color: rgba(255,255,255,0.75);
+			outline: 0;
+			border:none;
+			padding: 24px 22%;
+			box-sizing: border-box;
+		}
+		body{transition:background 0.6s;}
+	</style>
+	<script>
+        window.onload = function(){
+        	var body = document.getElementsByTagName("body")[0];
+        	var input = document.getElementsByTagName("input")[0];
+        	var convertToHexCode = function(str){
+        		var code = 0;
+        		var chars = str.split('');
+                chars.forEach(function(char){
+                	code += char.charCodeAt(0) * 100819;
+                });
+                return code.toString(16).substr(0,6);
+        	};
+        	input.onkeyup = function(e){
+        		var code = convertToHexCode(e.target.value);
+        		if(code === '0'){
+        			body.style.backgroundColor = '#ffffff';
+        			return;
+        		}
+        		body.style.backgroundColor = '#' + code;
+        	};
+        };
+	</script>
+</head>
+<body>
+	<input type="text" placeholder="Are you smiled today ?">
+</body>
+</html>
