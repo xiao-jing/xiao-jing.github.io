@@ -1,0 +1,757 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="-BEM," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="小序这篇文章是一篇有关于BEM(即 Block Element Modifier)的译文，如果你对BEM还不了解的话，可以点击  这里  了解更多相关信息。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[译文] 关于BEM中常见的十个问题以及如何避免他们">
+<meta property="og:url" content="http://yoursite.com/2016/06/09/battling-BEM-10-common-problems-and-how-to-avoid-them/index.html">
+<meta property="og:site_name" content="Sance's Blog">
+<meta property="og:description" content="小序这篇文章是一篇有关于BEM(即 Block Element Modifier)的译文，如果你对BEM还不了解的话，可以点击  这里  了解更多相关信息。">
+<meta property="og:updated_time" content="2016-06-09T00:40:36.941Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[译文] 关于BEM中常见的十个问题以及如何避免他们">
+<meta name="twitter:description" content="小序这篇文章是一篇有关于BEM(即 Block Element Modifier)的译文，如果你对BEM还不了解的话，可以点击  这里  了解更多相关信息。">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"right","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> [译文] 关于BEM中常见的十个问题以及如何避免他们 | Sance's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Sance's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                [译文] 关于BEM中常见的十个问题以及如何避免他们
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-09T08:14:05+08:00" content="2016-06-09">
+              2016-06-09
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/BEM/" itemprop="url" rel="index">
+                    <span itemprop="name">-BEM</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/06/09/battling-BEM-10-common-problems-and-how-to-avoid-them/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/09/battling-BEM-10-common-problems-and-how-to-avoid-them/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h6 id="小序"><a href="#小序" class="headerlink" title="小序"></a>小序</h6><p>这篇文章是一篇有关于BEM(即 Block Element Modifier)的译文，如果你对BEM还不了解的话，可以点击  <a href="http://www.w3cplus.com/blog/tags/325.html" target="_blank" rel="external"><strong>这里</strong></a>  了解更多相关信息。</p>
+<a id="more"></a>
+<p><a href="https://www.smashingmagazine.com/2016/06/battling-bem-extended-edition-common-problems-and-how-to-avoid-them/?utm_source=CSS-Weekly&amp;utm_campaign=Issue-218&amp;utm_medium=email" target="_blank" rel="external">原文链接</a></p>
+<hr>
+<p>不管你是刚刚才接触BEM还是已经是一名老手，对于它的思想你是不是都十分的赞美？如果你还没有接触过BEM，在阅读这篇文章之前我建议你先到<a href="https://en.bem.info/" target="_blank" rel="external">BEM官方网站</a>进行了解，因为我将对其进行分类表述我对这种CSS理念的观点。</p>
+<p>本文旨在对那些BEM的爱好者以及想要更好地使用它或者是想要加深对它了解的人有所帮助。</p>
+<p>现在我是不抱有任何幻想，关于说BEM是一个很好的CSS命名规范。因为它绝对不是！我曾经很长一段时间因为它丑陋的语法规范而放弃了它。作为设计者的我不希望我的标记中出现丑陋的双下划线以及连字符。</p>
+<p>但是作为构建一个逻辑性的、模块化的用户界面，它是比较务实的，这胜过了我的右大脑的抱怨 - “但是它不够漂亮！！！”。我当然不推荐在起居室这种小范围内使用这种方式，但是当你需要一件救生衣(当你遨游在CSS大海之中时)，我将会选择这种函数形式。不管怎么说，足够使用。这里有10个关于BEM的问题以及我处理这些问题的小技巧。</p>
+<h5 id="1-关于后代-不包含子选择器-选择器如何使用"><a href="#1-关于后代-不包含子选择器-选择器如何使用" class="headerlink" title="1. 关于后代(不包含子选择器)选择器如何使用?"></a>1. 关于后代(不包含子选择器)选择器如何使用?</h5><p>这里需要澄清一下，当你的元素嵌套两级以及大于两级的时候就需要使用子孙选择器。这简直就是我生命中的克星，我敢肯定他们的滥用就是有人对BEM产生反感的原因之一，如下所示:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"c-card"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"c-card__header"</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- Here comes the grandchild… --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h2</span> <span class="attr">class</span>=<span class="string">"c-card__header__title"</span>&gt;</span>Title text here<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"c-card__body"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">img</span> <span class="attr">class</span>=<span class="string">"c-card__body__img"</span> <span class="attr">src</span>=<span class="string">"some-img.png"</span> <span class="attr">alt</span>=<span class="string">"description"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"c-card__body__text"</span>&gt;</span>Lorem ipsum dolor sit amet, consectetur<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"c-card__body__text"</span>&gt;</span>Adipiscing elit.</span><br><span class="line">            <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/somelink.html"</span> <span class="attr">class</span>=<span class="string">"c-card__body__text__link"</span>&gt;</span>Pellentesque amet<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>正如你可以想象的，这样的命名很快就会失控，越嵌套一个组件，类名就会变得更加狰狞以及不可读。 我使用了一个短块名称<code>c-card</code>并且使用了短元素名，如<code>body</code> , <code>text</code>和<code>link</code>,但你能想象当你的初始块名称被命名为类似<code>c-drop-down-menu</code>时，就会出现失控现象。</p>
+<p>我相信双下划线模式在选择器名称下应该只能出现一次。BEM代表<code>Block__Element--Modifier</code>,并不是 <code>Block__Element__Element--Modifier</code> 。 因此，需要避免多个元素级别命名。这时如果你存在多层嵌套，你可能就需要重新审视你的组件结构了。</p>
+<p>BEM命名并不严格绑定到DOM上，所以后代元素有多少层嵌套并没有关系。命名规范是帮助你识别顶层块组件之间的关系，如这里的<code>c-card</code>。</p>
+<p>这里我就会这样子处理相同的卡片组件，如下:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"c-card"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"c-card__header"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h2</span> <span class="attr">class</span>=<span class="string">"c-card__title"</span>&gt;</span>Title text here<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"c-card__body"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">img</span> <span class="attr">class</span>=<span class="string">"c-card__img"</span> <span class="attr">src</span>=<span class="string">"some-img.png"</span> <span class="attr">alt</span>=<span class="string">"description"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"c-card__text"</span>&gt;</span>Lorem ipsum dolor sit amet, consectetur<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"c-card__text"</span>&gt;</span>Adipiscing elit.</span><br><span class="line">            <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/somelink.html"</span> <span class="attr">class</span>=<span class="string">"c-card__link"</span>&gt;</span>Pellentesque amet<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>这意味着所有的后代元素仅仅受到<code>card</code>块的影响。因此我们可以将文本和图像移动到<code>c-card__header</code>，甚至引入新的<code>c-card__footer</code>元素而不会破坏语义结构。</p>
+<h5 id="2-如何使用命名空间"><a href="#2-如何使用命名空间" class="headerlink" title="2. 如何使用命名空间?"></a>2. 如何使用命名空间?</h5><p>现在你可能已经注意到我在上述代码中使用 <code>c-</code> ，这表示“组件”，并且形成了我对BEM类命名规范。这个想法来自于Harry Robert的<a href="http://csswizardry.com/2015/03/more-transparent-ui-code-with-namespaces/" target="_blank" rel="external">命名技巧</a>,提高了代码的可读性。</p>
+<p>如下所示是我所采用的系统结构，其中许多前缀将出现在本文的代码示例中:</p>
+<table>
+<thead>
+<tr>
+<th><strong>TYPE</strong></th>
+<th><strong>PREFIX</strong></th>
+<th><strong>EXAMPLES</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Component</td>
+<td><code>c-</code></td>
+<td><code>c-card</code>  <code>c-checklist</code></td>
+</tr>
+<tr>
+<td>Layout module</td>
+<td><code>l</code></td>
+<td><code>l-grid</code>  <code>l-container</code></td>
+</tr>
+<tr>
+<td>Helpers</td>
+<td><code>h</code></td>
+<td><code>h-show</code>  <code>h-hide</code></td>
+</tr>
+<tr>
+<td>States</td>
+<td><code>is</code>  <code>has-</code></td>
+<td><code>is-visible</code> <code>has-loaded</code></td>
+</tr>
+<tr>
+<td>JavaScript hooks</td>
+<td><code>js</code></td>
+<td><code>js-tab-switcher</code></td>
+</tr>
+</tbody>
+</table>
+<p>我发现使用这些命名空间使我的代码更具有可读性，即使我不使用BEM，这也是一个重要的分辨点。</p>
+<p>你也可以采用其余的命名空间，如<code>qa-</code>表示质量保证，<code>ss-</code>表示服务器端挂钩等。但是上述列表是一个很好的参照，如果你感觉还不错可以将其介绍给别人。</p>
+<p>你会发现这种风格在未来命名空间问题上会是一个很好的例子。</p>
+<h5 id="3-我该如何命名包裹容器？"><a href="#3-我该如何命名包裹容器？" class="headerlink" title="3. 我该如何命名包裹容器？"></a>3. 我该如何命名包裹容器？</h5><p>一些部件需要一个决定子元素布局的父容器。在这些情况下，我总是尝试将布局抽象为一个布局模块，如<code>l-grid</code>,并将其组件插入其中，如<code>l-grid__item</code>。</p>
+<p>在我们的卡片示例中，如果我们想要生成一个具有四个<code>c-card</code>的列表，我将会使用下面所示的标记:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"l-grid"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"l-grid__item"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"c-card"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"c-card__header"</span>&gt;</span></span><br><span class="line">                […]</span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"c-card__body"</span>&gt;</span></span><br><span class="line">                […]</span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"l-grid__item"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"c-card"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"c-card__header"</span>&gt;</span></span><br><span class="line">                […]</span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"c-card__body"</span>&gt;</span></span><br><span class="line">                […]</span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"l-grid__item"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"c-card"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"c-card__header"</span>&gt;</span></span><br><span class="line">                […]</span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"c-card__body"</span>&gt;</span></span><br><span class="line">                […]</span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"l-grid__item"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"c-card"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"c-card__header"</span>&gt;</span></span><br><span class="line">                […]</span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"c-card__body"</span>&gt;</span></span><br><span class="line">                […]</span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>现在你应该对布局模块和组件的命名空间的组合使用有了一个坚实的想法。</p>
+<p>不要害怕使用一些额外的标记需要记忆而头疼。没有人会拍拍你的肩膀让你移除<code>&lt;div&gt;</code>标签的！</p>
+<p>在一些情况下，这是不可能的。如，你的网格不能实现你想要的结果，或者说你想要一些语义化对父元素进行命名，这时你要怎么办？对于我，根据不同场景，我倾向于选择使用<code>container</code>或者<code>list</code>。返回我们的卡片示例，我可能会使用<code>&lt;div class=&quot;l-cards-container&quot;&gt;[…]&lt;/div&gt;</code>或者<code>&lt;ul class=&quot;l-cards-list&quot;&gt;[…]&lt;/ul&gt;</code>。关键点在于和你的命名约定相一致。</p>
+<h5 id="4-跨组件…组件？"><a href="#4-跨组件…组件？" class="headerlink" title="4. 跨组件…组件？"></a>4. 跨组件…组件？</h5><p>所面临的另外一个问题是，组件的风格或者定位受其父容器的影响。关于这个问题Simurai对各种解决方案做了<a href="http://simurai.com/blog/2015/05/11/nesting-components" target="_blank" rel="external">详细的说明</a>。这里我就告诉大家我认为最具有扩展性的解决方法。</p>
+<p>假设我们想要我们的示例中<code>card__body</code>中插入一个<code>c-button</code>。这个按钮已经有自己的组件，并且标记如下:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"c-button c-button--primary"</span>&gt;</span>Click me!<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>如果与其它常规按钮组件没有样式区别，这里就不存在问题，我们可以如下所示直接使用:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"c-card"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"c-card__header"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h2</span> <span class="attr">class</span>=<span class="string">"c-card__title"</span>&gt;</span>Title text here<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"c-card__body"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">img</span> <span class="attr">class</span>=<span class="string">"c-card__img"</span> <span class="attr">src</span>=<span class="string">"some-img.png"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"c-card__text"</span>&gt;</span>Lorem ipsum dolor sit amet, consectetur<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"c-card__text"</span>&gt;</span>Adipiscing elit. Pellentesque.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!-- Our nested button component --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"c-button c-button--primary"</span>&gt;</span>Click me!<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>但是，当其样式不同时 - 如，我们想要其更小一点，或者完全是圆角，但是这些情况仅仅出现在<code>c-card</code>组件的一部分。这时应该怎么办？</p>
+<p>之前我说过，我找到一个跨组件最强大的解决方案:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"c-card"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"c-card__header"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h2</span> <span class="attr">class</span>=<span class="string">"c-card__title"</span>&gt;</span>Title text here<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"c-card__body"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">img</span> <span class="attr">class</span>=<span class="string">"c-card__img"</span> <span class="attr">src</span>=<span class="string">"some-img.png"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"c-card__text"</span>&gt;</span>Lorem ipsum dolor sit amet, consectetur<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"c-card__text"</span>&gt;</span>Adipiscing elit. Pellentesque.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!-- My *old* cross-component approach --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"c-button c-card__c-button"</span>&gt;</span>Click me!<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>这就是BEM官方网站上著名的“mix”。但是当我参考了Esteban Lussich的一些意见之后，我却对其改变了看法。</p>
+<p>在上面的示例中，<code>c-card__c-button</code>类试图改变<code>c-button</code>类已经存在的一个或者多个属性，但是是否成功取决于它们的源顺序(或者特殊指明)。源代码中，<code>c-card__c-button</code>类只有在<code>c-button</code>类之后才会起作用，但是当你建立更多类似组件时就会失控。(当然你也可以使用<code>!important</code>，但是我并不推荐使用)</p>
+<p>一个真正的模块化UI元素应该是完全不知其父容器的 - 无论在哪里使用，效果应该是一致的。在一个组件中添加一个具有特定样式的类，称之为”mix”方法，违反了组件导向设计的<a href="https://en.wikipedia.org/wiki/Open/closed_principle" target="_blank" rel="external">开/关</a>原则 - 即各个模块之间应该没有依赖关系。</p>
+<p>最好的解决办法就是在这些不同之处使用一个修饰器，因为你可能会发现，你会在其它地方对其复用。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"c-button c-button--rounded c-button--small"</span>&gt;</span>Click me!<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>即使你不会再次使用这些类，在修饰器指定特异性或者源顺序，它们不会被捆绑到父容器上。</p>
+<p>当然，另外一个选择就是回到你的设计者岗位，告诉他们按钮的样式就应该和网站上其余按钮保持一致，并完全避免这个问题……但是，这又是另一天。</p>
+<h5 id="5-修饰器或新建组件"><a href="#5-修饰器或新建组件" class="headerlink" title="5. 修饰器或新建组件?"></a>5. 修饰器或新建组件?</h5><p>最大的问题之一在于决定组件的结束与另一个组件的开始。在<code>c-card</code>示例中，你可能随后就会创建一个<code>c-panel</code>组件，它们之间有很大的相似之处，但是又有细微的差别。</p>
+<p>但是，你需要决定是否应该存在有两个组件 - <code>c-panel</code>和<code>c-card</code>,或者在<code>c-card</code>上应用一个简单的修饰器对样式进行修改。</p>
+<p>这很容易造成过渡模块化，使其一切变为组件。我建议使用修饰器，但是如果你发现你的特定组件的CSS文件越来越难以管理，这时你就可以终止对修饰器的使用。一个很好的指标就是，当你发现你不得不重置你所有的块CSS以对你的修饰器进行样式修饰时 - 这对我来说就可以生成一个新组件。</p>
+<p>最好的办法就是，如果你和其余的开发者或者设计师一起工作，征求他们的意见并进行讨论。我知道这有点虎头蛇尾，但是对于一个大型应用程序，明白模块化的复用性以及什么时候需要组件是至关重要的。</p>
+<h5 id="6-如何处理状态"><a href="#6-如何处理状态" class="headerlink" title="6. 如何处理状态?"></a>6. 如何处理状态?</h5><p>这是一个普遍的问题，特别是当你对组件的活动或开启状态进行样式修饰时。比方说我们的卡片需要有一个活跃状态；所以当你点击时，就会显现一个漂亮的边框样式。这里你将如何对类进行命名呢？</p>
+<p>这里我感觉你会有两个选择: 一个是独立的状态钩，或者是在组件中添加一个BEM中的修饰符:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- standalone state hook --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"c-card is-active"</span>&gt;</span></span><br><span class="line">    […]</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- or BEM modifier --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"c-card c-card--is-active"</span>&gt;</span></span><br><span class="line">    […]</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>这里我喜欢保持一致性，使用BEM类似命名。一个独立类的好处就是，它可以很容易的使用Javascript在所有组件上应用通用状态的挂钩。当你不得不用脚本应用特定的基于修饰器的状态类时，这就会变得有些困难。当然，这是完全有可能的，但意味着使用了大量的Javascript脚本。</p>
+<p>坚持使用一套标准挂钩是有道理的。Chris Pearce 有一个已经<a href="https://github.com/chris-pearce/css-guidelines#state-hooks" target="_blank" rel="external">编译好的目录</a>，我建议阅读一下。</p>
+<h5 id="7-什么时候可以不用在一个元素上添加类"><a href="#7-什么时候可以不用在一个元素上添加类" class="headerlink" title="7. 什么时候可以不用在一个元素上添加类?"></a>7. 什么时候可以不用在一个元素上添加类?</h5><p>我可以理解人们对于构建一个复杂的UI界面所面临的大量的类的苦楚，特别是他们不向每个类上添加一个标签。</p>
+<p>通常情况下，我会在有特殊样式的组件上下文中添加类。我经常丢弃<code>p</code>标签级的，除非是组件的特殊需要。</p>
+<p>当然这可能意味着你的标记中包含大量的类，但是你的组件可以独立化并且可以在任何地方无副作用使用。</p>
+<p>由于CSS的全局特性，应用样式所控制的远远大于组件所渲染的样式。这种最初的心理不适性导致是值得的，相对于模块化系统所带来的好处。</p>
+<h5 id="8-如何嵌套组件？"><a href="#8-如何嵌套组件？" class="headerlink" title="8. 如何嵌套组件？"></a>8. 如何嵌套组件？</h5><p>假设我们想在我们的<code>c-card</code>组件中展示一个选择清单，这里有一个错误的示范:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"c-card"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"c-card__header"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h2</span> <span class="attr">class</span>=<span class="string">"c-card__title"</span>&gt;</span>Title text here<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"c-card__body"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>I would like to buy:<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!-- Uh oh! A nested component --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"c-card__checklist"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"c-card__checklist__item"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">"option_1"</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"checkbox"</span> <span class="attr">class</span>=<span class="string">"c-card__checklist__input"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"option_1"</span> <span class="attr">class</span>=<span class="string">"c-card__checklist__label"</span>&gt;</span>Apples<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"c-card__checklist__item"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">"option_2"</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"checkbox"</span> <span class="attr">class</span>=<span class="string">"c-card__checklist__input"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"option_2"</span> <span class="attr">class</span>=<span class="string">"c-card__checklist__label"</span>&gt;</span>Pears<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- .c-card__body --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- .c-card --&gt;</span></span><br></pre></td></tr></table></figure>
+<p>这里存在几个问题。其中一个就是我们在section 1部分使用的祖父母选择器。另外一个问题就是所有应用<code>c-card__checklist__item</code>类的均被限定使用，不可复用。</p>
+<p>这里我更倾向于将清单本身变为一个布局模块并且清单子项目将会成为它的组件，使他们能够在其他地方独立使用。这里使用<code>l-</code>命名空间:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"c-card"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"c-card__header"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h2</span> <span class="attr">class</span>=<span class="string">"c-card__title"</span>&gt;</span>Title text here<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"c-card__body"</span>&gt;</span><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"c-card__body"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>I would like to buy:<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!-- Much nicer - a layout module --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"l-list"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"l-list__item"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">                <span class="comment">&lt;!-- A reusable nested component --&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"c-checkbox"</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">"option_1"</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"checkbox"</span> <span class="attr">class</span>=<span class="string">"c-checkbox__input"</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"option_1"</span> <span class="attr">class</span>=<span class="string">"c-checkbox__label"</span>&gt;</span>Apples<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">            <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"l-list__item"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">                <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"c-checkbox"</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">"option_2"</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"checkbox"</span> <span class="attr">class</span>=<span class="string">"c-checkbox__input"</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"option_2"</span> <span class="attr">class</span>=<span class="string">"c-checkbox__label"</span>&gt;</span>Pears<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">            <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- .l-list --&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- .c-card__body --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- .c-card --&gt;</span></span><br></pre></td></tr></table></figure>
+<p>这样你就不用重复样式，也意味着可以在应用的其它地方应用<code>l-list</code>类和<code>c-checkbox</code>类。这意味着多一点标记，但是方便了阅读，封装以及可重用性。你可能已经注意到了这都是共同的话题！</p>
+<h5 id="9-组件是不是结束于大量类之中？"><a href="#9-组件是不是结束于大量类之中？" class="headerlink" title="9. 组件是不是结束于大量类之中？"></a>9. 组件是不是结束于大量类之中？</h5><p>一些人认为，在一个元素上应用大量的类是很不好的，而且<code>--modifiers</code>会积少成多。就我个人而言，我不感觉这有问题，因为这使代码更具有可读性，可以很快明白其语义。</p>
+<p>这里有一个应用了四个类的按钮:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"c-button c-button--primary c-button--huge  is-active"</span>&gt;</span>Click me!<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>我知道这个语法不是最可视化的，但是却是最明确的。</p>
+<p>但是，如果这对于你来说是一个难题，你可以看看Sergey Zarouski所提出的<a href="http://webuniverse.io/css-organization-naming-conventions-and-safe-extend-without-preprocessors/#To_extend_or_not_to_extend?" target="_blank" rel="external">扩展技术</a>。从本质上说，我们将会在样式表中使用<code>.className [class^=&quot;className&quot;],[class*=&quot; className&quot;]</code> 效仿vanilla CSS的扩展功能。如果你对这种语法比较眼熟，这是因为它和<a href="https://icomoon.io/" target="_blank" rel="external">Icomoon</a>处理图标选择是十分相似的。</p>
+<p>使用这种方式，你的标记可能会如下所示:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"c-button--primary-huge  is-active"</span>&gt;</span>Click me!<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>我不知道使用<code>class=^</code>和<code>class*=</code>选择器所带来的性能损失是否比单独使用大规模的类大得多，但是这在理论上是一个很好的替代。我对于多类的选择还是可以接受的，但是我感觉应该为那些喜欢选择的人提及一下。</p>
+<h5 id="10-是否可使组件具有响应化？"><a href="#10-是否可使组件具有响应化？" class="headerlink" title="10. 是否可使组件具有响应化？"></a>10. 是否可使组件具有响应化？</h5><p>这个问题是Arie Thulank向我提出的，也是一个我挣扎了好久想出一个100%具体解决方案的问题。</p>
+<p>一个例子就是在给定断点一组选项卡的转换，或屏幕导航在给定断点处切换为下拉菜单样式。</p>
+<p>从本质上讲，一个组件在媒体查询下具有两个不同的表现形式。</p>
+<p>关于这两个具体例子，我的倾向是建立一个<code>c-navigation</code>组件，因为在两个断点处它的行为是最基础的。这让我产生了一个思考，在大屏幕上如何将一个图像列表转换为幻灯片形式？这对于我来说可能是一个边缘情况，并且只要是具有可行性文档和评论，我认为这是完全合理的，为这种类型的用户界面创建这种具有明确的命名(如<code>c-image-list-to-carousel</code>)一次性独立组件。</p>
+<p>Harry Roberts曾写过<a href="http://csswizardry.com/2015/08/bemit-taking-the-bem-naming-convention-a-step-further/" target="_blank" rel="external">响应后缀</a> ，这也是一种处理方式。他的做法是为了更多的布局和样式的变化，而不是整个组件的变化，但我不明白为什么这种技术不能应用在这里。所以，基本上你会发现作者的类是这样的：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"c-image-list@small-screen c-carousel@large-screen"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>这样，对于不同的屏幕尺寸就会保留各自的媒体查询。 提示：你需要在你的CSS中使用反斜杠使用@，如下所示：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.c-image-list</span>\@<span class="keyword">small</span>-<span class="keyword">screen</span> &#123;</span><br><span class="line">    <span class="comment">/* styles here */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我没有太多的示例创建这些类型的组件，但是你必须这样子做，这感觉将会是一种十分有好的开发商方式。 下面接管你代码的人应该也能够很容易地理解你的意图。 我不主张像<code>small-screen</code>和<code>large-screen</code>的命名 - 这里纯粹是为了可读性。</p>
+<h5 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h5><p>BEM绝对是我在创建一个具有模块化，组件驱动方式应用中的一个救星。现在我已经使用了近三年，上述问题是也是我遇到的为数不多的绊脚石。 我希望这篇文章对你的学习有所帮助，另外如果BEM不过时，我强烈建议你这样做。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/BEM/" rel="tag">#-BEM</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/06/06/inherited-property-and-reset-property-in-css/" rel="next" title="CSS中的继承属性与非继承属性">
+                <i class="fa fa-chevron-left"></i> CSS中的继承属性与非继承属性
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/06/09/battling-BEM-10-common-problems-and-how-to-avoid-them/"
+           data-title="[译文] 关于BEM中常见的十个问题以及如何避免他们" data-url="http://yoursite.com/2016/06/09/battling-BEM-10-common-problems-and-how-to-avoid-them/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/jingzi.png"
+               alt="静子" />
+          <p class="site-author-name" itemprop="name">静子</p>
+          <p class="site-description motion-element" itemprop="description">一个爱笑，喜欢前端，喜欢分享的女生~</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/xiao-jing" target="_blank" title="github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  github
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/jizhongjing" target="_blank" title="weibo">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#小序"><span class="nav-number">1.</span> <span class="nav-text">小序</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-关于后代-不包含子选择器-选择器如何使用"><span class="nav-number"></span> <span class="nav-text">1. 关于后代(不包含子选择器)选择器如何使用?</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-如何使用命名空间"><span class="nav-number"></span> <span class="nav-text">2. 如何使用命名空间?</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-我该如何命名包裹容器？"><span class="nav-number"></span> <span class="nav-text">3. 我该如何命名包裹容器？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-跨组件…组件？"><span class="nav-number"></span> <span class="nav-text">4. 跨组件…组件？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-修饰器或新建组件"><span class="nav-number"></span> <span class="nav-text">5. 修饰器或新建组件?</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-如何处理状态"><span class="nav-number"></span> <span class="nav-text">6. 如何处理状态?</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#7-什么时候可以不用在一个元素上添加类"><span class="nav-number"></span> <span class="nav-text">7. 什么时候可以不用在一个元素上添加类?</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#8-如何嵌套组件？"><span class="nav-number"></span> <span class="nav-text">8. 如何嵌套组件？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#9-组件是不是结束于大量类之中？"><span class="nav-number"></span> <span class="nav-text">9. 组件是不是结束于大量类之中？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#10-是否可使组件具有响应化？"><span class="nav-number"></span> <span class="nav-text">10. 是否可使组件具有响应化？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#总结"><span class="nav-number"></span> <span class="nav-text">总结</span></a></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">静子</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"xiao-jinggithubio"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
