@@ -1,0 +1,1229 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="原文链接
+An Ultimate Guide To CSS Pseudo-Classes And Pseudo-ElementsCSS 伪类和伪元素总结Hola a todos! (Hello, everyone!) In my early days of web design, I had to learn things the hard way: trial and error. There">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Sance's Blog">
+<meta property="og:url" content="http://yoursite.com/2016/06/13/an-ultimate-guide-to-css-pseudo-classes-and-pseudo-elements/index.html">
+<meta property="og:site_name" content="Sance's Blog">
+<meta property="og:description" content="原文链接
+An Ultimate Guide To CSS Pseudo-Classes And Pseudo-ElementsCSS 伪类和伪元素总结Hola a todos! (Hello, everyone!) In my early days of web design, I had to learn things the hard way: trial and error. There">
+<meta property="og:updated_time" content="2016-06-10T14:34:12.286Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Sance's Blog">
+<meta name="twitter:description" content="原文链接
+An Ultimate Guide To CSS Pseudo-Classes And Pseudo-ElementsCSS 伪类和伪元素总结Hola a todos! (Hello, everyone!) In my early days of web design, I had to learn things the hard way: trial and error. There">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"right","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title>  | Sance's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Sance's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-13T08:28:10+08:00" content="2016-06-13">
+              2016-06-13
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/06/13/an-ultimate-guide-to-css-pseudo-classes-and-pseudo-elements/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/13/an-ultimate-guide-to-css-pseudo-classes-and-pseudo-elements/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><a href="https://www.smashingmagazine.com/2016/05/an-ultimate-guide-to-css-pseudo-classes-and-pseudo-elements/?utm_source=CSS-Weekly&amp;utm_campaign=Issue-214&amp;utm_medium=email#active" target="_blank" rel="external">原文链接</a></p>
+<h1 id="An-Ultimate-Guide-To-CSS-Pseudo-Classes-And-Pseudo-Elements"><a href="#An-Ultimate-Guide-To-CSS-Pseudo-Classes-And-Pseudo-Elements" class="headerlink" title="An Ultimate Guide To CSS Pseudo-Classes And Pseudo-Elements"></a>An Ultimate Guide To CSS Pseudo-Classes And Pseudo-Elements</h1><h1 id="CSS-伪类和伪元素总结"><a href="#CSS-伪类和伪元素总结" class="headerlink" title="CSS 伪类和伪元素总结"></a>CSS 伪类和伪元素总结</h1><p>Hola a todos! (Hello, everyone!) In my early days of web design, I had to learn things the hard way: trial and error. There was no Smashing Magazine, Can I Use, CodePen or any of the other amazing tools at our disposal today. Having someone show me the ropes of web design, especially on the CSS front, would have been incredibly helpful.</p>
+<p>大家好！在早期的网页设计之中，我不得不从试验以及错误之中进行学习总结。那时没有可参考的杂志，也没有像 Codepen 或者其它类似的使用工具。如果有人可以为我指点一下，尤其是CSS方面，都将会是很大的帮助。</p>
+<p>Now that I am far more experienced, I want to share with you in a very friendly, casual, non-dogmatic way a CSS reference guide to pseudo-classes and pseudo-elements.</p>
+<p>现在我的经验越来越多，我想和大家分享一个友好的、随意的非条目的有关于CSS 伪类以及伪元素的总结。</p>
+<p>If you’re an experienced web designer or developer, you must know and have used most of the pseudo-classes and pseudo-elements discussed here. However, I encourage you to check the table of contents; you might not have heard of one or two of them before.</p>
+<p>如果你是一位前端设计者或开发者，你一定对将要讨论的伪元素以及伪类有所了解并且可能使用过它们。然而我还是建议你看看本文所讲的所有条目选项，你可能会有新的收获。</p>
+<p>Before diving into the meat and bones, and because this article is about pseudo-classes and pseudo-elements, let’s start with the basics: Have you ever wondered what the word “pseudo” means? If so, here’s a definition from Dictionary.com:</p>
+<p>在开始正式讲解之前，让我们先讨论一个问题，关于伪元素和伪类，大家了解“pseudo”的含义么？如果没有相关概念，请参考<a href="http://dictionary.reference.com/browse/pseudo" target="_blank" rel="external">Dictionary.com</a>网站上的定义:</p>
+<blockquote>
+<p>adjective</p>
+<ol>
+<li>not actually but having the appearance of; pretended; false or spurious; sham.</li>
+<li>almost, approaching, or trying to be.</li>
+</ol>
+<p>形容词</p>
+<ol>
+<li>不是真实存在的但是又好像存在；假装的；假的；</li>
+<li>几乎，接近，或想要成为</li>
+</ol>
+</blockquote>
+<p>Without getting overcomplicated with the W3C’s technical definition, a pseudo-class is basically a phantom state or specific characteristic of an element that can be targeted with CSS. A few common pseudo-classes are :link, :visited, :hover, :active, :first-child and :nth-child. There are more, and we’re going to see them all in a minute.</p>
+<p>这里就不在重复声明 W3C 上有关的定义，伪类就是一种虚构的状态或者说是一个具有特殊属性的元素可以使用CSS进行样式修饰。常见的几种伪类是: <code>:link</code> , <code>:visited</code> , <code>:hover</code> , <code>:active</code> , <code>:first-child</code> 以及 <code>:nth-child</code>。这里还有很多，接下来我们将要逐一进行介绍。</p>
+<p>Also, pseudo-classes are always preceded by a colon (:). Then comes the name of the pseudo-class and sometimes a value in parentheses. :nth-child anyone?</p>
+<p>此外，伪类前面总是加一个冒号(:)。之后跟着伪类的名字或者是括号里面的值，如<code>:nth-child</code>。</p>
+<p>Now, pseudo-elements are like virtual elements that we can treat as regular HTML elements. The thing is that they don’t exist in the document tree or DOM. This means we don’t actually type the pseudo-elements, but rather create them with CSS.</p>
+<p>关于伪元素，它们更像是虚拟的元素可以和HTML元素一样对待。区别在于它们并不存在于文档树或者DOM之中。这意味着我们并没有真正的指定伪元素，但是可以使用CSS进行创建。</p>
+<p>A few common pseudo-elements are :after, :before and :first-letter. We’ll talk about them towards the end of this article.</p>
+<p>常见的几种伪元素是: <code>:after</code> , <code>:before</code> 以及 <code>:first-letter</code>。在文章的最后我们将对他们进行详细的说明。</p>
+<h2 id="Single-Or-Double-Colon-For-Pseudo-Elements"><a href="#Single-Or-Double-Colon-For-Pseudo-Elements" class="headerlink" title="Single Or Double Colon For Pseudo-Elements?"></a>Single Or Double Colon For Pseudo-Elements?</h2><h2 id="关于伪元素使用单冒号还是双冒号"><a href="#关于伪元素使用单冒号还是双冒号" class="headerlink" title="关于伪元素使用单冒号还是双冒号?"></a>关于伪元素使用单冒号还是双冒号?</h2><p>The short answer is, in most cases, either.</p>
+<p>在大多数情况下，两者均可。</p>
+<p>The double colon (::) was introduced in CSS3 to differentiate pseudo-elements such as ::before and ::after from pseudo-classes such as :hover and :active. All browsers support double colons for pseudo-elements except Internet Explorer (IE) 8 and below.</p>
+<p>CSS3中引入双冒号(::)是为了在伪类中，如:<code>:hover</code>,<code>:active</code>,区分伪元素，如<code>::before</code>，<code>::after</code>。除了IE8及其以下版本不支持外，所有的浏览器均支持伪元素中双冒号的使用。</p>
+<p>Some pseudo-elements, such as ::backdrop, accept only a double colon, though.</p>
+<p>一些伪元素，如<code>::backdrop</code>只接受双冒号的使用。</p>
+<p>Personally, I use single-colon notation so that my CSS is backwards-compatible with legacy browsers. I use double-colon notation on those pseudo-elements that require it, of course.</p>
+<p>就我个人而言，我使用单冒号以便使我的CSS可以向后兼容一些旧浏览器。当然，在那些指定使用双冒号的伪元素上使用双冒号。</p>
+<p>You are free to use either; there is really no right or wrong about this.</p>
+<p>你可以自由的去选择使用，因为不存在对错之分。</p>
+<p>However, the specification, at the time of writing this article, does recommend using single-colon notation for the reason mentioned above, backwards compatibility:</p>
+<p>然而在写这篇文章时，<a href="https://www.w3.org/community/webed/wiki/Advanced_CSS_selectors#CSS3_pseudo-element_double_colon_syntax" target="_blank" rel="external">规范建议使用单冒号</a>，理由如上所述，为了得到更好的向后兼容性:</p>
+<blockquote>
+<p>Please note that the new CSS3 way of writing pseudo-elements is to use a double colon, eg a::after { … }, to set them apart from pseudo-classes. You may see this sometimes in CSS. CSS3 however also still allows for single colon pseudo-elements, for the sake of backwards compatibility, and we would advise that you stick with this syntax for the time being.</p>
+<p>请注意CSS3中伪元素的书写是使用双冒号，如 a::after{···}，以便于将他们与伪类进行区分。这种情况你可能在CSS中见过。但是CSS3中为了得到更好的向后兼容性，也允许单冒号的使用并且现在我们也建议单冒号的使用。</p>
+</blockquote>
+<p>In the headings in this article, pseudo-elements that support both a single and double colon will be shown with both notations. Pseudo-elements that support only a double colon will be shown as is.</p>
+<p>在这篇文章的头部，支持单双冒号的伪元素的显示为双冒号。当然只支持双冒号的伪元素的显示也是双冒号。</p>
+<h2 id="When-Not-To-Use-CSS-Generated-Content"><a href="#When-Not-To-Use-CSS-Generated-Content" class="headerlink" title="When (Not) To Use CSS Generated Content"></a>When (Not) To Use CSS Generated Content</h2><h2 id="什么时候使用-不使用-CSS-生成内容"><a href="#什么时候使用-不使用-CSS-生成内容" class="headerlink" title="什么时候使用(不使用) CSS 生成内容"></a>什么时候使用(不使用) CSS 生成内容</h2><p>Generating content via CSS is achieved by combining the content CSS property with the :before or :after pseudo-element.</p>
+<p>通过CSS生成内容是通过<code>content</code>属性结合<code>:before</code>或者<code>:after</code>伪元素实现的。</p>
+<p>This “content” may be either plain text or a container that we manipulate with CSS to display a graphic shape or decorative element. Here, I’ll be referring to the first type of content, text.</p>
+<p>这里的“内容”可能是纯文本或者是通过操纵CSS来显示<a href="http://codepen.io/ricardozea/pen/sdlvu" target="_blank" rel="external">图形形状或者装饰元素</a>的一个容器。这里，我将要涉及第一种类型 - 文本。</p>
+<p>Generated content shouldn’t be used for important copy or text, due to the following reasons:</p>
+<p>由于以下几个原因，生成内容不适用于重要副本或者文本:</p>
+<ul>
+<li>It won’t be accessible to some screen readers.</li>
+<li>对于屏幕阅读器是不可读的。</li>
+<li>It won’t be selectable.</li>
+<li>不可以进行选择。</li>
+<li>If generated content uses superfluous content for the sake of decoration, screen readers that do support CSS generated content will read it out loud, thus making the UX even worse.</li>
+<li>如果生成的内容使用过多的内容进行修饰，屏幕阅读器会将其放大化，从而导致较为糟糕的用户体验。</li>
+</ul>
+<p>Use CSS generated content for decoration and non-vital information, but make sure it’s properly handled by screen readers, so that people with assistive technology are not distracted. Think “progressive enhancement” when deciding whether to use CSS generated content.</p>
+<p>使用CSS生成内容用于修饰或者一些非重要的文本信息，需要处理好与屏幕阅读器的关系，这样子才可以确保使用辅助技术的人可以拥有最佳的使用效果。当你使用CSS生成内容时，要时刻考虑”渐进增强”地设计理念。</p>
+<p>Here on Smashing Magazine, Gabriele Romanato has an awesome article about using CSS generated content.</p>
+<p>有很多相关文献可参考，Gabriele Romanato曾书写了一篇令人敬畏的文章–<a href="https://www.smashingmagazine.com/2013/04/css-generated-content-counters/&quot;" target="_blank" rel="external">如何使用CSS生成内容</a>。</p>
+<h2 id="Experimental-Pseudo-Classes-And-Pseudo-Elements"><a href="#Experimental-Pseudo-Classes-And-Pseudo-Elements" class="headerlink" title="Experimental Pseudo-Classes And Pseudo-Elements"></a>Experimental Pseudo-Classes And Pseudo-Elements</h2><h2 id="一些正在实验的伪类以及伪元素"><a href="#一些正在实验的伪类以及伪元素" class="headerlink" title="一些正在实验的伪类以及伪元素"></a>一些正在实验的伪类以及伪元素</h2><p>A pseudo-class or pseudo-element that is experimental means that its specification is not stable or finalized. The syntax and behavior could change down the road.</p>
+<p>正在实验的伪类或者伪元素是指其规范还不稳定或者说还没有定稿。其语法挥着行为可能还会有所改变。</p>
+<p>However, we might be able to use experimental pseudo-classes and pseudo-elements now by applying vendor prefixes. To do this, refer to Can I Use; and some kind of auto-prefixing tool, such as -prefix-free or Autoprefixer, is a must.</p>
+<p>但是我们可以在其前面加上供应商前缀来进行使用。关于这个问题，请查阅<a href="http://caniuse.com/" target="_blank" rel="external">这里</a>。这里你可以使用一些自动进行前缀添加的工具，如<a href="https://www.smashingmagazine.com/2011/10/prefixfree-break-free-from-css-prefix-hell/" target="_blank" rel="external">-prefix-free</a>或者<a href="https://autoprefixer.github.io/" target="_blank" rel="external">Autoprefixer</a>。</p>
+<p>In this article, you will see an “experimental” label next to a relevant pseudo-class or pseudo-element’s name.</p>
+<p>在这篇文章中，在一些伪类或者伪元素旁边你可以会见到”实验性”的标签。</p>
+<h2 id="Pseudo-Classes"><a href="#Pseudo-Classes" class="headerlink" title="Pseudo-Classes"></a>Pseudo-Classes</h2><h2 id="伪类"><a href="#伪类" class="headerlink" title="伪类"></a>伪类</h2><p>We’ll begin our discussion of pseudo-classes with those relating to states.</p>
+<p>对伪类进行讲解之前，我们先来讨论一下与伪类息息相关的状态。</p>
+<h2 id="States"><a href="#States" class="headerlink" title="States"></a>States</h2><h2 id="状态"><a href="#状态" class="headerlink" title="状态"></a>状态</h2><p>A state pseudo-class usually come into play when the user performs an action. An “action” in CSS could also be “no action”, as in the case of a link that hasn’t been visited yet.</p>
+<p>当用户执行操作时，一般状态伪元素就会发挥作用。在CSS中“操作”也可以是“无操作”，如一个没有被访问的链接。</p>
+<p>Let’s check them out.</p>
+<p>现在让我们对其进行逐一讲解。</p>
+<h3 id="LINK"><a href="#LINK" class="headerlink" title=":LINK"></a>:LINK</h3><p>The :link pseudo-class represents the “normal” state of links and is used to select links that have not yet been visited. Declaring the :link pseudo-class before all other pseudo-classes in this category is recommended. The order of all four is this: :link, :visited, :hover, :active</p>
+<p><code>:link</code>伪元素代表链接的正常状态，用于选择未访问的链接。在这里需要声明一点，<code>:link</code>伪元素需要在所有此类别的伪元素之前声明。其顺序为<code>:link</code>,<code>:visited</code>,<code>:hover</code>,<code>:active</code></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:link</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: orange;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>If you use it as follows, it can be omitted:<br>如果你的使用方法如下所示，将会被忽略:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: orange;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="VISITED"><a href="#VISITED" class="headerlink" title=":VISITED"></a>:VISITED</h3><p>The :visited pseudo-class is used in links that have been visited. Position :visited pseudo-class second in order (after the :link pseudo-class).</p>
+<p><code>:visited</code>伪类用于已经被访问过的链接。如下所示处于此类伪元素的第二位置(<code>:link</code>伪类之后)。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:visited</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: blue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Hover"><a href="#Hover" class="headerlink" title=":Hover"></a>:Hover</h3><p>The :hover pseudo-class is used to style an element when the user’s pointer is above it. It doesn’t have to be restricted to links, although that is the most common use case.</p>
+<p><code>:hover</code>伪类用于当用户的鼠标悬停在链接之上时对元素的样式修饰。当然，这里不仅仅局限于链接，尽管其最为常见。</p>
+<p>It should appear third in order (after the :visited pseudo-class).<br>此伪类在此类伪类之中位列第三(<code>:visited</code>伪类之后)。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: orange;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>此处有Demo！！！！</p>
+<h3 id="ACTIVE"><a href="#ACTIVE" class="headerlink" title=":ACTIVE"></a>:ACTIVE</h3><p>The :active pseudo-class is used to style an element that has been “activated” either by a pointing device or by a tap on a touchscreen device. It can also be triggered by the keyboard, just like the :focus pseudo-class.</p>
+<p><code>:active</code>伪类用于已被“激活”元素的样式修饰，如通过触摸屏的点击。这里也可以通过键盘触发，和<code>:focus</code>伪类相似。</p>
+<p>It works very similarly to :focus, the difference being that the :active pseudo-class is an event that occurs between the mouse button being clicked and being released.</p>
+<p><code>active</code>伪类和<code>:focus</code>伪类十分相似，不同之处在于<code>:active</code>伪类是鼠标被点击与被释放之间发生的事件。</p>
+<p>It should appear fourth in order (after the :hover pseudo-class).<br>它处于此类伪元素的尾端(<code>hover</code>伪类之后)。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:active</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: rebeccapurple;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="FOCUS"><a href="#FOCUS" class="headerlink" title=":FOCUS"></a>:FOCUS</h3><p>The :focus pseudo-class is used to style an element that has gained focus via a pointing device, from a tap on a touchscreen device or via the keyboard. It’s used a lot in form elements.</p>
+<p><code>:focus</code>伪类用于获取焦点的元素样式的修饰，如触摸设备上的点击或者是通过键盘。这在表单元素之中的应用比较多。。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:focus</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: green;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Or:<br>或者是</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">input</span><span class="selector-pseudo">:focus</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#eee</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="BONUS-CONTENT-A-SASS-MIXIN-FOR-LINKS"><a href="#BONUS-CONTENT-A-SASS-MIXIN-FOR-LINKS" class="headerlink" title="BONUS CONTENT: A SASS MIXIN FOR LINKS"></a>BONUS CONTENT: A SASS MIXIN FOR LINKS</h3><h3 id="奖励内容-SASS中一个用于链接的MIXIN"><a href="#奖励内容-SASS中一个用于链接的MIXIN" class="headerlink" title="奖励内容: SASS中一个用于链接的MIXIN"></a>奖励内容: SASS中一个用于链接的MIXIN</h3><p>If you work with CSS preprocessors, such as Sass, this bonus content might interest you.</p>
+<p>如果你使用CSS预处理器，如Sass，那么你会对这里所讲的内容感兴趣。</p>
+<p>(If you’re not into CSS preprocessors — and that’s OK — you can skip to the section on structural pseudo-classes.)</p>
+<p>(如果你不使用CSS预处理器 - 也没有关系 - 你可以直接跳到下节内容 - 结构性伪类)</p>
+<p>In the spirit of optimizing our workflow, below is a Sass mixin that we can use to create a basic set of links.</p>
+<p>本着优化我们工作流程的精神，下面是一个Sass mixin，使我们可以创建一组基本链接的样式。</p>
+<p>The idea behind this mixin is that no defaults are declared in the arguments. So, we are “forced,” in a friendly way, to declare all four states of our links.</p>
+<p>mixin背后的思想是参数中没有默认值。所以我们是以一种友好的方式进行“强迫式”声明四种链接的状态。</p>
+<p>The :focus and :active pseudo-classes are usually declared together. Feel free to separate them if you prefer.</p>
+<p><code>:focus</code>伪类和<code>:active</code>伪类一般在一起声明。当然处于个人喜好，你也可以分开声明。</p>
+<p>Note that this mixin can be applied to any HTML element, not just links.<br>另外mixin可以应用于任何HTML元素，不仅仅是链接。</p>
+<p>Here is our mixin:<br>如下是我们的mixin：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">@mixin links ($link, $visited, $hover, $active) &#123;</span><br><span class="line">    &amp; &#123;</span><br><span class="line">        color: $link;</span><br><span class="line">        &amp;:visited &#123;</span><br><span class="line">            color: $visited;</span><br><span class="line">        &#125;</span><br><span class="line">        &amp;:hover &#123;</span><br><span class="line">            color: $hover;</span><br><span class="line">        &#125;</span><br><span class="line">        &amp;:active, &amp;:focus &#123;</span><br><span class="line">            color: $active;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>用法:</strong></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a &#123;</span><br><span class="line">    @include links(orange, blue, yellow, teal);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>编译为:</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: orange;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:visited</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: blue;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: yellow;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:active</span>, <span class="selector-tag">a</span><span class="selector-pseudo">:focus</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: teal;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>Demo</strong></p>
+<p>此处有Demo！！！！</p>
+<h2 id="Structural"><a href="#Structural" class="headerlink" title="Structural"></a>Structural</h2><h2 id="结构性"><a href="#结构性" class="headerlink" title="结构性"></a>结构性</h2><p>Structural pseudo-classes target additional information in the document tree or DOM and cannot be represented by another type of selectors or combinators.</p>
+<p>结构性伪类目标是在文档树或者DOM树中添加额外的信息，这里不能被另外一种选择器或者组合所表示。</p>
+<h3 id="FIRST-CHILD"><a href="#FIRST-CHILD" class="headerlink" title=":FIRST-CHILD"></a>:FIRST-CHILD</h3><p>The :first-child pseudo-class represents the first child of its parent element.</p>
+<p><code>:first-child</code>伪类表示父元素的第一个子元素。</p>
+<p>In the following example, the first li element will be the only one with orange text.</p>
+<p>在下面这个示例中，第一个<code>li</code>元素的文本将是橙色。</p>
+<p><strong>HTML</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>This text will be orange.<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>Lorem ipsum dolor sit amet.<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>Lorem ipsum dolor sit amet.<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>CSS</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">li</span><span class="selector-pseudo">:first-child</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: orange;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="FIRST-OF-TYPE"><a href="#FIRST-OF-TYPE" class="headerlink" title="FIRST-OF-TYPE"></a>FIRST-OF-TYPE</h3><p>The :first-of-type pseudo-class represents the first element of its kind in its parent container.</p>
+<p><code>:first-of-type</code>伪类表示在父容器内其所有种类元素的第一个元素。</p>
+<p>In the following example, the first li element and the first span element will be the only ones with orange text.</p>
+<p>在下面这个示例中，第一个<code>li</code>元素和第一个<code>span</code>元素的文本颜色将为橙色。</p>
+<p><strong>HTML</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>This text will be orange.<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>Lorem ipsum dolor sit amet. <span class="tag">&lt;<span class="name">span</span>&gt;</span>This text will be orange.<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>Lorem ipsum dolor sit amet.<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>CSS</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ul :first-of-type &#123;</span><br><span class="line">    color: orange;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="LAST-CHILD"><a href="#LAST-CHILD" class="headerlink" title=":LAST-CHILD"></a>:LAST-CHILD</h3><p>The :last-child pseudo-class represents the last child element in its parent container.</p>
+<p><code>:last-type</code>伪类表示其父容器内最后一个子元素。</p>
+<p>In the following example, the last li element will be the only one with orange text.</p>
+<p>下面示例中,最后一个<code>li</code>元素的文本颜色将为橙色。</p>
+<p><strong>HTML</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>Lorem ipsum dolor sit amet.<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>Lorem ipsum dolor sit amet.<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>This text will be orange.<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>CSS</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">li</span><span class="selector-pseudo">:last-child</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: orange;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="LAST-OF-TYPE"><a href="#LAST-OF-TYPE" class="headerlink" title=":LAST-OF-TYPE"></a>:LAST-OF-TYPE</h3><p>The :last-of-type pseudo-class represents the last element of its kind in its parent container.</p>
+<p><code>:last-of-type</code>伪类表示父容器内其所有种类元素的最后一个元素。</p>
+<p>In the following example, the last li and the last span elements will be the only ones with orange text.</p>
+<p>下面示例中，最后一个<code>li</code>和最后一个<code>span</code>元素的文本颜色将为橙色。</p>
+<p><strong>HTML</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>Lorem ipsum dolor sit amet. <span class="tag">&lt;<span class="name">span</span>&gt;</span>Lorem ipsum dolor sit amet.<span class="tag">&lt;/<span class="name">span</span>&gt;</span> <span class="tag">&lt;<span class="name">span</span>&gt;</span>This text will be orange.<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>Lorem ipsum dolor sit amet.<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>This text will be orange.<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>CSS</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">ul</span> <span class="selector-pseudo">:last-of-type</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: orange;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="NOT"><a href="#NOT" class="headerlink" title=":NOT"></a>:NOT</h3><p>The :not pseudo-class is also known as the negation pseudo-class. It accepts an argument — basically, another “selector” — inside parentheses. The argument can actually be another pseudo-class.</p>
+<p><code>:not</code>伪类也被称为反伪类。基本上它接收一个参数，在括号内书写另外一个“选择器”。实际上参数可以是另外一个选择器。</p>
+<p>It may be chained but may not contain another :not selector.</p>
+<p>这里可能是链接式的，但是不会包含<code>:not</code>选择器。</p>
+<p>In the following example, the :not pseudo-class matches an element that is not represented by the argument.</p>
+<p>下面示例中。<code>:not</code>伪类匹配参数外的元素。</p>
+<p><strong>HTML</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"first-item"</span>&gt;</span>Lorem ipsum dolor sit amet.<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>Lorem ipsum dolor sit amet.<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>Lorem ipsum dolor sit amet.<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>Lorem ipsum dolor sit amet.<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>CSS</strong></p>
+<p>In the following, all text is orange, except the li element with the class of .first-item:</p>
+<p>这里除了<code>.first-item</code>选择器所代表的<code>li</code>元素外，所有的文本颜色为橙色。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">li</span><span class="selector-pseudo">:not(.first-item)</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: orange;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Now, we’re going to chain two :not pseudo-classes. All elements will have black text and a yellow background, except the li element with the class .first-item and the last li element in the list:</p>
+<p>这里我们将要进行两个<code>:not</code>伪类的书写。在这个列表中除了<code>.first-item</code>选择器所代表的<code>li</code>元素以及最后一个<code>li</code>元素所表示的文本，所文本颜色均为橙色。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">li</span><span class="selector-pseudo">:not(.first-item)</span><span class="selector-pseudo">:not(</span><span class="selector-pseudo">:last-of-type)</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: yellow;</span><br><span class="line">    <span class="attribute">color</span>: black;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>Demo</strong></p>
+<p>此处有Demo！！！！</p>
+<h3 id="NTH-CHILD"><a href="#NTH-CHILD" class="headerlink" title=":NTH-CHILD"></a>:NTH-CHILD</h3><p>The :nth-child pseudo-class targets one or more elements depending on their order in the markup.</p>
+<p><code>:nth-child</code>伪类根据在标记中的顺序匹配一个或者多个元素。</p>
+<p>This pseudo-class is one of the most versatile and robust pseudo-classes in CSS.</p>
+<p>这个伪类在CSS中是最灵活、最强健的伪类之一。</p>
+<p>All of the :nth pseudo-classes take an argument, which is a formula that we type in parentheses. The formula may be a single integer, a formula structured as an+b or the keyword odd or even.</p>
+<p>所有的<code>:nth</code>伪类都带有一个参数-在括号内书写一个公式。这个公式可能是一个整数，也可能为<code>an+b</code>或者是<code>odd</code>或<code>even</code>关键字。</p>
+<p>In the an+b formula:<br>在<code>an+b</code>公式中:</p>
+<ul>
+<li>the a is a number (called an integer);</li>
+<li><code>a</code>是一个数字(成为整数);</li>
+<li>the n is a literal n (in other words, we will actually type the letter n in the formula);</li>
+<li><code>n</code>就是我们常说的<code>n</code>(换句话说就是键盘中键入的字母<code>n</code>);</li>
+<li>the + is an operator that may be either a plus sign (+) or a minus sign (-);</li>
+<li><code>+</code>是一个运算符，它可能是一个加号(+)或者减号(-);</li>
+<li>the b is an integer as well but is only required if an operator is being used.</li>
+<li><code>b</code>也表示一个整数，但是仅在运营商的需求要求下使用。</li>
+</ul>
+<p>Using the Greek alphabet, here are a few examples using the following basic HTML structure:</p>
+<p>使用希腊的字母表，这里有一个基本的HTML结构的示例:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>Alpha<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>Beta<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>Gamma<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>Delta<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>Epsilon<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>Zeta<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>Eta<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>Theta<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>Iota<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>Kappa<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>CSS</strong></p>
+<p>Let’s select the second child. So, only “Beta” will be orange:</p>
+<p>让我们选择第二个子元素。所以只有”Beta”文本为橙色。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">ol</span> <span class="selector-pseudo">:nth-child(2)</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: orange;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Now, let’s select every other child starting from the second. So, “Beta,” “Delta,” “Zeta,” “Theta” and “Kappa” will be orange:</p>
+<p>现在让我们从第二个子元素进行选择。所以”Beta”,”Delta”,”Zeta”,”Theta”以及”Kappa”文本为橙色。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">ol</span> <span class="selector-pseudo">:nth-child(2n)</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: orange;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Let’s select all even-numbered children:<br>让我们选择所有偶数的子元素:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">ol</span> <span class="selector-pseudo">:nth-child(even)</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: orange;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Let’s select every other child, starting from the sixth. So, “Zeta,” “Theta” and “Kappa” will be orange:</p>
+<p>让我们从第六个子元素开始，选择一下其它的子元素。这里”Zeta”,”Theta”以及”kappa”文本将为橙色。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">ol</span> <span class="selector-pseudo">:nth-child(2n+6)</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: orange;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>Demo</strong></p>
+<p>此处有Demo！！！！</p>
+<h3 id="NTH-LAST-CHILD"><a href="#NTH-LAST-CHILD" class="headerlink" title=":NTH-LAST-CHILD"></a>:NTH-LAST-CHILD</h3><p>The :nth-last-child pseudo-class basically works the same as :nth-child except that it selects elements starting from the end, rather than the beginning.</p>
+<p><code>:nth-last-child</code>伪类基本上和<code>:nth-child</code>伪类工作一致，只不过它是从后面开始，而不是前面。</p>
+<p><strong>CSS</strong></p>
+<p>Let’s select the second child, starting from the end. So, only “Iota” will be orange:</p>
+<p>让我们从后面选择第二个孩子，只有“Iota”变为橙色。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">ol</span> <span class="selector-pseudo">:nth-last-child(2)</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: orange;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Now, let’s select every other child, starting with the second from the end. So, “Iota,” “Eta,” “Epsilon,” “Gamma” and “Alpha” will be orange:</p>
+<p>让我们从后面第二个开始选择其余孩子，“Iota”，“Eta”，“Epsilon”，“Gamma”以及“Alpha”将会变为橙色。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">ol</span> <span class="selector-pseudo">:nth-last-child(2n)</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: orange;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Let’s select all even children, starting from the end:</p>
+<p>从后面开始选择偶数的孩子:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">ol</span> <span class="selector-pseudo">:nth-last-child(even)</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: orange;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Let’s select every other child, starting with the sixth element from the end. So, “Epsilon,” “Gamma” and “Alpha” will be orange:</p>
+<p>从后面第六个孩子开始选择其他孩子，“EEpsilon”，“Gamma”以及“Alpha”将会变为橙色。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">ol</span> <span class="selector-pseudo">:nth-last-child(2n+6)</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: orange;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="NTH-OF-TYPE"><a href="#NTH-OF-TYPE" class="headerlink" title=":NTH-OF-TYPE"></a>:NTH-OF-TYPE</h3><p>The :nth-of-type pseudo-class works basically the same as :nth-child, the main difference being that it’s more specific because we’re targeting a specific element relative to like elements contained within the same parent element.</p>
+<p><code>:nth-of-type</code>伪类基本上和<code>:nth-child</code>伪类工作一致，最大的区别在于其更为具体，我们指定一个元素相对于包含在相同父元素内的元素一样。</p>
+<p>In the following example, all second paragraphs in any given container will be orange.</p>
+<p>在下面的示例中，在所给的容器中所有第二个段落文本都将变为橙色。</p>
+<p><strong>HTML</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">article</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Heading Goes Here<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>Lorem ipsum dolor sit amet.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">""</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"images/rwd.png"</span> <span class="attr">alt</span>=<span class="string">"Mastering RWD"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>This text will be orange.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">article</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>CSS</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">:nth-of-type(2)</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: orange;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="NTH-LAST-OF-TYPE"><a href="#NTH-LAST-OF-TYPE" class="headerlink" title=":NTH-LAST-OF-TYPE"></a>:NTH-LAST-OF-TYPE</h3><p>The :nth-last-of-type pseudo-class works the same as :nth-of-type, the difference being that it starts counting from the end of the list, rather than the beginning.</p>
+<p><code>:nth-last-of-type</code>伪类和<code>:nth-of-type</code>伪类基本工作一致，区别在于它是从列表的后面开始计算，而不是前面。</p>
+<p>In the following example, because we’re starting from the bottom, all first paragraphs will be orange.</p>
+<p>在下面的示例中，因为我们是从底部开始，所有的第一个段落都将变为橙色。</p>
+<p><strong>HTML</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">article</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">h1</span>&gt;</span>Heading Goes Here<span class="tag">&lt;/<span class="name">article</span>&gt;</span>/h1&gt;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">p</span>&gt;</span>This text will be orange.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"images/rwd.png"</span> <span class="attr">alt</span>=<span class="string">"Mastering RWD"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">p</span>&gt;</span>Lorem ipsum dolor sit amet.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">article</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>CSS</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">:nth-last-of-type(2)</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: orange;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>Resources</strong><br><strong>相关参考</strong></p>
+<p>Refer to these two great resources when working with the :nth pseudo-classes:</p>
+<p>当你使用<code>:nth</code>伪类时，可以查阅下面两大资源:</p>
+<ul>
+<li>“<a href="http://lea.verou.me/demos/nth.html" target="_blank" rel="external">CSS3 Structural Pseudo-Class Selector Tester</a>,” Lea Verou</li>
+<li>“<a href="https://css-tricks.com/examples/nth-child-tester/" target="_blank" rel="external">:nth Tester</a>,” CSS-Tricks</li>
+</ul>
+<h3 id="ONLY-CHILD"><a href="#ONLY-CHILD" class="headerlink" title="ONLY-CHILD"></a>ONLY-CHILD</h3><p>The :only-child pseudo-class targets the only child of a parent element.</p>
+<p><code>:only-child</code>伪类指定只有一个孩子的父元素。</p>
+<p>In the following example, the first ul element has a single child, which will be given orange text. The second ul element has several children; therefore, its children won’t be affected by the :only-child pseudo-class.</p>
+<p>在下面的示例中，第一个<code>ul</code>只有一个孩子，所以其文本将变为橙色。第二个<code>ul</code>有两个孩子，因此其不会受<code>:nth-child</code>伪类的影响。</p>
+<p><strong>HTML</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>This text will be orange.<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>Lorem ipsum dolor sit amet.<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>Lorem ipsum dolor sit amet.<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>CSS</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">ul</span> <span class="selector-pseudo">:only-child</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: orange;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="ONLY-OF-TYPE"><a href="#ONLY-OF-TYPE" class="headerlink" title="ONLY-OF-TYPE"></a>ONLY-OF-TYPE</h3><p>The :only-of-type pseudo-class targets an element that has no siblings of that particular type. This is similar to :only-child except that we can target a specific element and make the selector more meaningful.</p>
+<p><code>:only-of-type</code>伪类指定一个元素没有特殊类型的兄弟元素。这和<code>:only-child</code>是十分相似的，只不过我们可以指定一个特殊类型的元素使我们的选择器更具有意义。</p>
+<p>In the following example, the first ul has a single child, which will be given orange text.</p>
+<p>在下面的示例中，第一个<code>ul</code>只有一个孩子，其文本将变为橙色。</p>
+<p><strong>HTML</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>This text will be orange.<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>Lorem ipsum dolor sit amet.<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>Lorem ipsum dolor sit amet.<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>CSS</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">li</span><span class="selector-pseudo">:only-of-type</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: orange;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="TARGET"><a href="#TARGET" class="headerlink" title=":TARGET"></a>:TARGET</h3><p>The :target pseudo-class… well, targets the unique ID of an element and the hash in the URL.</p>
+<p><code>:target</code>伪类…指定一个具有特殊ID元素一个URL中的hash。</p>
+<p>In the following example, the article with the ID of target will be targeted when the URL in the browser ends with #target.</p>
+<p>在下面的示例中，<code>article</code>具有<code>target</code>的ID，当浏览器中的URL以<code>#target</code>结束时，其将会被指定。</p>
+<p><strong>URL</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://awesomebook.com/#target</span><br></pre></td></tr></table></figure>
+<p><strong>HTML</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">article</span> <span class="attr">id</span>=<span class="string">"target"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span><span class="tag">&lt;<span class="name">code</span>&gt;</span>:target<span class="tag">&lt;/<span class="name">code</span>&gt;</span> pseudo-class<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit!<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">article</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>CSS</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">:target</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: yellow;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>Tip:</strong>You can use the background: shorthand instead of background-color: to achieve the same result.</p>
+<p><strong>提示:</strong> 你可以使用简写的<code>background:</code>代替<code>background-color:</code>来实现相同的效果。</p>
+<h2 id="Validation"><a href="#Validation" class="headerlink" title="Validation"></a>Validation</h2><h2 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h2><p>Forms have always been the bane of web design and development. With the help of validation pseudo-classes, we can make the process of filling out forms a smoother and more pleasant experience.</p>
+<p>表单一直是网页设计和开发的祸根。在验证伪类的帮助下，我们可以使表单填写更加顺畅，可以拥有更加愉快的过程。</p>
+<p>Note, however, that although most of the pseudo-classes listed in this section work well with form elements, some pseudo-classes can be used with other HTML elements, too.</p>
+<p>需要注意，这里列出的大部分伪类在表单元素中都可以正常工作，一些伪类在HTML元素中也可以使用。</p>
+<p>Let’s check out these pseudo-classes!</p>
+<p>让我们看看这些伪类。</p>
+<h3 id="CHECKED"><a href="#CHECKED" class="headerlink" title=":CHECKED"></a>:CHECKED</h3><p>The :checked pseudo-class targets radio buttons, checkboxes and option elements that have been checked or selected.</p>
+<p><code>:checked</code>伪类指定单选按钮，复选框以及已经被选择的选项元素。</p>
+<p>In the following example, when the checkbox is selected, the label is highlighted, thus enhancing the user experience.</p>
+<p>在下面的示例中，当复选框被选择时，标签就会以高亮显示，增强了用户体验。</p>
+<p><strong>Demo</strong></p>
+<p>此处有Demo！！！！</p>
+<h3 id="DEFAULT"><a href="#DEFAULT" class="headerlink" title=":DEFAULT"></a>:DEFAULT</h3><p>The :default pseudo-class targets the default element in a form among a group of similar elements.</p>
+<p><code>:default</code>伪类指定一组相似元素中默认的元素。</p>
+<p>In case you need to target the default button in a form that does not have a class, you can use the :default pseudo-class.</p>
+<p>当你需要在表单中指定一个默认的没有类的按钮时，你可以使用<code>:default</code>伪类。</p>
+<p>Note that providing a “Reset” or “Clear” button in a form comes with some serious usability issues. Avoid using it unless absolutely necessary. The following articles explain some reasons why:</p>
+<p>注意，为了避免带来一些严重的可用性问题，你需要在表单中提供一个“Reset”或者“Clear”按钮。除非有需要，否则不要轻易使用它们。下面两篇文章有相关解释:</p>
+<ul>
+<li>“<a href="http://www.nngroup.com/articles/reset-and-cancel-buttons/" target="_blank" rel="external">Reset and Cancel Buttons</a>,” Nielsen Norman Group (2000)</li>
+<li>“<a href="http://uxmovement.com/forms/killing-the-cancel-button-on-forms-for-good/" target="_blank" rel="external">Killing the Cancel Button on Forms for Good</a>,” UX Movement (2010)</li>
+</ul>
+<p><strong>Demo</strong></p>
+<p>此处有Demo！！！！</p>
+<h3 id="DISABLED"><a href="#DISABLED" class="headerlink" title=":DISABLED"></a>:DISABLED</h3><p>The :disabled pseudo-class targets a form element in the disabled state. An element in a disabled state can’t be selected, checked or activated or gain focus.</p>
+<p><code>:disabled</code>伪类指定一个表单元素处于不可用状态。处于不可用状态的元素不可以被选择、选中、激活或者获得焦点。</p>
+<p>In the following example, the input for the name field is disabled, so it will be shown as 50% transparent.</p>
+<p>在下面的示例中，名称字段的输入被禁用，它将以50%的透明度显示。</p>
+<p><strong>HTML</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">id</span>=<span class="string">"name"</span> <span class="attr">disabled</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>CSS</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">:disabled</span> &#123;</span><br><span class="line">    <span class="attribute">opacity</span>: .<span class="number">5</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>Tip:</strong>Using disabled=”disabled” in the markup isn’t required. You can accomplish the same result using only the attribute disabled. Keep in mind, though, that using disabled=”disabled” is required in XHTML.</p>
+<p><strong>提示:</strong>在标记中使用<code>disabled=&quot;disabled</code>不是必需的的。你可以只使用<code>disabled</code>属性实现相同的效果。需要记住在XHTML中必须使用<code>disabled=&quot;disabled</code>。</p>
+<p><strong>Demo</strong></p>
+<p>此处有Demo！！！！</p>
+<h3 id="EMPTY"><a href="#EMPTY" class="headerlink" title=":EMPTY"></a>:EMPTY</h3><p>The :empty pseudo-class targets elements that have no content in them of any kind at all. If an element has a letter, another HTML element or even a space, then that element would not be empty.</p>
+<p><code>:empty</code>伪类指定任何一种没有内容的元素。如果一个元素有一个字母。一个另外的HTML元素甚至是一个空格，该元素都将不为空。</p>
+<p>Here is what is considered empty and not empty:</p>
+<p>这里有一个有关于为不为空的定义:</p>
+<ul>
+<li><strong>Empty</strong></li>
+</ul>
+<p>No content or characters would appear in an element. An HTML comment inside an element does not count as content in this case.</p>
+<p>在一个元素中没有内容和字符的出现。元素内部HTML注释不算做内容。</p>
+<ul>
+<li><strong>Not empty</strong></li>
+</ul>
+<p>Characters would appear inside the element. Even a space would be considered content.</p>
+<p>一个元素内出现字符。甚至一个空格都将视为内容。</p>
+<p>In the following example:<br>在下面的例子中:</p>
+<ul>
+<li>the top container has text, so it will have an orange background;</li>
+<li>第一个容器内有文本，所以有一个橙色的背景。</li>
+<li>the second container has a space, which is considered content, so it will have an orange background as well;</li>
+<li>第二个容器内有一个空格包含内容，同样有一个橙色的背景。</li>
+<li>the third container has nothing in it (it’s empty), so it will have a yellow background;</li>
+<li>第三个容器无内容为空，不具有橙色背景。</li>
+<li>the last container has only an HTML comment (it’s empty, too), so it will have a yellow background as well.</li>
+<li>最后一个容器仅仅有一个HTML注释(同样为空)，所以页布局与橙色背景。</li>
+</ul>
+<p><strong>HTML:</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>This box is orange<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span> <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="comment">&lt;!-- This comment is not considered content --&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>CSS:</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: orange;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">30px</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">div</span><span class="selector-pseudo">:empty</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: yellow;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>Demo:</strong></p>
+<p>此处有Demo！！！！</p>
+<h3 id="ENABLED"><a href="#ENABLED" class="headerlink" title=":ENABLED"></a>:ENABLED</h3><p>The :enabled pseudo-class targets elements that are enabled. All form elements are enabled by default — that is, until we add the disabled attribute to the element in the markup.</p>
+<p><code>:enabled</code>伪类指定一个元素可用。默认情况下，所有的表单元素均可用，除非我们在标记中添加<code>disabled</code>属性。</p>
+<p>We can use a combination of :enabled and :disabled to provide visual feedback, thus improving the user experience.</p>
+<p>我们可以结合使用<code>:enabled</code>和<code>:disabled</code>提供可视反馈，从而改善用户体验。</p>
+<p>In the following example, after having been disabled, the input for name is enabled and so is given an opacity value of 1 and a 1-pixel green border:</p>
+<p>在下面的示例中，在不可用之后，名称字段输入变为可用并且透明度变为1并具有1像素的绿色边框。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">:enabled</span> &#123;</span><br><span class="line">    <span class="attribute">opacity</span>: <span class="number">1</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid green;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>Tip:</strong> Using enabled=”enabled” in the markup isn’t required. You can accomplish the same result using only the enabled attribute. Keep in mind, though, that enabled=”enabled” is required in XHTML.</p>
+<p><strong>提示:</strong> 在标记中使用<code>enabled=&quot;enabled</code>不是必需的，你也可以使用简写的<code>enabled</code>来实现相同的效果。记住在XHTML中必须使用<code>enabled=&quot;enabled</code>.</p>
+<p><strong>Demo:</strong></p>
+<p>此处有Demo！！！！</p>
+<h3 id="IN-RANGE"><a href="#IN-RANGE" class="headerlink" title=":IN-RANGE"></a>:IN-RANGE</h3><p>The :in-range pseudo-class targets elements that have a range and whose values are within the defined range.</p>
+<p><code>:in-range</code>伪类指定有一个范围并且值在其定义范围之内的元素。</p>
+<p>In the following example, the input element supports a range between 5 and 10. Values within this range will trigger a green border.</p>
+<p>在下面的示例中，输入元素支持5~10的值，若其值在范围之内将会触发一个绿色的边框。</p>
+<p><strong>HTML:</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"number"</span> <span class="attr">min</span>=<span class="string">"5"</span> <span class="attr">max</span>=<span class="string">"10"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>CSS:</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">input</span><span class="selector-attr">[type=number]</span> &#123;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">5px</span> solid orange;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">input</span><span class="selector-attr">[type=number]</span><span class="selector-pseudo">:in-range</span> &#123;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">5px</span> solid green;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>Demo:</strong></p>
+<p>此处有Demo！！！！</p>
+<h3 id="OUT-OF-RANGE"><a href="#OUT-OF-RANGE" class="headerlink" title=":OUT-OF-RANGE"></a>:OUT-OF-RANGE</h3><p>The :out-of-range pseudo-class targets elements that have a range and whose values fall outside of the defined range.</p>
+<p><code>:out-of-range</code>伪类指定一个具有一定范围的并且值不在定义范围之内的元素。</p>
+<p>In the following example, the input element supports a range between 1 and 12. Values outside of this range will trigger an orange border.</p>
+<p>在下面的示例中，输入元素支持的值在1~12之间。超出此范围的值将会触发一个橙色的边框。</p>
+<p><strong>HTML:</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">"months"</span> <span class="attr">name</span>=<span class="string">"months"</span> <span class="attr">type</span>=<span class="string">"number"</span> <span class="attr">min</span>=<span class="string">"1"</span> <span class="attr">max</span>=<span class="string">"12"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>CSS:</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">input</span><span class="selector-attr">[type=number]</span><span class="selector-pseudo">:out-of-range</span> &#123;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid orange;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>Demo:</strong></p>
+<p>此处有Demo！！！！</p>
+<h3 id="INDETERMINATE"><a href="#INDETERMINATE" class="headerlink" title=":INDETERMINATE"></a>:INDETERMINATE</h3><p>The :indeterminate pseudo-class targets input elements such as radio buttons and check boxes that are not selected or that are unselected upon the page loading.</p>
+<p><code>:indeterminate</code>伪类指定输入元素没有被选择的元素，如单选按钮或复选框，未选中或页面加载后未选中的元素。</p>
+<p>An example of this is when a page loads with a group of radio buttons and no default or preselected radio button has been set, or when a checkbox has been given the indeterminate state via JavaScript.</p>
+<p>一个例子就是: 当页面加载许多单选按钮并且没有设置默认或者预选择的按钮，或者一个复选框已通过JavaScript确定不确定状态。</p>
+<p><strong>HTML:</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"list"</span> <span class="attr">id</span>=<span class="string">"option1"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"option1"</span>&gt;</span>Option 1<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"list"</span> <span class="attr">id</span>=<span class="string">"option2"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"option2"</span>&gt;</span>Option 2<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"list"</span> <span class="attr">id</span>=<span class="string">"option3"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"option3"</span>&gt;</span>Option 3<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>CSS:</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">:indeterminate</span> + <span class="selector-tag">label</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: orange;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>Demo:</strong></p>
+<p>此处有Demo！！！！</p>
+<h3 id="VALID"><a href="#VALID" class="headerlink" title=":VALID"></a>:VALID</h3><p>The :valid pseudo-class targets a form element whose formatting is correct according to that element’s required format.</p>
+<p><code>:valid</code>伪类指定一个通过匹配正确的所要求格式的表单元素。</p>
+<p>In the following example, the email input field has a correctly formatted email structure; so, the field would be considered valid and would appear with a 1-pixel green border:</p>
+<p>在下面的例子中，<code>email</code>输入区域具有一个已经预先设置好的输入格式。，所以其确认被验证时就会出现一个1像素的绿色边框。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">input</span><span class="selector-attr">[type=email]</span><span class="selector-pseudo">:valid</span> &#123;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid green;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>Demo:</strong></p>
+<p>此处有Demo！！！！</p>
+<h3 id="INVALID"><a href="#INVALID" class="headerlink" title=":INVALID"></a>:INVALID</h3><p>The :invalid pseudo-class targets a form element whose formatting is not correct according to that element’s required format.</p>
+<p><code>:invalid</code>伪类指定一个不匹配指定样式的表单元素。</p>
+<p>In the following example, when the email input field has an incorrectly formatted email structure, the value would be considered invalid, and so an orange border would appear around the field:</p>
+<p>在下面的例子中，当email表单输入区的值不匹配预先设置好的格式时就会出现一个橙色的边框:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">input</span><span class="selector-attr">[type=email]</span><span class="selector-pseudo">:invalid</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: orange;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>Demo:</strong></p>
+<p>此处有Demo！！！！</p>
+<h3 id="OPTIONAL"><a href="#OPTIONAL" class="headerlink" title=":OPTIONAL"></a>:OPTIONAL</h3><p>The :optional pseudo-class targets input fields that are not required in a form. In other words, as long as an input doesn’t have the required attribute, it can be targeted with the :optional pseudo-class.</p>
+<p><code>:optional</code>伪类指定表单中没有被<code>required</code>的输入区域。换句话说就是，只要输入区域没有<code>required</code>属性，它就会被<code>:optional</code>伪类指定。</p>
+<p>In the following example, the field is optional. It doesn’t have the required attribute, so the text will appear gray.</p>
+<p>在下面的例子中，输入区域是可选择的，不具有<code>required</code>属性，所以其文本将变为灰色。</p>
+<p><strong>HTML:</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"number"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>CSS:</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">:optional</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: gray;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="READ-ONLY"><a href="#READ-ONLY" class="headerlink" title=":READ-ONLY"></a>:READ-ONLY</h3><p>The :read-only pseudo-class targets an element that cannot be edited by the user. It’s similar to the :disabled pseudo-class; the attribute used in the markup would determine which pseudo-class we should use.</p>
+<p><code>:read-only</code>伪类指定不能由用户进行编辑的元素。与<code>:disabled</code>伪类十分相似。该属性在标记中的使用将决定我们使用哪一个伪类。</p>
+<p>This would be useful, for example, in a form where we need to show pre-populated information that cannot be altered but that still needs to be displayed within the form element for submission purposes.</p>
+<p>这将会十分有用，如在窗体要显示预填充的内容，不能更改，但是仍需要在提交表单的表单元素中显示。</p>
+<p>In the following example, the input element has a readonly HTML attribute. So, it can be targeted with the :read-only pseudo-class, which we will use to give it gray text.</p>
+<p>在下面的例子中，输入元素只有一个只读HTML属性。因此它可以被<code>:read-only</code>伪类指定，所以将显示一个灰色的文本。</p>
+<p><strong>HTML:</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">value</span>=<span class="string">"I am read only"</span> <span class="attr">readonly</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>CSS:</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">input</span><span class="selector-pseudo">:read-only</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: gray;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>Demo:</strong></p>
+<p>此处有Demo！！！！</p>
+<h3 id="READ-WRITE"><a href="#READ-WRITE" class="headerlink" title=":READ-WRITE"></a>:READ-WRITE</h3><p>The :read-write pseudo-class targets elements that can be edited by the user. It can work on elements that have the contenteditable HTML attribute as well.</p>
+<p><code>:read-write</code>伪类指定一个可以用户编辑的元素。一个具有<code>contenteditable</code>HTML属性的元素同样可以被指定。</p>
+<p>This pseudo-class can be combined with the :focus pseudo-class to enhance the UX in certain situations.</p>
+<p>在某些情况下，此伪类可以结合<code>:focus</code>伪类使用以提高用户体验。</p>
+<p>In the following example, the user would be able to edit the div by clicking on it. We could enhance the user experience by applying a particular style that differentiates this piece of content from the rest, providing a visual cue to the user that this content can be edited.</p>
+<p>在下面的示例中，用户可以通过点击对div进行编辑。我们可以通过应用一种特殊风格的样式以区别普通内容块，给用户提供视觉提示从而增强用户体验。</p>
+<p><strong>HTML:</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"editable"</span> <span class="attr">contenteditable</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Click on this text to edit it<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit!<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>CSS:</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">:read-write</span><span class="selector-pseudo">:focus</span> &#123;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">5px</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> dotted black;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>Demo:</strong></p>
+<p>此处有Demo！！！！</p>
+<h3 id="REQUIRED"><a href="#REQUIRED" class="headerlink" title=":REQUIRED"></a>:REQUIRED</h3><p>The :required pseudo-class targets input elements that have the required HTML attribute.</p>
+<p><code>:required</code>伪类指定具有<code>required</code> HTML属性的表单输入元素。</p>
+<p>In addition to relying on the traditional asterisk (*) on an input element’s label to denote that it is required, we could also style the field with CSS. Basically, we get the best of both worlds.</p>
+<p>除了依靠传统的星号(*)标签表示此区域为必填写区域，我们也可以通过CSS设置样式进行提示。两者效果均佳。</p>
+<p>In the following example, the input field has the required HTML attribute. We can enhance the UX by applying a particular style that gives a visual cue that the field is… well, required.</p>
+<p>在下面的示例中，输入区域具有<code>required</code>HTML属性。我们可以通过设置一个特殊的样式给用户一个视觉提示表示区域为必填写区域，从而提高用户体验。</p>
+<p><strong>HTML:</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"email"</span> <span class="attr">required</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>CSS:</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">:required</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: black;</span><br><span class="line">    <span class="attribute">font-weight</span>: bold;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>Demo:</strong></p>
+<p>此处有Demo！！！！</p>
+<h3 id="SCOPE-EXPERIMENTAL"><a href="#SCOPE-EXPERIMENTAL" class="headerlink" title=":SCOPE (EXPERIMENTAL)"></a>:SCOPE (EXPERIMENTAL)</h3><p>The :scope pseudo-class makes most sense when it’s tied to the scoped HTML attribute in a style tag.</p>
+<p>当在样式标签内限定HTML属性的作用域时，<code>:scope</code>伪类最有意义。</p>
+<p>If there is no scoped attribute in a style tag within a section of the page, then the :scope pseudo-class will traverse all the way up to the html element, which is basically the default scope of a style sheet.</p>
+<p>如果网页上的一节在样式标签内没有<code>scoped</code>属性时，<code>:scope</code>伪类将遍历到整个html元素，基本上是一个样式表的默认范围。</p>
+<p>In the following example, the HTML block has a scoped style sheet, and so all text in the second section element will be shown in italics.</p>
+<p>在下面的例子中，HTML块有一个<code>scoped</code>样式，因此第二节元素的文本将呈现斜体。</p>
+<p><strong>HTML and CSS</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">article</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">section</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Lorem ipsum dolor sit amet<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>Lorem ipsum dolor sit amet.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">section</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span>&gt;</span><span class="css"></span><br><span class="line">            <span class="selector-pseudo">:scope</span> &#123;</span><br><span class="line">                <span class="attribute">font-style</span>: italic;</span><br><span class="line">            &#125;</span><br><span class="line">        </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h1</span>&gt;</span>This text will be italicized<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>This text will be italicized.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">article</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>Demo:</strong></p>
+<p>此处有Demo！！！！</p>
+<h2 id="Language"><a href="#Language" class="headerlink" title="Language"></a>Language</h2><h2 id="语言"><a href="#语言" class="headerlink" title="语言"></a>语言</h2><p>Language pseudo-classes relate to the text contained on the page. They do not target any media such as images or video.</p>
+<p>语言伪类仅和页面中包含的文本有关。和任何媒体，如图片，播放器都无关。</p>
+<h3 id="DIR-EXPERIMENTAL"><a href="#DIR-EXPERIMENTAL" class="headerlink" title=":DIR (EXPERIMENTAL)"></a>:DIR (EXPERIMENTAL)</h3><p>The :dir pseudo-class targets an element whose directionality is specified in the document. In other words, in order for the :dir pseudo-class to work, we need to specify the directionality of the relevant element in the markup with the dir HTML attribute.</p>
+<p><code>:dir</code>伪类指定文档中被指定方向的元素。换句话说就是，为了使<code>:dir</code>伪类工作，我们需要使用<code>dir</code> HTML属性在标记中指定相关元素的方向。</p>
+<p>Two directions are currently available and supported: ltr (left to right) and rtl (right to left).</p>
+<p>目前有两个方向可供使用: <code>ltr</code>(从左向右)以及<code>rtl</code>(从右向左)。</p>
+<p>At the time of writing, only Firefox (with a prefixed -moz-dir() selector) supports the :dir pseudo-class. This will very likely change in future; so, the following examples show both the prefixed and non-prefixed selectors.</p>
+<p>在写这篇文章时，只有火狐(使用前缀<code>-moz-dir()</code>选择器)支持<code>:dir</code>伪类。在将来这可能很快就会改变，所以下面的示例中国使用了前缀选择器以及无前缀选择器。</p>
+<p><strong>Note:</strong> Combining the prefixed and unprefixed versions in a single rule won’t work. We need to create two separate rules.</p>
+<p><strong>注意:</strong> 在单一的规则中，结合一个单一的前缀选择器和前缀选择器不起作用。我们需要创建单独两个规则。</p>
+<p>In the following example, the paragraph is written in Arabic (whose script is right to left); so, the text will be orange.</p>
+<p>在下面的示例中，段落使用阿拉伯语书写(script从右向左)。所以其文本颜色为橙色。</p>
+<p><strong>HTML:</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">article</span> <span class="attr">dir</span>=<span class="string">"rtl"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>التدليك واحد من أقدم العلوم الصحية التي عرفها الانسان والذي يتم استخدامه لأغراض الشفاء منذ ولاده الطفل.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">article</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>CSS:</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* prefixed */</span></span><br><span class="line"><span class="selector-tag">article</span> <span class="selector-pseudo">:-moz-dir(rtl)</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: orange;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* unprefixed */</span></span><br><span class="line"><span class="selector-tag">article</span> <span class="selector-pseudo">:dir(rtl)</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: orange;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>The paragraph in the following example is written in English (left to right); so, the text will be in blue.</p>
+<p>下面的段落使用英语书写(从左向右),所以文本颜色为蓝色。</p>
+<p><strong>HTML:</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">article</span> <span class="attr">dir</span>=<span class="string">"ltr"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>If you already know some HTML and CSS and understand the principles of responsive web design, then this book is for you.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">article</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>CSS:</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* prefixed */</span></span><br><span class="line"><span class="selector-tag">article</span> <span class="selector-pseudo">:-moz-dir(ltr)</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: blue;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* unprefixed */</span></span><br><span class="line"><span class="selector-tag">article</span> <span class="selector-pseudo">:dir(ltr)</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: blue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>Demo:</strong></p>
+<p>此处有Demo！！！！</p>
+<h3 id="LANG"><a href="#LANG" class="headerlink" title=":LANG"></a>:LANG</h3><p>The :lang pseudo-class matches the language of an element as determined by a combination of the lang=”” HTML attribute, the corresponding meta element and information gleaned from the protocol, such as an HTTP header.</p>
+<p><code>:lang</code>伪类匹配一个元素的语言与HTML属性中的<code>lang=&quot;&quot;</code>，相应的<code>meta</code>元素以及信息收集到的协议，如HTTP标头结合决定。</p>
+<p>The lang=”” HTML attribute is commonly used in the html tag, but it can also be used in any other tag if needed.</p>
+<p><code>lang=&quot;&quot;</code>html属性通常用于html标记中，但是如果需要在其他标记中也可以使用。</p>
+<p>On a tangential note, a common practice is to add proper quotation marks to a particular language using the quotes CSS property. However, the user agents (UA) of most browsers (including IE 9 and up) are able to add proper quotation marks automatically in case they are not declared in the CSS.</p>
+<p>注意，对于特定的语言常见的做法是使用括号CSS属性添加适当的引号括起来。但是大多数浏览器(包括IE9及以上)的用户代理(UA)都可以自动的添加引号，以防在CSS中没有被声明。</p>
+<p>Depending on your circumstance, this may or may not be OK, because there are differences between the default quotation marks added by a browser’s UA and the commonly used quotation marks added via CSS.</p>
+<p>根据你的情况，由于浏览器UA默认添加的引号和通过CSS添加的引号的差异，这可能成功也可能不会成功。</p>
+<p>For example, German (de) quotation marks added by a browser’s UA look like this:</p>
+<p>如，浏览器UA添加的German(de)引号如下所示:</p>
+<blockquote>
+<p>„Lorem ipsum dolor sit amet.“</p>
+</blockquote>
+<p>However, in most examples found on the web where quotations marks are declared via CSS, German quotation marks look like this:</p>
+<p>然而，在大多数例子中通过CSS声明的German引号如下所示:</p>
+<blockquote>
+<p>»Lorem ipsum dolor sit amet.«</p>
+</blockquote>
+<p>Both are actually correct. So, you’ll have to decide whether to let the UA add the quotation marks or to add them yourself via CSS using the :lang pseudo-class and the quotes CSS property.</p>
+<p>两者都是正确的。所以你不得不决定你是使用UA添加引号好事通过CSS使用<code>:lang</code>伪类和引号CSS属性自己添加引号标记。</p>
+<p>Let’s add quotation marks with CSS.</p>
+<p>让我们使用CSS添加引号标记:</p>
+<p><strong>HTML:</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">article</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">q</span>&gt;</span>Lorem ipsum dolor sit amet.<span class="tag">&lt;/<span class="name">q</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">article</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">article</span> <span class="attr">lang</span>=<span class="string">"fr"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">q</span>&gt;</span>Lorem ipsum dolor sit amet.<span class="tag">&lt;/<span class="name">q</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">article</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">article</span> <span class="attr">lang</span>=<span class="string">"de"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">q</span>&gt;</span>Lorem ipsum dolor sit amet.<span class="tag">&lt;/<span class="name">q</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">article</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>CSS:</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">:lang(en)</span> <span class="selector-tag">q</span> &#123; <span class="attribute">quotes</span>: <span class="string">'“'</span> <span class="string">'”'</span>; &#125;</span><br><span class="line"><span class="selector-pseudo">:lang(fr)</span> <span class="selector-tag">q</span> &#123; <span class="attribute">quotes</span>: <span class="string">'«'</span> <span class="string">'»'</span>; &#125;</span><br><span class="line"><span class="selector-pseudo">:lang(de)</span> <span class="selector-tag">q</span> &#123; <span class="attribute">quotes</span>: <span class="string">'»'</span> <span class="string">'«'</span>; &#125;</span><br></pre></td></tr></table></figure>
+<p><strong>Demo:</strong></p>
+<p>此处有Demo！！！！</p>
+<h2 id="Miscellaneous"><a href="#Miscellaneous" class="headerlink" title="Miscellaneous"></a>Miscellaneous</h2><h2 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h2><p>Let’s explore some pseudo-classes with other functionality.</p>
+<p>接下来，让我们探索一些具有其他功能的伪类。</p>
+<h3 id="ROOT"><a href="#ROOT" class="headerlink" title=":ROOT"></a>:ROOT</h3><p>The :root pseudo-class refers to the highest parent element in a document.</p>
+<p><code>:root</code>伪类指文档中最高级父元素。</p>
+<p>In virtually all cases, the :root pseudo-class will refer to the html element in an HTML document. However, it could refer to a different element if it’s used in another markup language, such as SVG or XML.</p>
+<p>几乎在所有情况下，<code>:root</code>伪类都指代HTML文档中的html元素。但是如果在另外一种标记语言，如 SVG 或者 XML中，它也可以指代另外一种元素。</p>
+<p>Let’s add a solid background color to the html element, the highest parent element in an HTML document:</p>
+<p>让我们在HTML文档中给最高级父元素 - html元素添加一个指定的背景颜色，</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">:root</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: orange;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>Note:</strong> We could have accomplished the same effect if we had used html as the selector. However, :root, like a class, has a higher specificity than an element selector (in this case, html).</p>
+<p><strong>注意:</strong> 我们也可以使用<code>html</code>选择器实现相同的效果。但是，<code>:root</code>作为一个类比一个元素选择器具有更高的识别性(在html中)。</p>
+<h3 id="FULLSCREEN-EXPERIMENTAL"><a href="#FULLSCREEN-EXPERIMENTAL" class="headerlink" title=":FULLSCREEN (EXPERIMENTAL)"></a>:FULLSCREEN (EXPERIMENTAL)</h3><p>The :fullscreen pseudo-class targets elements that are displayed in full-screen mode.</p>
+<p><code>:fullscreen</code>伪类指定元素在全屏模式下显示。</p>
+<p>However, it is not intended to work when the user presses F11 to enter full-screen mode in their browser. Rather, it is intended to work with the JavaScript Fullscreen API, which is geared to images, videos and games that are executed in a parent container.</p>
+<p>但是，这不是用户使用F11键使浏览器进入的全屏模式。相反，这是为了和JavaScript Fullscreen API 结合使用的，面向在父容器中执行的图像，视频和游戏。</p>
+<p>The way to tell whether we have entered full-screen mode is when a message appears at the top of the browser telling us so and when pressing the Escape key takes us back to the normal page. We see this when maximizing a video in YouTube or Vimeo, for example.</p>
+<p>当一条信息显示在浏览器上方时，就显示告知我们已经进入全屏模式，当按下Escape键时就会回到正常显示页面。如，当我们在YouTube最大化视频时一样。</p>
+<p>If you plan to use the :fullscreen pseudo-class, keep in mind that browsers style things very differently. Plus, you will have to deal with browser prefixes not only in the CSS, but also in your JavaScript. I recommend using Hernan Rajchert’s screenfull.js, which irons out most browser quirks.</p>
+<p>如果你想使用<code>:fullscreen</code>伪类，需要记住浏览器之间对样式的渲染十分不同。加上，你不得不处理浏览器前缀，不仅仅是CSS同时也包括你的JavaScript。这里我推荐使用Hernan Rajchert的<a href="https://github.com/sindresorhus/screenfull.js/" target="_blank" rel="external">screenfull.js</a>，其处理了大部分的不同。</p>
+<p>The Fullscreen API is beyond the scope of this article, but here’s a snippet that will work in WebKit and Blink browsers.</p>
+<p>Fullscreen API超出了本文章所讲述的范围，但是这里有一个工作在 Webkit 和 Blink浏览器中的一个片段。 </p>
+<p><strong>HTML:</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">id</span>=<span class="string">"element"</span>&gt;</span>This heading will have a solid background color in full-screen mode.<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">"var el = document.getElementById('element'); el.webkitRequestFullscreen();"</span>&gt;</span>Trigger full screen!<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>CSS:</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h1</span><span class="selector-pseudo">:fullscreen</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: orange;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>Demo:</strong></p>
+<p>此处有Demo！！！！</p>
+<h2 id="Pseudo-Elements"><a href="#Pseudo-Elements" class="headerlink" title="Pseudo-Elements"></a>Pseudo-Elements</h2><h2 id="伪元素"><a href="#伪元素" class="headerlink" title="伪元素"></a>伪元素</h2><p>As mentioned at the beginning of this article, pseudo-elements are like virtual elements that we can treat like regular HTML elements. They don’t exist in the document tree or DOM, which means we don’t actually type pseudo-elements in the HTML, but rather create them with CSS.</p>
+<p>正如文章开头提到的一样，伪元素就像我们处理正常HTML元素般的虚元素。它们不存在于文档树和DOM之中，意味着我们没有在HTML中指定伪元素，但是却使用CSS创建了它们。</p>
+<p>Also, the double colon (::) and single colon (:) difference is merely a visual distinction between CSS 2.1 and CSS3 pseudo-elements. You are free to use either.</p>
+<p>另外，双冒号(<code>::</code>)和单冒号(<code>:</code>)只是CSS 2.1和CSS3伪元素在视觉上的区分，你仍旧可以自由的选择使用它们。</p>
+<h3 id="BEFORE-BEFORE"><a href="#BEFORE-BEFORE" class="headerlink" title="::BEFORE/:BEFORE"></a>::BEFORE/:BEFORE</h3><p>The :before pseudo-element, like its sibling :after, adds content (text or a shape) to another HTML element. Again, this content is not actually present in the DOM but can be manipulated as if it were. And the content property needs to be declared in the CSS.</p>
+<p><code>:before</code>伪元素和它的兄弟<code>:after</code>，用来给另外一个HTML元素添加内容(文本或者图形)。同样的，添加的内容并不在DOM中真实存在但是可操纵。另外，内容的属性需要在CSS中声明。</p>
+<p>Remember that text added with this pseudo-element cannot be selected.</p>
+<p>需要记住，使用这个伪元素添加的文本不可以被选择。</p>
+<p><strong>HTML:</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Ricardo<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>CSS:</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h1</span><span class="selector-pseudo">:before</span> &#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">"Hello "</span>; <span class="comment">/* Note the space after the word Hello. */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>This will render like so:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hello Ricardo!</span><br></pre></td></tr></table></figure>
+<p><strong>Note:</strong> See the space after the word “Hello ”? Yes, spaces are taken into account.</p>
+<p><strong>注意:</strong>“Hello ”中的空格也同时被添加进去了。</p>
+<h3 id="AFTER-AFTER"><a href="#AFTER-AFTER" class="headerlink" title="::AFTER/:AFTER"></a>::AFTER/:AFTER</h3><p>The :after pseudo-element is used to add content (either text or a shape) to another HTML element. This content is not actually present in the DOM, but it can be manipulated as if it were. In order for it to work, the content property needs to be declared in the CSS.</p>
+<p><code>:after</code>伪元素用来向另一个HTML元素中添加内容(同样的也是文本或者图形)。被添加的内容不存在于DOM中，但是可操纵。为了更好地工作，内容属性需要在CSS中声明。</p>
+<p>Note that any text added with this pseudo-class cannot be selected.</p>
+<p>注意，使用这个伪元素添加的内容不可以被选择。</p>
+<p><strong>HTML:</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Ricardo<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>CSS:</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h1</span><span class="selector-pseudo">:after</span> &#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">", Web Designer!"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>This will render like so:</p>
+<p>渲染结果如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Ricardo, Web Designer!</span><br></pre></td></tr></table></figure>
+<h3 id="BACKDROP-EXPERIMENTAL"><a href="#BACKDROP-EXPERIMENTAL" class="headerlink" title="::BACKDROP (EXPERIMENTAL)"></a>::BACKDROP (EXPERIMENTAL)</h3><p>The ::backdrop pseudo-element is a box that is generated behind the full-screen element but that sits above all other content. It’s used in combination with the :fullscreen pseudo-class to change the background color of a maximized screen — in case you don’t want to go with the default black.</p>
+<p><code>::backdrop</code>伪元素是一个盒子，在全屏元素之后生成，但是在其它所有内容之上。它经常和<code>:fullscreen</code>伪类结合使用改变最大化屏幕的背景颜色 - 如果你不想使用默认的黑色。</p>
+<p><strong>Note:</strong> The ::backdrop pseudo-element requires a double colon; it doesn’t work with a single colon.</p>
+<p><strong>注意:</strong> <code>::backdrop</code>伪元素需要使用双冒号，使用单冒号不起作用。</p>
+<p>Let’s continue our example from the :fullscreen pseudo-class.</p>
+<p>让我们再次继续<code>:fullscreen</code>伪类的示例。</p>
+<p><strong>HTML:</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">id</span>=<span class="string">"element"</span>&gt;</span>This heading will have a solid background color in full-screen mode.<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">"var el = document.getElementById('element'); el.webkitRequestFullscreen();"</span>&gt;</span>Trigger full screen!<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>CSS:</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h1</span><span class="selector-pseudo">:fullscreen</span><span class="selector-pseudo">::backdrop</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: orange;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>Demo:</strong></p>
+<p>此处有Demo！！！！</p>
+<h3 id="FIRST-LETTER-FIRST-LETTER"><a href="#FIRST-LETTER-FIRST-LETTER" class="headerlink" title="::FIRST-LETTER/:FIRST-LETTER"></a>::FIRST-LETTER/:FIRST-LETTER</h3><p>The :first-letter pseudo-element selects the first letter in a line of text.</p>
+<p><code>:first-letter</code> 伪元素用来选择文本的第一个字母。</p>
+<p>If an element is included before that line, such as an image, video or table, then the first letter is not affected and can still be selected.</p>
+<p>如果第一行文本包含一个元素，如图片，播放器或者表格，这时第一个字母不会被影响仍旧可以被选择。</p>
+<p>This is a great feature to use in paragraphs, for example, to enhance typographic appeal, without having to resort to an image or external assets.</p>
+<p>这在段落中是一个很好的应用，如：在不需要使用图片或者外部设置时，可以提高段落的吸引力。</p>
+<p>Tip: For text generated with the :before pseudo-element, the first letter of that text will be targeted, even though it is not present in the DOM.</p>
+<p><strong>提示:</strong>使用<code>:before</code>伪元素生成的内容文本，即使不存在于DOM中，其文本的第一个字母可以被指定。</p>
+<p><strong>CSS:</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h1</span><span class="selector-pseudo">:first-letter</span>  &#123;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">5em</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="FIRST-LINE-FIRST-LINE"><a href="#FIRST-LINE-FIRST-LINE" class="headerlink" title="::FIRST-LINE/:FIRST-LINE"></a>::FIRST-LINE/:FIRST-LINE</h3><p>The :first-line pseudo-element targets the first line of an element. It works only on block-level elements, not inline elements.</p>
+<p><code>:first-line</code>伪元素指定一个元素的第一行。它旨在块级元素中起作用，在行内元素不起作用。</p>
+<p>When used in a paragraph, for example, only the first line of that paragraph will be styled, even if the text wraps.</p>
+<p>当在段落中使用时，如:只是给段落的第一行文本改变样式，即使文本被包裹。</p>
+<p><strong>CSS:</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">:first-line</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: orange;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="SELECTION"><a href="#SELECTION" class="headerlink" title="::SELECTION"></a>::SELECTION</h3><p>The ::selection pseudo-element is used to style the portion of a document that has been highlighted.</p>
+<p><code>::selection</code>伪元素用于文档中样式被突出显示的部分。</p>
+<p>Until further notice, Gecko-based browsers required the prefixed version: ::-moz-selection.</p>
+<p>另外，基于Gecko的浏览器需要添加版本前缀: <code>::-moz-selection</code>.</p>
+<p><strong>Note:</strong> Combining the prefixed and unprefixed versions in a single rule won’t work. We need to create two separate rules.</p>
+<p><strong>注意:</strong> 仅仅在一个规则中使用前缀或者不使用前缀是不起作用的。我们需要声明两个单独的规则。</p>
+<p><strong>CSS:</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">::-moz-selection</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: orange;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#333</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-pseudo">::selection</span>  &#123;</span><br><span class="line">    <span class="attribute">color</span>: orange;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#333</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="PLACEHOLDER-EXPERIMENTAL"><a href="#PLACEHOLDER-EXPERIMENTAL" class="headerlink" title="::PLACEHOLDER (EXPERIMENTAL)"></a>::PLACEHOLDER (EXPERIMENTAL)</h3><p>The ::placeholder pseudo-element targets placeholder text used in form elements via the placeholder HTML attribute.</p>
+<p><code>::placeholder</code>伪元素指定通过HTML属性设置的表单元素中的占位符文本。</p>
+<p>It can also be written as ::input-placeholder, which is actually the syntax used in CSS.</p>
+<p>它也可以被写作<code>::input-placeholder</code>，这种是CSS中实际使用的语法。</p>
+<p><strong>Note:</strong> This pseudo-element is not a part of the standard and its implementation will very likely change in future, so use with caution.</p>
+<p><strong>注意:</strong> 这个伪元素还不是标准的一部分，它的实现可能还会有改变，所以使用时需要注意。</p>
+<p>In some browsers (IE 10 and Firefox up to version 18), the ::placeholder pseudo-element is implemented like a pseudo-class. All other browsers treat it like a pseudo-element. So, unless you have to support old versions of Firefox or IE 10, you would write the following.</p>
+<p>在一些浏览器中(IE 10 和火狐的版本18以上的)，<code>::placeholder</code>伪元素的实现如一个伪类。但是其余浏览器的实现仍旧是一个伪元素。所以除非你不得不支持火狐的旧版本或者IE10 以下的版本，你的书写需要向如下所示般:</p>
+<p><strong>HTML:</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"email"</span> <span class="attr">placeholder</span>=<span class="string">"name@domain.com"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>CSS:</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">input</span><span class="selector-pseudo">::-moz-placeholder</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>:<span class="number">#666</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">input</span><span class="selector-pseudo">::-webkit-input-placeholder</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>:<span class="number">#666</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* IE 10 only */</span></span><br><span class="line"><span class="selector-tag">input</span><span class="selector-pseudo">:-ms-input-placeholder</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>:<span class="number">#666</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Firefox 18 and below */</span></span><br><span class="line"><span class="selector-tag">input</span><span class="selector-pseudo">:-moz-input-placeholder</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>:<span class="number">#666</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>Phew! That was something, eh?</p>
+<p>唷 ！这是不是信息量很大?</p>
+<p>CSS pseudo-classes and pseudo-elements are certainly a handful, aren’t they? They provide so many possibilities that one can easily feel overwhelmed, for sure. But that’s the life of a web designer and developer.</p>
+<p>CSS中的伪类和伪元素有许多，是不是?可以很轻松的感觉到，它为我们提供了许多的可能性。但是仅仅是针对网页设计师和开发人与而言。</p>
+<p>Make sure to test thoroughly. Well implemented pseudo-classes and pseudo-elements go a long way.</p>
+<p>这里，大家需要自己动手去实践，已经实现的伪类和伪元素的使用会持续很久很久。</p>
+<p>I hope you’ve enjoyed this extensive reference article as much as I did writing it. And don’t forget to bookmark it!</p>
+<p>我希望你可以喜欢这篇可参考文章，就如我书写时的初衷般。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/06/09/battling-BEM-10-common-problems-and-how-to-avoid-them/" rel="next" title="[译文] 关于BEM中常见的十个问题以及如何避免他们">
+                <i class="fa fa-chevron-left"></i> [译文] 关于BEM中常见的十个问题以及如何避免他们
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/06/13/an-ultimate-guide-to-css-pseudo-classes-and-pseudo-elements/"
+           data-title="" data-url="http://yoursite.com/2016/06/13/an-ultimate-guide-to-css-pseudo-classes-and-pseudo-elements/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/jingzi.png"
+               alt="静子" />
+          <p class="site-author-name" itemprop="name">静子</p>
+          <p class="site-description motion-element" itemprop="description">一个爱笑，喜欢前端，喜欢分享的女生~</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">14</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/xiao-jing" target="_blank" title="github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  github
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/jizhongjing" target="_blank" title="weibo">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#An-Ultimate-Guide-To-CSS-Pseudo-Classes-And-Pseudo-Elements"><span class="nav-number">1.</span> <span class="nav-text">An Ultimate Guide To CSS Pseudo-Classes And Pseudo-Elements</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CSS-伪类和伪元素总结"><span class="nav-number">2.</span> <span class="nav-text">CSS 伪类和伪元素总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Single-Or-Double-Colon-For-Pseudo-Elements"><span class="nav-number">2.1.</span> <span class="nav-text">Single Or Double Colon For Pseudo-Elements?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于伪元素使用单冒号还是双冒号"><span class="nav-number">2.2.</span> <span class="nav-text">关于伪元素使用单冒号还是双冒号?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#When-Not-To-Use-CSS-Generated-Content"><span class="nav-number">2.3.</span> <span class="nav-text">When (Not) To Use CSS Generated Content</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么时候使用-不使用-CSS-生成内容"><span class="nav-number">2.4.</span> <span class="nav-text">什么时候使用(不使用) CSS 生成内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Experimental-Pseudo-Classes-And-Pseudo-Elements"><span class="nav-number">2.5.</span> <span class="nav-text">Experimental Pseudo-Classes And Pseudo-Elements</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一些正在实验的伪类以及伪元素"><span class="nav-number">2.6.</span> <span class="nav-text">一些正在实验的伪类以及伪元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pseudo-Classes"><span class="nav-number">2.7.</span> <span class="nav-text">Pseudo-Classes</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#伪类"><span class="nav-number">2.8.</span> <span class="nav-text">伪类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#States"><span class="nav-number">2.9.</span> <span class="nav-text">States</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#状态"><span class="nav-number">2.10.</span> <span class="nav-text">状态</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#LINK"><span class="nav-number">2.10.1.</span> <span class="nav-text">:LINK</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#VISITED"><span class="nav-number">2.10.2.</span> <span class="nav-text">:VISITED</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hover"><span class="nav-number">2.10.3.</span> <span class="nav-text">:Hover</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ACTIVE"><span class="nav-number">2.10.4.</span> <span class="nav-text">:ACTIVE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#FOCUS"><span class="nav-number">2.10.5.</span> <span class="nav-text">:FOCUS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BONUS-CONTENT-A-SASS-MIXIN-FOR-LINKS"><span class="nav-number">2.10.6.</span> <span class="nav-text">BONUS CONTENT: A SASS MIXIN FOR LINKS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#奖励内容-SASS中一个用于链接的MIXIN"><span class="nav-number">2.10.7.</span> <span class="nav-text">奖励内容: SASS中一个用于链接的MIXIN</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Structural"><span class="nav-number">2.11.</span> <span class="nav-text">Structural</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结构性"><span class="nav-number">2.12.</span> <span class="nav-text">结构性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#FIRST-CHILD"><span class="nav-number">2.12.1.</span> <span class="nav-text">:FIRST-CHILD</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#FIRST-OF-TYPE"><span class="nav-number">2.12.2.</span> <span class="nav-text">FIRST-OF-TYPE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LAST-CHILD"><span class="nav-number">2.12.3.</span> <span class="nav-text">:LAST-CHILD</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LAST-OF-TYPE"><span class="nav-number">2.12.4.</span> <span class="nav-text">:LAST-OF-TYPE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NOT"><span class="nav-number">2.12.5.</span> <span class="nav-text">:NOT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NTH-CHILD"><span class="nav-number">2.12.6.</span> <span class="nav-text">:NTH-CHILD</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NTH-LAST-CHILD"><span class="nav-number">2.12.7.</span> <span class="nav-text">:NTH-LAST-CHILD</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NTH-OF-TYPE"><span class="nav-number">2.12.8.</span> <span class="nav-text">:NTH-OF-TYPE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NTH-LAST-OF-TYPE"><span class="nav-number">2.12.9.</span> <span class="nav-text">:NTH-LAST-OF-TYPE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ONLY-CHILD"><span class="nav-number">2.12.10.</span> <span class="nav-text">ONLY-CHILD</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ONLY-OF-TYPE"><span class="nav-number">2.12.11.</span> <span class="nav-text">ONLY-OF-TYPE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TARGET"><span class="nav-number">2.12.12.</span> <span class="nav-text">:TARGET</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Validation"><span class="nav-number">2.13.</span> <span class="nav-text">Validation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#验证"><span class="nav-number">2.14.</span> <span class="nav-text">验证</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CHECKED"><span class="nav-number">2.14.1.</span> <span class="nav-text">:CHECKED</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DEFAULT"><span class="nav-number">2.14.2.</span> <span class="nav-text">:DEFAULT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DISABLED"><span class="nav-number">2.14.3.</span> <span class="nav-text">:DISABLED</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#EMPTY"><span class="nav-number">2.14.4.</span> <span class="nav-text">:EMPTY</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ENABLED"><span class="nav-number">2.14.5.</span> <span class="nav-text">:ENABLED</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IN-RANGE"><span class="nav-number">2.14.6.</span> <span class="nav-text">:IN-RANGE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OUT-OF-RANGE"><span class="nav-number">2.14.7.</span> <span class="nav-text">:OUT-OF-RANGE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#INDETERMINATE"><span class="nav-number">2.14.8.</span> <span class="nav-text">:INDETERMINATE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#VALID"><span class="nav-number">2.14.9.</span> <span class="nav-text">:VALID</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#INVALID"><span class="nav-number">2.14.10.</span> <span class="nav-text">:INVALID</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OPTIONAL"><span class="nav-number">2.14.11.</span> <span class="nav-text">:OPTIONAL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#READ-ONLY"><span class="nav-number">2.14.12.</span> <span class="nav-text">:READ-ONLY</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#READ-WRITE"><span class="nav-number">2.14.13.</span> <span class="nav-text">:READ-WRITE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#REQUIRED"><span class="nav-number">2.14.14.</span> <span class="nav-text">:REQUIRED</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SCOPE-EXPERIMENTAL"><span class="nav-number">2.14.15.</span> <span class="nav-text">:SCOPE (EXPERIMENTAL)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Language"><span class="nav-number">2.15.</span> <span class="nav-text">Language</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#语言"><span class="nav-number">2.16.</span> <span class="nav-text">语言</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DIR-EXPERIMENTAL"><span class="nav-number">2.16.1.</span> <span class="nav-text">:DIR (EXPERIMENTAL)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LANG"><span class="nav-number">2.16.2.</span> <span class="nav-text">:LANG</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Miscellaneous"><span class="nav-number">2.17.</span> <span class="nav-text">Miscellaneous</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其它"><span class="nav-number">2.18.</span> <span class="nav-text">其它</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ROOT"><span class="nav-number">2.18.1.</span> <span class="nav-text">:ROOT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#FULLSCREEN-EXPERIMENTAL"><span class="nav-number">2.18.2.</span> <span class="nav-text">:FULLSCREEN (EXPERIMENTAL)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pseudo-Elements"><span class="nav-number">2.19.</span> <span class="nav-text">Pseudo-Elements</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#伪元素"><span class="nav-number">2.20.</span> <span class="nav-text">伪元素</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#BEFORE-BEFORE"><span class="nav-number">2.20.1.</span> <span class="nav-text">::BEFORE/:BEFORE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AFTER-AFTER"><span class="nav-number">2.20.2.</span> <span class="nav-text">::AFTER/:AFTER</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BACKDROP-EXPERIMENTAL"><span class="nav-number">2.20.3.</span> <span class="nav-text">::BACKDROP (EXPERIMENTAL)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#FIRST-LETTER-FIRST-LETTER"><span class="nav-number">2.20.4.</span> <span class="nav-text">::FIRST-LETTER/:FIRST-LETTER</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#FIRST-LINE-FIRST-LINE"><span class="nav-number">2.20.5.</span> <span class="nav-text">::FIRST-LINE/:FIRST-LINE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SELECTION"><span class="nav-number">2.20.6.</span> <span class="nav-text">::SELECTION</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PLACEHOLDER-EXPERIMENTAL"><span class="nav-number">2.20.7.</span> <span class="nav-text">::PLACEHOLDER (EXPERIMENTAL)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Conclusion"><span class="nav-number">2.21.</span> <span class="nav-text">Conclusion</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">2.22.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">静子</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"xiao-jinggithubio"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
