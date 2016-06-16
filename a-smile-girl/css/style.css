@@ -12,8 +12,6 @@ h1{
 	font-family: 'Roboto', 'Avenir Next', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif;
 	margin-bottom: 30px;
 }
-ul{	list-style: none;}
-ul li{float: left;}
 a{text-decoration: none;}
 a:hover{text-decoration: none;}
 .centered{
@@ -147,9 +145,11 @@ header .text-center{
 .contact ul{
 	display: block;
 	overflow: hidden;
+	text-decoration: none;
 }
 .contact ul li{
 	padding: 0 10px;
+	float: left;
 }
 .contact a:hover{
 	color: #24B348;
