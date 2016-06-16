@@ -145,7 +145,7 @@ header .text-center{
 .contact ul{
 	display: block;
 	overflow: hidden;
-	text-decoration: none;
+	list-style-type: none;
 }
 .contact ul li{
 	padding: 0 10px;
