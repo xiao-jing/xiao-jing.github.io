@@ -84,17 +84,17 @@
 
 
 
-<meta name="description" content="前一段时间在研究Gulp自动化构建工具的使用，有使用过的童鞋知道我们使用npm包管理器时安装了很多模块，相应的产生了node_modules文件夹，里面有各种包依赖。你们是怎么删除这些文件夹的呢？？？">
+<meta name="description" content="前一段时间在研究Gulp自动化构建工具的使用，有使用过的童鞋知道我们使用npm包管理器安装了很多模块，相应的产生了node_modules文件夹，里面有各种包依赖。你们是怎么删除这些文件夹的呢？？？">
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于node_modules文件夹(windows)无法删除问题">
 <meta property="og:url" content="http://yoursite.com/2016/06/17/how-to-delete-gulp-node-modules/index.html">
 <meta property="og:site_name" content="Sance's Blog">
-<meta property="og:description" content="前一段时间在研究Gulp自动化构建工具的使用，有使用过的童鞋知道我们使用npm包管理器时安装了很多模块，相应的产生了node_modules文件夹，里面有各种包依赖。你们是怎么删除这些文件夹的呢？？？">
+<meta property="og:description" content="前一段时间在研究Gulp自动化构建工具的使用，有使用过的童鞋知道我们使用npm包管理器安装了很多模块，相应的产生了node_modules文件夹，里面有各种包依赖。你们是怎么删除这些文件夹的呢？？？">
 <meta property="og:image" content="https://o77qb5l10.qnssl.com/56f9ec9524216.png">
-<meta property="og:updated_time" content="2016-06-17T09:30:52.941Z">
+<meta property="og:updated_time" content="2016-06-17T09:33:49.501Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于node_modules文件夹(windows)无法删除问题">
-<meta name="twitter:description" content="前一段时间在研究Gulp自动化构建工具的使用，有使用过的童鞋知道我们使用npm包管理器时安装了很多模块，相应的产生了node_modules文件夹，里面有各种包依赖。你们是怎么删除这些文件夹的呢？？？">
+<meta name="twitter:description" content="前一段时间在研究Gulp自动化构建工具的使用，有使用过的童鞋知道我们使用npm包管理器安装了很多模块，相应的产生了node_modules文件夹，里面有各种包依赖。你们是怎么删除这些文件夹的呢？？？">
 <meta name="twitter:image" content="https://o77qb5l10.qnssl.com/56f9ec9524216.png">
 
 
@@ -319,7 +319,7 @@
       
 
       
-        <p>前一段时间在研究Gulp自动化构建工具的使用，有使用过的童鞋知道我们使用npm包管理器时安装了很多模块，相应的产生了node_modules文件夹，里面有各种包依赖。你们是怎么删除这些文件夹的呢？？？</p>
+        <p>前一段时间在研究Gulp自动化构建工具的使用，有使用过的童鞋知道我们使用npm包管理器安装了很多模块，相应的产生了node_modules文件夹，里面有各种包依赖。你们是怎么删除这些文件夹的呢？？？</p>
 <a id="more"></a>
 <p>进行电脑清理的时候，我发现出现了一个问题，如下所示:</p>
 <p><img src="https://o77qb5l10.qnssl.com/56f9ec9524216.png" alt="img"></p>
@@ -331,7 +331,7 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> rimraf = <span class="built_in">require</span>(<span class="string">'rimraf'</span>);  </span><br><span class="line">rimraf(<span class="string">'/node_modules'</span>, [], <span class="function"><span class="keyword">function</span>(<span class="params"> err </span>)</span>&#123; <span class="built_in">console</span>.log( err ); &#125;);</span><br></pre></td></tr></table></figure>
 <p>当删除过程中出现错误会被打印出来，否则输出null ~</p>
 <ul>
-<li>如果不想每次都进行文件夹的创建，可以使用npm全局加载 <strong>rimraf</strong>。打开控制台</li>
+<li>如果不想每次都进行文件夹的创建，可以使用npm全局加载 <strong>rimraf</strong>。打开控制台:</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i rimfaf -g</span><br></pre></td></tr></table></figure>
 <p>待模块加载完成后，执行如下命令:</p>
@@ -367,8 +367,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/06/13/an-ultimate-guide-to-css-pseudo-classes-and-pseudo-elements/" rel="next" title="CSS 伪类和伪元素总结">
-                <i class="fa fa-chevron-left"></i> CSS 伪类和伪元素总结
+              <a href="/2016/06/13/an-ultimate-guide-to-css-pseudo-classes-and-pseudo-elements/" rel="next" title="[译文]CSS 伪类和伪元素总结">
+                <i class="fa fa-chevron-left"></i> [译文]CSS 伪类和伪元素总结
               </a>
             
           </div>
@@ -453,7 +453,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -462,7 +462,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
