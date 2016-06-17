@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="-gulp," />
 
 
 
@@ -84,16 +84,18 @@
 
 
 
-<meta name="description" content="一个爱笑，喜欢前端，喜欢分享的女生~">
+<meta name="description" content="前一段时间在研究Gulp自动化构建工具的使用，有使用过的童鞋知道我们使用npm包管理器时安装了很多模块，相应的产生了node_modules文件夹，里面有各种包依赖。你们是怎么删除这些文件夹的呢？？？">
 <meta property="og:type" content="article">
-<meta property="og:title" content="how-to-delete-gulp-node_modules">
+<meta property="og:title" content="关于node_modules文件夹(windows)无法删除问题">
 <meta property="og:url" content="http://yoursite.com/2016/06/17/how-to-delete-gulp-node-modules/index.html">
 <meta property="og:site_name" content="Sance's Blog">
-<meta property="og:description" content="一个爱笑，喜欢前端，喜欢分享的女生~">
-<meta property="og:updated_time" content="2016-06-17T08:44:06.389Z">
+<meta property="og:description" content="前一段时间在研究Gulp自动化构建工具的使用，有使用过的童鞋知道我们使用npm包管理器时安装了很多模块，相应的产生了node_modules文件夹，里面有各种包依赖。你们是怎么删除这些文件夹的呢？？？">
+<meta property="og:image" content="https://o77qb5l10.qnssl.com/56f9ec9524216.png">
+<meta property="og:updated_time" content="2016-06-17T09:18:10.306Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="how-to-delete-gulp-node_modules">
-<meta name="twitter:description" content="一个爱笑，喜欢前端，喜欢分享的女生~">
+<meta name="twitter:title" content="关于node_modules文件夹(windows)无法删除问题">
+<meta name="twitter:description" content="前一段时间在研究Gulp自动化构建工具的使用，有使用过的童鞋知道我们使用npm包管理器时安装了很多模块，相应的产生了node_modules文件夹，里面有各种包依赖。你们是怎么删除这些文件夹的呢？？？">
+<meta name="twitter:image" content="https://o77qb5l10.qnssl.com/56f9ec9524216.png">
 
 
 
@@ -111,7 +113,7 @@
   };
 </script>
 
-  <title> how-to-delete-gulp-node_modules | Sance's Blog </title>
+  <title> 关于node_modules文件夹(windows)无法删除问题 | Sance's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -251,7 +253,7 @@
             
             
               
-                how-to-delete-gulp-node_modules
+                关于node_modules文件夹(windows)无法删除问题
               
             
           </h1>
@@ -298,7 +300,25 @@
       
 
       
-        
+        <p>前一段时间在研究Gulp自动化构建工具的使用，有使用过的童鞋知道我们使用npm包管理器时安装了很多模块，相应的产生了node_modules文件夹，里面有各种包依赖。你们是怎么删除这些文件夹的呢？？？</p>
+<a id="more"></a>
+<p>进行电脑清理的时候，我发现出现了一个问题，如下所示:</p>
+<p><img src="https://o77qb5l10.qnssl.com/56f9ec9524216.png" alt="img"></p>
+<p>由于有路径长度的限制，有的node_modules文件夹是删除不了的，那么要怎么处理呢？？</p>
+<p>后来发现npm有一个 <strong>rimraf</strong>模块 – 用于清理Gulp过期文件。使用方法如下:</p>
+<ul>
+<li>在所要删除的node_modules文件夹下，创建一个js文件，代码如下:</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> rimraf = <span class="built_in">require</span>(<span class="string">'rimraf'</span>);  </span><br><span class="line">rimraf(<span class="string">'/node_modules'</span>, [], <span class="function"><span class="keyword">function</span>(<span class="params"> err </span>)</span>&#123; <span class="built_in">console</span>.log( err ); &#125;);</span><br></pre></td></tr></table></figure>
+<p>当删除过程中出现错误会被打印出来，否则输出null ~</p>
+<ul>
+<li>如果不想每次都进行文件夹的创建，可以使用npm全局加载 <strong>rimraf</strong>。打开控制台</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i rimfaf -g</span><br></pre></td></tr></table></figure>
+<p>待模块加载完成后，执行如下命令:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rimraf node_modules</span><br></pre></td></tr></table></figure>
+<p>这时模块就很轻易被清理了 ~~</p>
+
       
     </div>
 
@@ -316,6 +336,12 @@
     </div>
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/gulp/" rel="tag">#-gulp</a>
+          
+        </div>
       
 
       
@@ -355,7 +381,7 @@
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="2016/06/17/how-to-delete-gulp-node-modules/"
-           data-title="how-to-delete-gulp-node_modules" data-url="http://yoursite.com/2016/06/17/how-to-delete-gulp-node-modules/">
+           data-title="关于node_modules文件夹(windows)无法删除问题" data-url="http://yoursite.com/2016/06/17/how-to-delete-gulp-node-modules/">
       </div>
     
   </div>
@@ -417,7 +443,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">14</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
