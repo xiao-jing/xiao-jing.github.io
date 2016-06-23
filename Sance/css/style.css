@@ -1,7 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto+Slab:700);
 
 body{
-	background: #555 url(http://subtlepatterns.com/patterns/food.png);
+	background: #555 url(../images/bg.png);
 	color:#fff;
 	font-family: 'Roboto Slab', arial, helvetica neue; 
 }
