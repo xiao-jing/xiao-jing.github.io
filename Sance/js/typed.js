@@ -104,7 +104,21 @@
             // current string will be passed as an argument each time after this
             var self = this;
             self.timeout = setTimeout(function() {
-                for (var i=0;i<self.strings.length;++i) self.sequence[i]="i;" shuffle="" the="" array="" if="" true="" if(self.shuffle)="" self.sequence="self.shuffleArray(self.sequence);" start="" typing="" self.typewrite(self.strings[self.sequence[self.arraypos]],="" self.strpos);="" },="" self.startdelay);="" }="" ,="" build:="" function()="" {="" insert="" cursor="" (this.showcursor="==" true)="" this.cursor="$("<span" class="\"typed-cursor\"">" + this.cursorChar + "");
+                for (var i=0;i<self.strings.length;++i) self.sequence[i]=i;
+
+                // shuffle the array if true
+                if(self.shuffle) self.sequence = self.shuffleArray(self.sequence);
+
+                // Start typing
+                self.typewrite(self.strings[self.sequence[self.arrayPos]], self.strPos);
+            }, self.startDelay);
+        }
+
+        ,
+        build: function() {
+            // Insert cursor
+            if (this.showCursor === true) {
+                this.cursor = $("<span class=\"typed-cursor\">" + this.cursorChar + "</span>");
                 this.el.after(this.cursor);
             }
             this.init();
@@ -153,9 +167,136 @@
                 if (self.contentType === 'html') {
                     // skip over html tags while typing
                     var curChar = curString.substr(curStrPos).charAt(0)
-                    if (curChar === '<' ||="" curchar="==" '&')="" {="" var="" tag="" ;="" endtag="" if="" (curchar="==" '<')="" }="" else="" while="" (curstring.substr(curstrpos).charat(0)="" !="=" endtag)="" +="curString.substr(curStrPos).charAt(0);" curstrpos++;="" timeout="" for="" any="" pause="" after="" a="" character="" self.timeout="setTimeout(function()" (curstrpos="==" curstring.length)="" fires="" callback="" function="" self.options.onstringtyped(self.arraypos);="" is="" this="" the="" final="" string="" (self.arraypos="==" self.strings.length="" -="" 1)="" animation="" that="" occurs="" on="" last="" typed="" self.options.callback();="" self.curloop++;="" quit="" we="" wont="" loop back="" (self.loop="==" false="" self.curloop="==" self.loopcount)="" return;="" self.backspace(curstring,="" curstrpos);="" },="" self.backdelay);="" *="" call="" before="" functions="" applicable="" 0)="" self.options.prestringtyped(self.arraypos);="" start="" typing="" each="" new="" char="" into="" existing="" curstring:="" arg,="" self.el.html:="" original="" text="" inside="" element="" nextstring="curString.substr(0," curstrpos="" 1);="" (self.attr)="" self.el.attr(self.attr,="" nextstring);="" (self.isinput)="" self.el.val(nextstring);="" (self.contenttype="==" 'html')="" self.el.html(nextstring);="" self.el.text(nextstring);="" add="" characters="" one="" by="" self.typewrite(curstring,="" end="" of="" charpause);="" humanized="" value="" humanize);="" ,="" backspace:="" function(curstring,="" curstrpos)="" exit="" when="" stopped="" (this.stop="==" true)="" varying="" values="" settimeout="" during="" can't="" be="" global="" since="" number="" changes="" time="" executed="" humanize="Math.round(Math.random()" (100="" 30))="" this.backspeed;="" self="this;" -----="" part="" optional="" check="" array="" position="" first="" string,="" only="" delete="" word="" stopnum="" actually="" represents="" amount="" chars="" to="" keep="" in="" current="" string.="" my="" case="" it's="" 14.="" 1){="" self.stopnum="14;" every="" other="" time,="" whole="" else{="" skip="" over="" html="" tags="" backspacing="" '="">') {
+                    if (curChar === '<' || curChar === '&') {
                         var tag = '';
-                        while (curString.substr(curStrPos).charAt(0) !== '<') {="" tag="" -="curString.substr(curStrPos).charAt(0);" curstrpos--;="" }="" +="<" ;="" -----="" continue="" important="" stuff="" replace="" text="" with="" base="" typed="" characters="" var="" nextstring="curString.substr(0," curstrpos);="" if="" (self.attr)="" self.el.attr(self.attr,="" nextstring);="" else="" (self.isinput)="" self.el.val(nextstring);="" (self.contenttype="==" 'html')="" self.el.html(nextstring);="" self.el.text(nextstring);="" the="" number="" (id="" of="" character="" in="" current="" string)="" is="" less="" than="" stop="" number,="" keep="" going="" (curstrpos=""> self.stopNum) {
+                        var endTag = '';
+                        if (curChar === '<') {
+                            endTag = '>'
+                        } else {
+                            endTag = ';'
+                        }
+                        while (curString.substr(curStrPos).charAt(0) !== endTag) {
+                            tag += curString.substr(curStrPos).charAt(0);
+                            curStrPos++;
+                        }
+                        curStrPos++;
+                        tag += endTag;
+                    }
+                }
+
+                // timeout for any pause after a character
+                self.timeout = setTimeout(function() {
+                    if (curStrPos === curString.length) {
+                        // fires callback function
+                        self.options.onStringTyped(self.arrayPos);
+
+                        // is this the final string
+                        if (self.arrayPos === self.strings.length - 1) {
+                            // animation that occurs on the last typed string
+                            self.options.callback();
+
+                            self.curLoop++;
+
+                            // quit if we wont loop back
+                            if (self.loop === false || self.curLoop === self.loopCount)
+                                return;
+                        }
+
+                        self.timeout = setTimeout(function() {
+                            self.backspace(curString, curStrPos);
+                        }, self.backDelay);
+                    } else {
+
+                        /* call before functions if applicable */
+                        if (curStrPos === 0)
+                            self.options.preStringTyped(self.arrayPos);
+
+                        // start typing each new char into existing string
+                        // curString: arg, self.el.html: original text inside element
+                        var nextString = curString.substr(0, curStrPos + 1);
+                        if (self.attr) {
+                            self.el.attr(self.attr, nextString);
+                        } else {
+                            if (self.isInput) {
+                                self.el.val(nextString);
+                            } else if (self.contentType === 'html') {
+                                self.el.html(nextString);
+                            } else {
+                                self.el.text(nextString);
+                            }
+                        }
+
+                        // add characters one by one
+                        curStrPos++;
+                        // loop the function
+                        self.typewrite(curString, curStrPos);
+                    }
+                    // end of character pause
+                }, charPause);
+
+                // humanized value for typing
+            }, humanize);
+
+        }
+
+        ,
+        backspace: function(curString, curStrPos) {
+            // exit when stopped
+            if (this.stop === true) {
+                return;
+            }
+
+            // varying values for setTimeout during typing
+            // can't be global since number changes each time loop is executed
+            var humanize = Math.round(Math.random() * (100 - 30)) + this.backSpeed;
+            var self = this;
+
+            self.timeout = setTimeout(function() {
+
+                // ----- this part is optional ----- //
+                // check string array position
+                // on the first string, only delete one word
+                // the stopNum actually represents the amount of chars to
+                // keep in the current string. In my case it's 14.
+                // if (self.arrayPos == 1){
+                //  self.stopNum = 14;
+                // }
+                //every other time, delete the whole typed string
+                // else{
+                //  self.stopNum = 0;
+                // }
+
+                if (self.contentType === 'html') {
+                    // skip over html tags while backspacing
+                    if (curString.substr(curStrPos).charAt(0) === '>') {
+                        var tag = '';
+                        while (curString.substr(curStrPos).charAt(0) !== '<') {
+                            tag -= curString.substr(curStrPos).charAt(0);
+                            curStrPos--;
+                        }
+                        curStrPos--;
+                        tag += '<';
+                    }
+                }
+
+                // ----- continue important stuff ----- //
+                // replace text with base text + typed characters
+                var nextString = curString.substr(0, curStrPos);
+                if (self.attr) {
+                    self.el.attr(self.attr, nextString);
+                } else {
+                    if (self.isInput) {
+                        self.el.val(nextString);
+                    } else if (self.contentType === 'html') {
+                        self.el.html(nextString);
+                    } else {
+                        self.el.text(nextString);
+                    }
+                }
+
+                // if the number (id of character in current string) is
+                // less than the stop number, keep going
+                if (curStrPos > self.stopNum) {
                     // subtract characters one by one
                     curStrPos--;
                     // loop the function
@@ -163,7 +304,65 @@
                 }
                 // if the stop number has been reached, increase
                 // array position to next string
-                else if (curStrPos <= self.stopnum)="" {="" self.arraypos++;="" if="" (self.arraypos="==" self.strings.length)="" self.arraypos="0;" shuffle="" sequence="" again="" if(self.shuffle)="" self.sequence="self.shuffleArray(self.sequence);" self.init();="" }="" else="" self.typewrite(self.strings[self.sequence[self.arraypos]],="" curstrpos);="" humanized="" value="" for="" typing="" },="" humanize);="" **="" *="" shuffles="" the="" numbers="" in="" given="" array.="" @param="" {array}="" array="" @returns="" ,shufflearray:="" function(array)="" var="" tmp,="" current,="" top="array.length;" if(top)="" while(--top)="" current="Math.floor(Math.random()" (top="" +="" 1));="" tmp="array[current];" array[current]="array[top];" array[top]="tmp;" return="" array;="" start="" &="" stop="" currently="" not="" working="" ,="" stop:="" function()="" self="this;" self.stop="true;" clearinterval(self.timeout);="" start:="" if(self.stop="==" false)="" return;="" this.stop="false;" this.init();="" reset="" and="" rebuild="" element="" reset:="" id="this.el.attr('id');" this.el.after('<span="">')
+                else if (curStrPos <= self.stopNum) {
+                    self.arrayPos++;
+
+                    if (self.arrayPos === self.strings.length) {
+                        self.arrayPos = 0;
+
+                        // Shuffle sequence again
+                        if(self.shuffle) self.sequence = self.shuffleArray(self.sequence);
+
+                        self.init();
+                    } else
+                        self.typewrite(self.strings[self.sequence[self.arrayPos]], curStrPos);
+                }
+
+                // humanized value for typing
+            }, humanize);
+
+        }
+        /**
+         * Shuffles the numbers in the given array.
+         * @param {Array} array
+         * @returns {Array}
+         */
+        ,shuffleArray: function(array) {
+            var tmp, current, top = array.length;
+            if(top) while(--top) {
+                current = Math.floor(Math.random() * (top + 1));
+                tmp = array[current];
+                array[current] = array[top];
+                array[top] = tmp;
+            }
+            return array;
+        }
+
+        // Start & Stop currently not working
+
+        // , stop: function() {
+        //     var self = this;
+
+        //     self.stop = true;
+        //     clearInterval(self.timeout);
+        // }
+
+        // , start: function() {
+        //     var self = this;
+        //     if(self.stop === false)
+        //        return;
+
+        //     this.stop = false;
+        //     this.init();
+        // }
+
+        // Reset and rebuild the element
+        ,
+        reset: function() {
+            var self = this;
+            clearInterval(self.timeout);
+            var id = this.el.attr('id');
+            this.el.after('<span id="' + id + '"/>')
             this.el.remove();
             if (typeof this.cursor !== 'undefined') {
                 this.cursor.remove();
@@ -219,4 +418,4 @@
     };
 
 
-}(window.jQuery);</=></')></'></self.strings.length;++i)>
+}(window.jQuery);
