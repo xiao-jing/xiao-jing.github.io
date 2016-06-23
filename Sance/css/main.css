@@ -1,0 +1,142 @@
+body{
+	font-family: 'Roboto', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	line-height: 1.5;
+	color: #8a8e91;
+	letter-spacing: 1px;
+	background: url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/pink_rice.png);
+}
+h2{
+	font-family: 'Roboto', 'Avenir Next', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif;
+	margin-bottom: 30px;
+}
+a{text-decoration: none;}
+a:hover{text-decoration: none;}
+.centered{
+	text-align: center;
+}
+/*Navbar*/
+.navbar{
+	margin-bottom: 0px;
+}
+.navbar .navbar-header span{
+	display: block;
+	line-height: 55px;
+}
+
+/*About*/
+#about{
+	margin-top: 90px;
+	margin-bottom: 60px;
+}
+#about .about-content{
+	padding-top: 10px;
+}
+/*Skill*/
+.skill{
+	/*color: #fff;*/
+	letter-spacing: 1px;
+	margin-bottom: 20px;
+}
+.skill .skill-row{
+	padding-top: 20px;
+}
+/*Products*/
+.grid figure{
+	overflow: hidden;
+	margin: 0;
+	position: relative;
+}
+.grid figure img{
+	width: 100%;
+	position: relative;
+	-webkit-transition:-webkit-transform 0.4s;
+	-moz-transition: -moz-transform 0.4s;
+	transition: transform 0.4s
+}
+.grid figure:hover img{
+	-webkit-transform: translateY(-30px);
+			transform: translateY(-30px);
+	-webkit-transition: -webkit-transform 0.4s;
+			transition: transform 0.4s;
+}
+.grid figcaption{
+	position: absolute;
+	color: #fff;
+	background: silver;
+	height: 50px;
+	width: 100%;
+	bottom: 0;
+	opacity: 0;
+	-webkit-transform: translateY(100%);
+			transform: translateY(100%);
+	-webkit-transition: -webkit-transform 0.4s,opacity 0.1s;
+			transition: transform 0.4s,opacity 0.1s;
+}
+.grid figcaption h5{
+	color: #fff;
+	font-weight: 700;
+	text-align: left;
+	padding-top: 10px;
+	padding-left: 20px;
+}
+.grid figcaption a{
+	position: absolute;
+	text-align: left;
+	padding: 5px 10px;
+	background: #FFD175;
+	color: #fff;
+	font-size: 13px;
+	border: 1px solid transparent;
+	top: 10px;
+	bottom: 10px;
+	right: 30px;
+}
+.grid figure:hover figcaption{
+	opacity: 1;
+	-webkit-transform:translateY(0px);
+			transform:translateY(0px);
+	-webkit-transition: -webkit-transform 0.4s,opacity 0.2s;
+			transition: transform 0.4s,opacity 0.2s;
+}
+/*Contact Me*/
+.contact{
+	letter-spacing: 1px;
+	color: #ED4097;
+	margin-top: 60px;
+	padding-bottom: 20px;
+}
+.contact h3{
+	margin-bottom: 20px;
+}
+.contact p{
+	padding-left: 40px;
+	font-weight: 600;
+	font-size: 16px;
+}
+.contact .intro{
+	padding-left: 0px;
+	color: #726F77;
+}
+.contact p i{margin-right: 5px;}
+.contact ul{
+	display: block;
+	overflow: hidden;
+	list-style-type: none;
+}
+.contact ul li{
+	float: left;
+	padding: 0 10px;
+}
+
+.contact a{
+	color: #726F77;
+}
+.contact a:hover{
+	color: #24B348;
+}
+/*Footer*/
+footer{
+	padding: 15px 0;
+	text-align: center;
+}
