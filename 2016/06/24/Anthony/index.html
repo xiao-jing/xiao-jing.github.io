@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="CSS," />
+  <meta name="keywords" content="小心情," />
 
 
 
@@ -84,16 +84,16 @@
 
 
 
-<meta name="description" content="当我们参考CSS规范时，就会发现每个属性中都指出了 Inherited的值，即是否可继承。这决定了当你还没有为元素的属性指定值时该如何计算值。今天我们就大概的说说CSS中的继承属性与非继承属性。">
+<meta name="description" content="记得高二的时候在想以后大学想要读的专业，一直很坚定地说“以后要做一个园艺师，修剪出自己心水的花草树木，那会是一件令人十分兴奋的事情 ~ ”">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CSS中的继承属性与非继承属性">
-<meta property="og:url" content="http://yoursite.com/2016/06/06/inherited-property-and-reset-property-in-css/index.html">
+<meta property="og:title" content="一只叫做Alice的鲸鱼">
+<meta property="og:url" content="http://yoursite.com/2016/06/24/Anthony/index.html">
 <meta property="og:site_name" content="Sance's Blog">
-<meta property="og:description" content="当我们参考CSS规范时，就会发现每个属性中都指出了 Inherited的值，即是否可继承。这决定了当你还没有为元素的属性指定值时该如何计算值。今天我们就大概的说说CSS中的继承属性与非继承属性。">
-<meta property="og:updated_time" content="2016-06-17T09:37:19.972Z">
+<meta property="og:description" content="记得高二的时候在想以后大学想要读的专业，一直很坚定地说“以后要做一个园艺师，修剪出自己心水的花草树木，那会是一件令人十分兴奋的事情 ~ ”">
+<meta property="og:updated_time" content="2016-06-24T12:02:32.100Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CSS中的继承属性与非继承属性">
-<meta name="twitter:description" content="当我们参考CSS规范时，就会发现每个属性中都指出了 Inherited的值，即是否可继承。这决定了当你还没有为元素的属性指定值时该如何计算值。今天我们就大概的说说CSS中的继承属性与非继承属性。">
+<meta name="twitter:title" content="一只叫做Alice的鲸鱼">
+<meta name="twitter:description" content="记得高二的时候在想以后大学想要读的专业，一直很坚定地说“以后要做一个园艺师，修剪出自己心水的花草树木，那会是一件令人十分兴奋的事情 ~ ”">
 
 
 
@@ -111,7 +111,7 @@
   };
 </script>
 
-  <title> CSS中的继承属性与非继承属性 | Sance's Blog </title>
+  <title> 一只叫做Alice的鲸鱼 | Sance's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -251,7 +251,7 @@
             
             
               
-                CSS中的继承属性与非继承属性
+                一只叫做Alice的鲸鱼
               
             
           </h1>
@@ -263,8 +263,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-06-06T08:49:09+08:00" content="2016-06-06">
-              2016-06-06
+            <time itemprop="dateCreated" datetime="2016-06-24T18:36:24+08:00" content="2016-06-24">
+              2016-06-24
             </time>
           </span>
 
@@ -277,8 +277,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/CSS/" itemprop="url" rel="index">
-                    <span itemprop="name">CSS</span>
+                  <a href="/categories/小心情/" itemprop="url" rel="index">
+                    <span itemprop="name">小心情</span>
                   </a>
                 </span>
 
@@ -293,8 +293,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/06/06/inherited-property-and-reset-property-in-css/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/06/inherited-property-and-reset-property-in-css/" itemprop="commentsCount"></span>
+                <a href="/2016/06/24/Anthony/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/24/Anthony/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -317,68 +317,30 @@
       
 
       
-        <p>当我们参考CSS规范时，就会发现每个属性中都指出了 <strong>Inherited</strong>的值，即是否可继承。这决定了当你还没有为元素的属性指定值时该如何计算值。今天我们就大概的说说CSS中的继承属性与非继承属性。</p>
- <a id="more"></a>
-<h5 id="继承属性-inherited-property"><a href="#继承属性-inherited-property" class="headerlink" title="继承属性(inherited property)"></a>继承属性(inherited property)</h5><p>当元素的一个继承属性没有指定值时，则取父元素的同属性的计算值。只有文档根元素取该属性的概述中给定的初始值。下面我们举一个简单的例子:</p>
-<p><strong>典型例子: <code>color</code>属性</strong></p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span>&#123; <span class="attribute">color</span>: orange;&#125;</span><br></pre></td></tr></table></figure>
-<p>HTML:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt; I am a &lt;em&gt;smile&lt;/em&gt; girl. &lt;/p&gt;</span><br></pre></td></tr></table></figure>
-<p>这里你就会发现 “smile” 文本将呈现橙色，原因是<code>em</code>元素继承了<code>p</code>元素的<code>color</code>属性的值。</p>
-<h6 id="常见的继承属性"><a href="#常见的继承属性" class="headerlink" title="常见的继承属性"></a>常见的继承属性</h6><p>那么，有哪些我们常见的继承属性呢？这里我给大家例举一下:</p>
-<ul>
-<li>border-collapse</li>
-<li>border-spacing</li>
-<li>caption-side</li>
-<li>color</li>
-<li>cursor</li>
-<li>direction</li>
-<li>font (其中包括 <code>font-family</code> , <code>font-size</code> , <code>font-weight</code> , <code>font-style</code>)</li>
-<li>letter-spacing</li>
-<li>line-height</li>
-<li>list-style (其中包括 <code>list-style-image</code> , <code>list-style-position</code> , <code>list-style-type</code>)</li>
-<li>text-align</li>
-<li>text-indent</li>
-<li>text-transform</li>
-<li>visibility</li>
-<li>white-space</li>
-<li>word-spacing</li>
-</ul>
-<p>大家有没有发现一些字体呀，文本呀，颜色等的设置都是可继承属性 ~</p>
-<p><a href="https://www.w3.org/TR/CSS21/propidx.html" target="_blank" rel="external">参考地址</a></p>
-<h5 id="非继承属性-reset-property"><a href="#非继承属性-reset-property" class="headerlink" title="非继承属性(reset property)"></a>非继承属性(reset property)</h5><p>当元素的一个非继承属性没有指定值时，则取属性的初始值。 </p>
-<p><strong>典型例子: <code>border</code>属性</strong></p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span> &#123; <span class="attribute">border</span>: medium solid &#125;</span><br></pre></td></tr></table></figure>
-<p>HTML:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt; I am a &lt;em&gt;smile&lt;/em&gt; girl. &lt;/p&gt;</span><br></pre></td></tr></table></figure>
-<p>这时你就会发现文本 “smile” 没有边框，原因是<code>border</code>属性为不可继承属性，其初始值为<code>none</code>。</p>
-<h6 id="常见的非继承属性"><a href="#常见的非继承属性" class="headerlink" title="常见的非继承属性"></a>常见的非继承属性</h6><p>这里例举几个常见的非继承属性:</p>
-<ul>
-<li>z-index</li>
-<li>width (其中包括 <code>min-width</code> , <code>max-width</code>)</li>
-<li>dispaly</li>
-<li>float</li>
-<li>clear</li>
-<li>vertical-align</li>
-<li>unicode-bidi</li>
-<li>position</li>
-<li>top</li>
-<li>bottom</li>
-<li>left</li>
-<li>right</li>
-<li>text-decoration</li>
-<li>background (其中包括 <code>background-color</code> , <code>background-image</code> , <code>background-position</code> , <code>background-attachment</code> , <code>background-repeat</code>)</li>
-<li>border (其中包括 <code>border-color</code> , <code>border-style</code> , <code>border-width</code> , <code>border-spacing</code> and so on)</li>
-<li>padding (其中包括 <code>padding-left</code> , <code>padding-right</code> , <code>padding-top</code> , <code>padding-bottom</code>)</li>
-<li>margin (其中包括 <code>margin-left</code> , <code>margin-right</code> , <code>margin-top</code> , <code>margin-bottom</code>)</li>
-<li>outline (其中包括 <code>outline-color</code> , <code>outline-style</code> , <code>outline-width</code>)</li>
-<li>clip</li>
-<li>content</li>
-</ul>
-<p>非继承属性大部分都是一些和定位呀，浮动呀，盒子模型呀等有关 ~</p>
-<p><a href="https://www.w3.org/TR/CSS21/propidx.html" target="_blank" rel="external">参考地址</a></p>
-<h5 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h5><p>这些属性都是大家平时使用时常见的，了解了其继承性会对你的使用更加有帮助，会让你的布局更加得心应手 ~ ~ 大家也记得经常进行知识的总结呀 ~</p>
-<p>希望本文章对你的前端学习会有帮助 ~ ~</p>
+        <p>记得高二的时候在想以后大学想要读的专业，一直很坚定地说“以后要做一个园艺师，修剪出自己心水的花草树木，那会是一件令人十分兴奋的事情 ~ ”</p>
+<a id="more"></a>
+<p>心中的大连是一个富有浪漫气息的城市，如果可以来这边读书的话，肯定大学时光会十分丰富多彩 ~~</p>
+<p>当时的梦想完成了一半，我来到了那个曾经存在于梦中的城市，但是没有学习园林 - 那个当时还很天真的想法。但是误打误撞却选择了一个可以改变世界的专业，啦啦啦~~</p>
+<p>故事的前序说到这里。</p>
+<p><strong>陪安东尼度过漫长岁月</strong></p>
+<p>曾听室友说，有一部电影前序拍摄于大连，镜头中有古老的有轨电车，有那个年代大连独有的生活气息。但是一直没有时间观看，今天偷懒突然想起来了，深深爱上了这部电影，故事中的人，故事的情节 ~~</p>
+<p><strong>我做自己喜欢的事情，就算被别人骂也没有关系</strong></p>
+<p>故事中的安东尼去了澳洲读取与金融相关的专业，可能是没有找到自己想要的感觉，久久不能融入其中。一次偶然机会，去一所西餐厅当厨工赚取生活费，看到每个人认真的做菜系以及被顾客享受无忧美食的表情深深地震撼。在没有爸妈同意的情况下，顶着经济的压力，毅然选择转入了西餐专业。当然，这里有一段美丽的邂逅，这个美丽的邂逅也造就了一个创意十足意义深远的菜系 ~</p>
+<p>做自己喜欢的事情，在拥有自由的美好青春年华里 ~</p>
+<p><strong>我就是这样的后知后觉，后来回忆起来才那么美好</strong></p>
+<p>每一个离开家的孩子都会想念当时不知道如何去珍惜的生活。安东尼在临走之前，拍摄了很多很多照片，有关于亲人、朋友、家乡、美食以及自己所喜欢的人儿。后知后觉，当真正不再拥有的时候才感觉是那么的触不可及。即使世界的每一个角落都有肯德基，食品一样，但是人不在，也是如此悲凉的情景。</p>
+<p>很喜欢这句话，因为发生的很多都是后知后觉，感觉总是慢了一拍。六月毕业季，很多小伙伴就要分离，但是当他们真的离开的时候，才发现是如此的想念 ~</p>
+<p>所以，要珍惜当下，好好爱护自己，爱护身边的每一个人，爱护你所看见的一花一草 ~</p>
+<p><strong>这个世界上，有一条最寂寞的鱼，叫Alice…</strong></p>
+<p>这个世界上，有一条最寂寞的鱼，叫Alice。它和所有的鲸鱼都不一样，因为它发出的频率比普通的鲸鱼都要高出一倍，所以没有人能够明白它的欢乐与悲伤…</p>
+<p>这是电影中的一个故事，但是这个世界上有很多人都是Alice。有的时候的不被理解是因为还没有遇到与你频率一样的人儿吧 ~ 所以静静等待吧，那个与你频率一样的鲸鱼一定会出现的，一定有人可以理解你所发出的那个频率，就像故事中的结局一般 ~ </p>
+<p><strong>有人说，叶散的时候，你明白欢聚；花落。我明白了青春。</strong></p>
+<p>故事的女主角在日本追逐自己的梦想，事业与生活。安东尼去日本的时候正好是樱花盛开的时候，漫天粉粉的颜色，真的好美好美 ~ 不知为何日本人喜欢花落，漫天花瓣飞舞，无声无息。中国人喜欢赏花，因为感觉花落代表了一种忧伤，一种时光的逝去 ~</p>
+<p>喜欢故事中的小萱，开开心心做自己喜欢的事情。她的笑真的很迷人。青春，要做一些自己喜欢的事情，不一定要成功，但是一定要坚持。</p>
+<p>不知不觉写了好多。最后想要说，大连是一个很美很适合生活的城市，古老的有轨电车，帅帅的女骑士，让你很有feel的渔人码头的猫的天空之城，那走也走不到尽头的木栈道，看也看不完的美景，那个让你找不到出口的，看哪哪都一样(针对我这样子的路痴)的星海广场，童话般的发现王国，到处都是美腻的小广场，街头那让你怎么都吃不够的烤鱿鱼，还有大连特色小吃大连焖子，那个永远都有水果季，吃完草莓吃樱桃，吃完樱桃吃葡萄的大连….这个城市真的值得你来走一遭 ~</p>
+<p>在即将离开这个城市之前，再好好欣赏一下它。最后，让我更加的努力学习吧 ~~  (<em>^__^</em>)</p>
+<p>最后的最后，强烈推荐大家有时间看一下这个电影以及听一下陈奕迅所唱的主题曲，中文版以及英语版，相信你会喜欢的奥 ~</p>
+<p>笔收，书于 2016年6月24日的傍晚</p>
 
       
     </div>
@@ -400,7 +362,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/CSS/" rel="tag">#CSS</a>
+            <a href="/tags/小心情/" rel="tag">#小心情</a>
           
         </div>
       
@@ -409,17 +371,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/06/03/css-selector-performance/" rel="next" title="关于CSS选择器的优化问题">
-                <i class="fa fa-chevron-left"></i> 关于CSS选择器的优化问题
+              <a href="/2016/06/17/how-to-delete-gulp-node-modules/" rel="next" title="关于node_modules文件夹(windows)无法删除问题">
+                <i class="fa fa-chevron-left"></i> 关于node_modules文件夹(windows)无法删除问题
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/06/09/battling-BEM-10-common-problems-and-how-to-avoid-them/" rel="prev" title="[译文] 关于BEM中常见的十个问题以及如何避免他们">
-                [译文] 关于BEM中常见的十个问题以及如何避免他们 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -445,8 +403,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/06/06/inherited-property-and-reset-property-in-css/"
-           data-title="CSS中的继承属性与非继承属性" data-url="http://yoursite.com/2016/06/06/inherited-property-and-reset-property-in-css/">
+      <div class="ds-thread" data-thread-key="2016/06/24/Anthony/"
+           data-title="一只叫做Alice的鲸鱼" data-url="http://yoursite.com/2016/06/24/Anthony/">
       </div>
     
   </div>
@@ -557,7 +515,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#继承属性-inherited-property"><span class="nav-number">1.</span> <span class="nav-text">继承属性(inherited property)</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#常见的继承属性"><span class="nav-number">1.1.</span> <span class="nav-text">常见的继承属性</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#非继承属性-reset-property"><span class="nav-number">2.</span> <span class="nav-text">非继承属性(reset property)</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#常见的非继承属性"><span class="nav-number">2.1.</span> <span class="nav-text">常见的非继承属性</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#小结"><span class="nav-number">3.</span> <span class="nav-text">小结</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
         </section>
