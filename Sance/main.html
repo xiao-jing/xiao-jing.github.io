@@ -4,13 +4,13 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<title>一个爱笑的女生</title>
+	<title>一个爱笑的女程序猿</title>
 	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,600,400italic,700' rel='stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
-<body data-spy="scroll" data-target=".navbar" data-offset="10">
+<body data-spy="scroll" data-target=".navbar" data-offset="0">
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container">
 			<div class="navbar-header">
@@ -25,7 +25,6 @@
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="#about">ABOUT ME</a></li>
 					<li><a href="#products">MY PRODUCTS</a></li>
-					<li><a href="#details">PRODUCTS DETAILS</a></li>
 					<li><a href="#contact">CONTACT</a></li>
 				</ul>
 			</div>
@@ -42,7 +41,7 @@
 					<h5>A smile girl ~</h5>
 				</div>
 				<div class="col-md-8 about-content">
-					<h2>一个爱笑女生的自述</h2>
+					<h2>一个smile女程序猿的自述</h2>
 					<p>Hello, 我是静子，一个爱笑的女生，喜欢前端，喜欢分享，想要通过自己的努力，做到心中的那个自己~</p><p>来自山东，目前就读于大连的一所高校，专业为计算机科学与技术。目前在学习前端的道路上，努力ing ~~ 很喜欢这个行业，享受敲键盘时“嗒嗒嗒..."的响声，享受自己解决问题后的喜悦，喜欢英语并希望自己的译文或者博客可以受益于更多的小伙伴 ~~~</p><p>关于我呢<br/>性格乐观开朗、积极向上，具有良好的学习能力，英语已通过六级(一次通过)，曾获得国家奖学金、国家励志奖学金，目前是一名中共党员。<br/>具有良好的团队合作精神，在校期间，曾和小伙伴多次参加校外竞赛，如全美数学建模，亚太地区数学建模，辽宁省蓝桥杯个人赛等等，并取得了一定的成绩。<br/>业余时间喜欢听听歌，跑跑步，和小伙伴爬爬山，有点小干净喜欢打扫卫生~~</p>
 					<p><a href="http://xiao-jing.github.io/about/" class="fa fa-link"> Read More</a></p>
 				</div>
@@ -65,13 +64,13 @@
 					</div>
 					<h3>其它技能</h3>
 					<div class="progress">
-						<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width:90%">团队意识</div>
+						<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width:90%">团队合作力</div>
 					</div>
 					<div class="progress">
 						<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width:80%">学习能力</div>
 					</div>
 					<div class="progress">
-						<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width:95%">令人开心力</div>
+						<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width:95%">氛围制造力</div>
 					</div>
 				</div>
 				<div class="col-lg-6">
@@ -99,14 +98,40 @@
 				<div class="col-md-4">
 					<div class="grid">
 						<figure>
-							<img src="images/pro1.png" alt="">
+							<img src="images/pro1.png" alt="project1_img">
 							<figcaption>
-								<h5>explanatory caption</h5>
-								<a href="#" class="btn btn-warning btn-lg">Take a Look</a>
+								<h5>时光轴</h5>
+								<a data-toggle="modal" href="#pro1_modal" class="btn btn-warning btn-lg">Take a Look</a>
 							</figcaption>
 						</figure>
 					</div>
 				</div>
+				<!-- project_1 modal -->
+				<div class="modal fade" id="pro1_modal" role="dialog" aria-labelledby="timelineLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+								<h4 class="modal-title">时光轴</h4>
+							</div>
+							<div class="modal-body">
+								<h4>小序</h4>
+								<p>想把这个时光轴放在第一个位置，因为它记录了大学已逝去的美好的三年光阴。满满成长的足迹，亦有欢乐的或小忧伤的记忆 ~~</p><br/>
+								<h4>想要分享的</h4>
+								<p>可能大家感觉做出来这样子的效果并不是很困难，在这里还是想要总结自己所学到的一些知识:</p>
+								<ul>
+									<li>关于等腰直角三角形的制作。点击下方链接你会发现每一个时光记录左方亦或右方均有一个小直角的出现，这使用了before伪元素制作的，主要利用的是border这个属性。当给div宽与高设置为0但是四个border-width具有一定大小时，你会发现每一个边边相接并不是我们想象的那个样子。它们就像是小时候使用的田字格当中的对角线般连接。对角线的交点就像是设置的没有宽高的div。利用这个特性你就可以制作小直角了，但是最好自己动手实践一下，你会记忆更加深刻奥 ~</li>
+									<li>第二点想要说的就是如何判断一个元素是否出现在视口当中，这里我使用的是getBoundingClientRect()函数，在《Javascript高级程序设计》324页有讲解，当然你可以点击<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Element/getBoundingClientRect">Here</a>进行查看 ~</li>
+								</ul>
+								<p><b><a href="http://xiao-jing.github.io/demo/timeline/index.html" class="fa fa-link">Visit Here</a></b></p>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
 				<div class="col-md-4">
 					<div class="grid">
 						<figure>
