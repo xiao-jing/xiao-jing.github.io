@@ -23,7 +23,7 @@ body{
 .timeline ul{
 	padding: 50px 0;
 }
-.timeline ul li{
+.timeline .time_demail{
 	list-style-type: none;
 	width: 6px;
 	margin: 0 auto;
@@ -31,7 +31,7 @@ body{
 	padding-top: 60px;
 	position: relative;
 }
-.timeline ul li:after{
+.timeline .time_demail:after{
 	content: '';
 	position: absolute;
 	left: 50%;
@@ -42,7 +42,7 @@ body{
 	transform:translateX(-50%);
 	background: inherit;
 }
-.timeline ul li div{
+.time_demail div{
 	position: relative;
 	top: -60px;
 	width: 400px;
@@ -50,7 +50,7 @@ body{
 	border-radius: 10px;
 	box-shadow: 0 3px 0 rgba(0,0,0,0.1);
 }
-.timeline ul li div:before{
+.time_demail div:before{
 	content: '';
 	position: absolute;
 	top: 7px;
@@ -58,18 +58,18 @@ body{
 	width: 0;
 	height: 0;
 }
-.timeline ul li:nth-child(odd) div{
+.time_demail:nth-child(odd) div{
 	left: 45px;
 }
-.timeline ul li:nth-child(odd) div:before{
+.time_demail:nth-child(odd) div:before{
 	left: -15px;
 	border-width: 8px 16px 8px 0;
 	border-color: transparent #ee4d4d transparent transparent;
 }
-.timeline ul li:nth-child(even) div{
+.time_demail:nth-child(even) div{
 	left: -439px;
 }
-.timeline ul li:nth-child(even) div:before{
+.time_demail:nth-child(even) div:before{
 	right:-15px;
 	border-width: 8px 0 8px 16px;
 	border-color: transparent transparent transparent #ee4d4d;
@@ -86,47 +86,57 @@ time{
 	background: #ee4d4d;
 	color: #fff;
 }
-.timeline ul li:after{
+.time_demail:after{
 	transition: background 0.5s ease-in-out;
 }
-.timeline ul li.in-view:after{
+.time_demail.in-view:after{
 	background: #ee4d4d;
 }
-.timeline ul li div{
+.time_demail div{
 	visibility: hidden;
 	opacity: 0;
 	transition: all 0.5s ease-in-out;
 }
-.timeline ul li:nth-child(odd) div{
+.time_demail:nth-child(odd) div{
 	transform: translateX(200px);
 }
-.timeline ul li:nth-child(even) div{
+.time_demail:nth-child(even) div{
 	transform: translateX(-200px);
 }
-.timeline ul li.in-view div{
+.time_demail.in-view div{
 	transform: none;
 	visibility: visible;
 	opacity: 1;
 }
+.J_index{
+	position: fixed;
+	bottom: 100px;
+	left: 100px;
+}
+.J_index a{
+	font-size: 48px;
+	text-decoration: none;
+	color: #00FF99;
+}
 @media screen and (max-width: 900px){
-	.timeline ul li div{
+	.time_demail div{
 		width: 250px;
 	}
-	.timeline ul li:nth-child(even) div{
+	.time_demail:nth-child(even) div{
 		left: -289px;
 	}
 }
 @media screen and (max-width: 600px){
-	.timeline ul li{
+	.timeline .time_demail{
 		margin-left: 20px;
 	}
-	.timeline ul li div{
+	.time_demail div{
 		width: calc(100vw - 91px);
 	}
-	.timeline ul li:nth-child(even) div{
+	.time_demail:nth-child(even) div{
 		left: 45px;
 	}
-	.timeline ul li:nth-child(even) div:before{
+	.time_demail:nth-child(even) div:before{
 		left: -15px;
 		border-width: 8px 16px 8px 0;
 		border-color: transparent #ee4d4d transparent transparent; 
