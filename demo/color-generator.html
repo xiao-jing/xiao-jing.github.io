@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Color Generator</title>
+	<link rel="stylesheet" type="text/css" href="timeline/css/font-awesome.min.css">
 	<style>
 		input{
 			position: absolute;
@@ -18,6 +19,17 @@
 			border:none;
 			padding: 24px 22%;
 			box-sizing: border-box;
+			overflow: hidden;
+		}
+		.J_index{
+			position: absolute;
+			bottom: 80px;
+			left: 80px;
+		}
+		.J_index a{
+			font-size: 48px;
+			text-decoration: none;
+			color: #00FF99;
 		}
 		body{transition:background 0.6s;}
 	</style>
@@ -27,7 +39,7 @@
         	var input = document.getElementsByTagName("input")[0];
         	var convertToHexCode = function(str){
         		var code = 0;
-        		var chars = str.split('');
+        		var chars = str.split(''); 
                 chars.forEach(function(char){
                 	code += char.charCodeAt(0) * 100819;
                 });
@@ -45,6 +57,7 @@
 	</script>
 </head>
 <body>
-	<input type="text" placeholder="Are you smiled today ?">
+	<input type="text" placeholder="Did you smile today ?">
+	<div class="J_index"><a class="fa fa-hand-o-left" href="http://xiao-jing.github.io/Sance/main.html"></a></div>
 </body>
 </html>
