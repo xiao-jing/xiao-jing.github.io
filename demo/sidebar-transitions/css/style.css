@@ -1,0 +1,127 @@
+*,*:before,*:after{margin:0;padding:0;box-sizing:border-box;}
+html,body,.container,.pusher,.content{height: 100%;}
+.container{overflow: hidden;position: relative;}
+
+.content,
+.content-inner{
+	position: relative;
+}
+.pusher{
+	position: relative;
+	left: 0;
+	z-index: 99;
+	perspective:1000px;
+	-webkit-transition:-webkit-transform 0.5s;
+			transition:transform 0.5s;
+}
+.pusher:after{
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 0;
+	height: 0;
+	background: rgba(0,0,0,0.2);
+	content: '';
+	opacity: 0;
+	-webkit-transition: opacity 0.5s,width 0.1s ease 0.5s,height 0.1s ease 0.5s;
+			transition: opacity 0.5s,width 0.1s ease 0.5s,height 0.1s ease 0.5s;
+}
+.menu-open .pusher:after{
+	width: 100%;
+	height: 100%;
+	opacity: 1;
+	-webkit-transition: opacity 0.5s;
+			transition: opacity 0.5s;
+}
+.menu{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 300px;
+	height: 100%;
+	background: #48a770;
+	z-index: 100;
+	visibility: hidden;
+	-webkit-transition: all 0.5s;
+			transition: all 0.5s;
+}
+.menu:after{
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.2);
+	content: '';
+	opacity: 1;
+	-webkit-transition: opacity 0.5s;
+			transition: opacity 0.5s;
+}
+.menu-open .menu:after{
+	width: 0;
+	height: 0;
+	opacity: 0;
+	-webkit-transition: opacity 0.5s,width 0.1s ease 0.5s,height 0.1s ease 0.5s;
+			transition: opacity 0.5s,width 0.1s ease 0.5s,height 0.1s ease 0.5s;
+}
+.menu ul{list-style-type: none;}
+.menu h2{
+	font-size: 24px;
+	color: rgba(0,0,0,0.4);
+	text-shadow:0 0 1px rgba(0,0,0,0.1);
+	padding: 15px 100px;
+}
+
+.menu a{
+	display: block;
+	text-decoration: none;
+	outline: none;
+	color: #f3efe0;
+	font-weight: 400;
+	text-shadow:0 0 1px rgba(255,255,255,0.1);
+	padding: 14px 14px 14px 16px;
+	box-shadow: inset 0 -1px rgba(0,0,0,0.2);
+	-webkit-transition:background 0.3s,box-shadow 0.3s;
+			transition:background 0.3s,box-shadow 0.3s;
+}
+.menu li:first-child a{
+	box-shadow: inset 0 -1px rgba(0,0,0,0.2),inset 0 1px rgba(0,0,0,0.2);
+}
+.menu li a:hover{
+	background: rgba(0,0,0,0.2);
+	box-shadow: inset 0 -1px rgba(0,0,0,0);
+	color: #fff;
+}
+.menu li span{margin-left: 10px;font-family: 'Lato', Calibri, Arial, sans-serif;}
+
+/*different effects*/
+/*Slide in on left*/
+.effect-1.menu{
+	visibility: visible;
+	-webkit-transform:translateX(-100%);
+			transform:translateX(-100%);
+}
+.effect-1.menu-open .effect-1.menu{
+	visibility: visible;
+	-webkit-transform:translateX(0);
+			transform:translateX(0);
+}
+.effect-1.menu:after{display: none;}
+
+/*Slide along*/
+.effect-2.menu{
+	-webkit-transform:translateX(-100%);
+			transform:translateX(-100%);
+}
+.effect-2.menu-open .pusher{
+	-webkit-transform:translateX(300px);
+			transform:translateX(300px);
+}
+.effect-2.menu-open .effect-2.menu{
+	visibility: visible;
+	-webkit-transform:translateX(0);
+			transform:translateX(0);
+	-webkit-transition:-webkit-transform 0.5s;
+			transition:transform 0.5s;
+}
+.effect-2.menu:after{display: none;}

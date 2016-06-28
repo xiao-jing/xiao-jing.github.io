@@ -1,0 +1,33 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
+body{
+	background: #F3EFE0;
+	color: #48a770;
+	font-weight: 300;
+	line-height: 1.5;
+	font-family: 'Lato', Calibri, Arial, sans-serif;
+	letter-spacing: 1px;
+}
+button{
+	background: #388a5a;
+	color: #fff;
+	cursor: pointer;
+	display: inline-block;
+	margin: 5px;
+	border-radius: 5px;
+	padding: 10px 15px;
+	border: 0 none;
+	letter-spacing: 1px;
+	font-size: 14px;
+}
+button:hover{background: #2c774b;}
+header{
+	text-align: center;
+	padding: 80px 30px; 
+}
+header h1{font-weight: 300;font-size: 38px;}
+header span{color: #aca89a;font-size: 16px;}
+.main{
+	margin: 0 auto;
+	max-width: 650px;
+	text-align: center;
+}
