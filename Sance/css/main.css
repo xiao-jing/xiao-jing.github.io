@@ -43,6 +43,15 @@ a:hover,a:focus{text-decoration: none;outline: 0;color: #ED40A0;}
 .skill .skill-row{
 	padding-top: 20px;
 }
+.skill-row .btn-view{
+	position: relative;
+	box-shadow: 3px 3px 0px #eea236;
+}
+.skill-row .btn-view:hover{
+	left: 3px;
+	top: 3px;
+	box-shadow: none;
+}
 /*Products*/
 .grid figure{
 	overflow: hidden;
