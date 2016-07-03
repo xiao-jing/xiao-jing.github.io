@@ -1,0 +1,692 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="ES6," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="前言ES6中的许多语法可以改变代码的质量，不仅限于其炫炫的书写模式。现在我们开启有关于变量解构赋值的模式，关于它的一些基本语法以及一些陷阱和注意事项。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ES6 - 解构赋值">
+<meta property="og:url" content="http://yoursite.com/2016/07/03/ES6-JavaScript-Destructuring-in-Depth/index.html">
+<meta property="og:site_name" content="Sance's Blog">
+<meta property="og:description" content="前言ES6中的许多语法可以改变代码的质量，不仅限于其炫炫的书写模式。现在我们开启有关于变量解构赋值的模式，关于它的一些基本语法以及一些陷阱和注意事项。">
+<meta property="og:updated_time" content="2016-07-03T10:40:05.100Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ES6 - 解构赋值">
+<meta name="twitter:description" content="前言ES6中的许多语法可以改变代码的质量，不仅限于其炫炫的书写模式。现在我们开启有关于变量解构赋值的模式，关于它的一些基本语法以及一些陷阱和注意事项。">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"right","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> ES6 - 解构赋值 | Sance's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Sance's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                ES6 - 解构赋值
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-03T08:28:00+08:00" content="2016-07-03">
+              2016-07-03
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/ES6/" itemprop="url" rel="index">
+                    <span itemprop="name">ES6</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/07/03/ES6-JavaScript-Destructuring-in-Depth/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/03/ES6-JavaScript-Destructuring-in-Depth/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h5 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h5><p>ES6中的许多语法可以改变代码的质量，不仅限于其炫炫的书写模式。现在我们开启有关于变量解构赋值的模式，关于它的一些基本语法以及一些陷阱和注意事项。<br><a id="more"></a></p>
+<h5 id="解构-Destructuring"><a href="#解构-Destructuring" class="headerlink" title="解构(Destructuring)"></a>解构(Destructuring)</h5><p>这是一个很常用的，也是最简单的一种功能。可以多个变量绑定一个属性，适用于数组与对象。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> foo = &#123; bar: <span class="string">'pony'</span>, baz: <span class="number">3</span> &#125;</span><br><span class="line"><span class="keyword">var</span> &#123;bar, baz&#125; = foo</span><br><span class="line"><span class="built_in">console</span>.log(bar)</span><br><span class="line"><span class="comment">// &lt;- 'pony'</span></span><br><span class="line"><span class="built_in">console</span>.log(baz)</span><br><span class="line"><span class="comment">// &lt;- 3</span></span><br></pre></td></tr></table></figure>
+<p>从一个对象中可以很快地获取一个特定属性值。这里需要属性和别名映射相同。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> foo = &#123; bar: <span class="string">'pony'</span>, baz: <span class="number">3</span> &#125;</span><br><span class="line"><span class="keyword">var</span> &#123;bar: a, baz: b&#125; = foo</span><br><span class="line"><span class="built_in">console</span>.log(a)</span><br><span class="line"><span class="comment">// &lt;- 'pony'</span></span><br><span class="line"><span class="built_in">console</span>.log(b)</span><br><span class="line"><span class="comment">// &lt;- 3</span></span><br></pre></td></tr></table></figure>
+<p>当然，可以存在多层嵌套，只需“模式匹配”。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> foo = &#123; bar: &#123; deep: <span class="string">'pony'</span>, dangerouslySetInnerHTML: <span class="string">'lol'</span> &#125; &#125;</span><br><span class="line"><span class="keyword">var</span> &#123;bar: &#123; deep, dangerouslySetInnerHTML: sure &#125;&#125; = foo</span><br><span class="line"><span class="built_in">console</span>.log(deep)</span><br><span class="line"><span class="comment">// &lt;- 'pony'</span></span><br><span class="line"><span class="built_in">console</span>.log(sure)</span><br><span class="line"><span class="comment">// &lt;- 'lol'</span></span><br></pre></td></tr></table></figure>
+<p>默认情况下，属性找不到对应值就会被定义为<code>undefined</code>，就像是对象使用点或括号访问属性时一样。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> &#123;foo&#125; = &#123;bar: <span class="string">'baz'</span>&#125;</span><br><span class="line"><span class="built_in">console</span>.log(foo)</span><br><span class="line"><span class="comment">// &lt;- undefined</span></span><br></pre></td></tr></table></figure>
+<p>如果你试图获取一个不存在的嵌套的父级属性，这时就会抛出异常:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> &#123;foo:&#123;bar&#125;&#125; = &#123;baz: <span class="string">'ouch'</span>&#125;</span><br><span class="line"><span class="comment">// &lt;- Exception</span></span><br></pre></td></tr></table></figure>
+<p>如果你把解构理解为ES5中的语法糖，会更加容易理解:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> _temp = &#123; baz: <span class="string">'ouch'</span> &#125;</span><br><span class="line"><span class="keyword">var</span> bar = _temp.foo.bar</span><br><span class="line"><span class="comment">// &lt;- Exception</span></span><br></pre></td></tr></table></figure>
+<p>解构一个很酷酷的特性就是，在不使用<code>aux</code>变量下，可以实现变量的交换。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">es5</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> left = <span class="number">10</span></span><br><span class="line">  <span class="keyword">var</span> right = <span class="number">20</span></span><br><span class="line">  <span class="keyword">var</span> aux</span><br><span class="line">  <span class="keyword">if</span> (right &gt; left) &#123;</span><br><span class="line">    aux = right</span><br><span class="line">    right = left</span><br><span class="line">    left = aux</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">es6</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> left = <span class="number">10</span></span><br><span class="line">  <span class="keyword">var</span> right = <span class="number">20</span></span><br><span class="line">  <span class="keyword">if</span> (right &gt; left) &#123;</span><br><span class="line">    [left, right] = [right, left]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>解构另外一个方便之处就是，键值可以使用<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer#Computed_property_names" target="_blank" rel="external">计算的属性名</a>:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> key = <span class="string">'such_dynamic'</span></span><br><span class="line"><span class="keyword">var</span> &#123; [key]: foo &#125; = &#123; such_dynamic: <span class="string">'bar'</span> &#125;</span><br><span class="line"><span class="built_in">console</span>.log(foo)</span><br><span class="line"><span class="comment">// &lt;- 'bar'</span></span><br></pre></td></tr></table></figure>
+<p>ES5中，便于可分配，你还需要一个额外的声明。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> key = <span class="string">'such_dynamic'</span></span><br><span class="line"><span class="keyword">var</span> baz = &#123; such_dynamic: <span class="string">'bar'</span> &#125;</span><br><span class="line"><span class="keyword">var</span> foo = baz[key]</span><br><span class="line"><span class="built_in">console</span>.log(foo)</span><br></pre></td></tr></table></figure>
+<p>为了防止属性获取<code>undefined</code>,你也可以设置一个默认值。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> &#123;foo=<span class="number">3</span>&#125; = &#123; foo: <span class="number">2</span> &#125;</span><br><span class="line"><span class="built_in">console</span>.log(foo)</span><br><span class="line"><span class="comment">// &lt;- 2</span></span><br><span class="line"><span class="keyword">var</span> &#123;foo=<span class="number">3</span>&#125; = &#123; foo: <span class="literal">undefined</span> &#125;</span><br><span class="line"><span class="built_in">console</span>.log(foo)</span><br><span class="line"><span class="comment">// &lt;- 3</span></span><br><span class="line"><span class="keyword">var</span> &#123;foo=<span class="number">3</span>&#125; = &#123; bar: <span class="number">2</span> &#125;</span><br><span class="line"><span class="built_in">console</span>.log(foo)</span><br><span class="line"><span class="comment">// &lt;- 3</span></span><br></pre></td></tr></table></figure>
+<p>解构同样适用于数组，注意我如何在解构的一边使用方括号。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> [a] = [<span class="number">10</span>]</span><br><span class="line"><span class="built_in">console</span>.log(a)</span><br><span class="line"><span class="comment">// &lt;- 10</span></span><br></pre></td></tr></table></figure>
+<p>同样的，这里也可以设置默认值:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> [a] = []</span><br><span class="line"><span class="built_in">console</span>.log(a)</span><br><span class="line"><span class="comment">// &lt;- undefined</span></span><br><span class="line"><span class="keyword">var</span> [b=<span class="number">10</span>] = [<span class="literal">undefined</span>]</span><br><span class="line"><span class="built_in">console</span>.log(b)</span><br><span class="line"><span class="comment">// &lt;- 10</span></span><br><span class="line"><span class="keyword">var</span> [c=<span class="number">10</span>] = []</span><br><span class="line"><span class="built_in">console</span>.log(c)</span><br><span class="line"><span class="comment">// &lt;- 10</span></span><br></pre></td></tr></table></figure>
+<p>可以直接获取你需要的数组元素:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> [,,a,b] = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line"><span class="built_in">console</span>.log(a)</span><br><span class="line"><span class="comment">// &lt;- 3</span></span><br><span class="line"><span class="built_in">console</span>.log(b)</span><br><span class="line"><span class="comment">// &lt;- 4</span></span><br></pre></td></tr></table></figure>
+<p>你也可以使用在解构中使用一个<code>function</code>参数列表:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">greet</span> (<span class="params">&#123; age, name:greeting='she' &#125;</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">`<span class="subst">$&#123;greeting&#125;</span> is <span class="subst">$&#123;age&#125;</span> years old.`</span>)</span><br><span class="line">&#125;</span><br><span class="line">greet(&#123; name: <span class="string">'nico'</span>, age: <span class="number">27</span> &#125;)</span><br><span class="line"><span class="comment">// &lt;- 'nico is 27 years old'</span></span><br><span class="line">greet(&#123; age: <span class="number">24</span> &#125;)</span><br><span class="line"><span class="comment">// &lt;- 'she is 24 years old'</span></span><br></pre></td></tr></table></figure>
+<p>以上是一个有关于解构的粗糙讲解，那么解构的好处是什么呢？</p>
+<h5 id="关于解构的示例"><a href="#关于解构的示例" class="headerlink" title="关于解构的示例"></a>关于解构的示例</h5><p>很多情况下，使用解构将会十分方便。下面是一些最为常见的，当对象中具有一个或多个返回值时，使用解构将会变得简洁方便。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getCoords</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    x: <span class="number">10</span>,</span><br><span class="line">    y: <span class="number">22</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> &#123;x, y&#125; = getCoords()</span><br><span class="line"><span class="built_in">console</span>.log(x)</span><br><span class="line"><span class="comment">// &lt;- 10</span></span><br><span class="line"><span class="built_in">console</span>.log(y)</span><br><span class="line"><span class="comment">// &lt;- 22</span></span><br></pre></td></tr></table></figure>
+<p>类似的，当你有一堆需要默认值的选项方法时，定义默认选项。就像是Python和C#等语言中的命名参数。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">random</span> (<span class="params">&#123; min=1, max=300 &#125;</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * (max - min)) + min</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(random(&#123;&#125;))</span><br><span class="line"><span class="comment">// &lt;- 174</span></span><br><span class="line"><span class="built_in">console</span>.log(random(&#123;max: <span class="number">24</span>&#125;))</span><br><span class="line"><span class="comment">// &lt;- 18</span></span><br></pre></td></tr></table></figure>
+<p>如果你想要使选项对象完全可选，可以将语法更改为:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">random</span> (<span class="params">&#123; min=1, max=300 &#125; = &#123;&#125;</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * (max - min)) + min</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(random())</span><br><span class="line"><span class="comment">// &lt;- 133</span></span><br></pre></td></tr></table></figure>
+<p>适用于解构另外一种方式类似于正则表达式，无需索引进行参数命名。这里有一个在<a href="http://stackoverflow.com/a/27755/389745" target="_blank" rel="external">StackOverflow</a>找到的使用一个随意的<code>RegExp</code>进行URL传递的示例。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getUrlParts</span> (<span class="params">url</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> magic = <span class="regexp">/^(https?):\/\/(ponyfoo\.com)(\/articles\/([a-z0-9-]+))$/</span></span><br><span class="line">  <span class="keyword">return</span> magic.exec(url)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> parts = getUrlParts(<span class="string">'http://ponyfoo.com/articles/es6-destructuring-in-depth'</span>)</span><br><span class="line"><span class="keyword">var</span> [,protocol,host,pathname,slug] = parts</span><br><span class="line"><span class="built_in">console</span>.log(protocol)</span><br><span class="line"><span class="comment">// &lt;- 'http'</span></span><br><span class="line"><span class="built_in">console</span>.log(host)</span><br><span class="line"><span class="comment">// &lt;- 'ponyfoo.com'</span></span><br><span class="line"><span class="built_in">console</span>.log(pathname)</span><br><span class="line"><span class="comment">// &lt;- '/articles/es6-destructuring-in-depth'</span></span><br><span class="line"><span class="built_in">console</span>.log(slug)</span><br><span class="line"><span class="comment">// &lt;- 'es6-destructuring-in-depth'</span></span><br></pre></td></tr></table></figure>
+<h5 id="特殊示例-import-声明"><a href="#特殊示例-import-声明" class="headerlink" title="特殊示例: import 声明"></a>特殊示例: import 声明</h5><p>尽管<code>import</code>声明不符合解构的规则，但其表现十分类似。下面是一个找到的类似于解构但是不是解构的示例。当你使用<code>import</code>书写模块声明时，你可以引入模块API中的任意模块，一个使用<code>contra</code>的示例:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;series, concurrent, map &#125; <span class="keyword">from</span> <span class="string">'contra'</span></span><br><span class="line">series(tasks, done)</span><br><span class="line">concurrent(tasks, done)</span><br><span class="line">map(items, mapper, done)</span><br></pre></td></tr></table></figure>
+<p>你也会注意到，<code>import</code>声明有其不一样的语法，与解构相比较，以下的<code>import</code>语句均不起作用:</p>
+<ul>
+<li>使用默认值，<code>import {series = noop} from &#39;contra&#39;</code></li>
+<li>嵌套解构风格，<code>import {map: { series }} from &#39;contra&#39;</code></li>
+<li>别名语法，<code>import {map: mapAsync} from &#39;contra&#39;</code></li>
+</ul>
+<p>这些限制的主要原因在于<code>import</code>声明有一个绑定，不是一个引用或者一个值。在模块讲解部分，我们将进行深入探索。</p>
+<p><strong>注:</strong></p>
+<p>这是一个系统学习ES6的课程，会坚持翻译，分享于大家 ~~ </p>
+<p>原文链接: <a href="https://ponyfoo.com/articles/es6-destructuring-in-depth" target="_blank" rel="external"><strong>ES6 JavaScript Destructuring in Depth</strong></a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ES6/" rel="tag">#ES6</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/06/28/hoisting-of-javascript/" rel="next" title="JavaScript之变量提升">
+                <i class="fa fa-chevron-left"></i> JavaScript之变量提升
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/07/03/ES6-JavaScript-Destructuring-in-Depth/"
+           data-title="ES6 - 解构赋值" data-url="http://yoursite.com/2016/07/03/ES6-JavaScript-Destructuring-in-Depth/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/jingzi.png"
+               alt="静子" />
+          <p class="site-author-name" itemprop="name">静子</p>
+          <p class="site-description motion-element" itemprop="description">一个爱笑，喜欢前端，喜欢分享的女生~</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">18</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/xiao-jing" target="_blank" title="github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  github
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/jizhongjing" target="_blank" title="weibo">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#解构-Destructuring"><span class="nav-number">2.</span> <span class="nav-text">解构(Destructuring)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#关于解构的示例"><span class="nav-number">3.</span> <span class="nav-text">关于解构的示例</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#特殊示例-import-声明"><span class="nav-number">4.</span> <span class="nav-text">特殊示例: import 声明</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">静子</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"xiao-jinggithubio"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
