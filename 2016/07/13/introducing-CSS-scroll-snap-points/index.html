@@ -1,0 +1,698 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="CSS," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/icon.png?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="小序好久不见，今天接触了CSS一个新属性，分享给大家 ~ ~ ~">
+<meta property="og:type" content="article">
+<meta property="og:title" content="scroll-snap-type">
+<meta property="og:url" content="http://yoursite.com/2016/07/13/introducing-CSS-scroll-snap-points/index.html">
+<meta property="og:site_name" content="Sance's Blog">
+<meta property="og:description" content="小序好久不见，今天接触了CSS一个新属性，分享给大家 ~ ~ ~">
+<meta property="og:image" content="https://cdn.css-tricks.com/wp-content/uploads/2016/02/scroll-snap-align-1.jpg">
+<meta property="og:image" content="https://cdn.css-tricks.com/wp-content/uploads/2016/02/ssd1.jpg">
+<meta property="og:image" content="https://cdn.css-tricks.com/wp-content/uploads/2016/02/ssd.jpg">
+<meta property="og:updated_time" content="2016-07-13T08:17:05.544Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="scroll-snap-type">
+<meta name="twitter:description" content="小序好久不见，今天接触了CSS一个新属性，分享给大家 ~ ~ ~">
+<meta name="twitter:image" content="https://cdn.css-tricks.com/wp-content/uploads/2016/02/scroll-snap-align-1.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"right","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> scroll-snap-type | Sance's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Sance's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                scroll-snap-type
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-13T16:15:02+08:00" content="2016-07-13">
+              2016-07-13
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/07/13/introducing-CSS-scroll-snap-points/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/13/introducing-CSS-scroll-snap-points/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="小序"><a href="#小序" class="headerlink" title="小序"></a>小序</h4><p>好久不见，今天接触了CSS一个新属性，分享给大家 ~ ~ ~<br><a id="more"></a></p>
+<p><a href="https://css-tricks.com/introducing-css-scroll-snap-points/" target="_blank" rel="external">原文链接</a></p>
+<hr>
+<p>介绍这个新CSS属性之前，我想要先讲一下使用JavaScript实现的一个功能 - 将一个元素锁定在滚动视窗之中。众所周知，使用JavaScript实现滚动的行为还是有些难度的。</p>
+<p><a href="https://drafts.csswg.org/css-snappoints/" target="_blank" rel="external">CSS Scroll Snap Points 新规范</a>指出你仅仅使用几行简单的CSS代码就可以实现以上所述的功能。</p>
+<p>新出现的web技术总是在不变的变动之中，这个规范也处于不断的修改之中。也存在“旧的”与“新的”属性与值。随着浏览器的不断地<a href="http://caniuse.com/#feat=css-snappoints" target="_blank" rel="external">支持</a>，这个新属性的前景还是不错哒~ 在规范处于中间的阶段，我将带你们获取浏览器对其最大的支持性。</p>
+<h4 id="Polyfilled-示例"><a href="#Polyfilled-示例" class="headerlink" title="Polyfilled 示例"></a>Polyfilled 示例</h4><p>下面的示例是一个水平的滚动。随着每一个“面板”视口的宽度以及高度响应(这里感谢<code>vh</code>以及<code>vh</code>两个相关的单位)。</p>
+<p>这里使用了一个<a href="https://github.com/ckrack/scrollsnap-polyfill" target="_blank" rel="external">polyfill</a>，但是为了其更好地的发挥作用。这里最好同时书写旧版的“值” - 也就是接下来我所要介绍的。</p>
+<p></p><p data-height="265" data-theme-id="0" data-slug-hash="qbzmpw" data-default-tab="css,result" data-user="sdras" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/sdras/pen/qbzmpw/" target="_blank" rel="external">Simple Responsive Scroll Snap Point Demo</a> by Sarah Drasner (<a href="http://codepen.io/sdras" target="_blank" rel="external">@sdras</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p><p></p>
+<script src="//assets.codepen.io/assets/embed/ei.js"></script>
+
+<ul>
+<li><strong>Firefox:</strong> 这是目前支持性最好的浏览器，所以你可以获取原始的最佳效果感受。</li>
+<li><strong>Chrome 或者 Opera:</strong> 对其没有任何的支持，所以你在这两个浏览器中所看到的效果都是polyfill所起到的作用。</li>
+<li><strong>Edge 或者 IE:</strong> 也可能不会有什么作用。但是会得到<a href="https://dl.dropboxusercontent.com/u/444684/openwebref/CSS/scroll-snap-points/support.html" target="_blank" rel="external">部分的支持</a>。</li>
+<li><strong>移动设备:</strong> iOS 9 支持(在iPhone 6已测试)，但是其行为有些怪异。Chrome/Android不支持，但是polyfill可以起到很好的填补功能(已在Android Nexus 6测试)。</li>
+</ul>
+<p>注意我在Pen使用了<a href="https://css-tricks.com/autoprefixer/" target="_blank" rel="external">Autoprefixer</a>，帮助我自动添加必要的厂商前缀属性。</p>
+<p>以下就是创造奇迹的代码:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.scroller</span> &#123;</span><br><span class="line">  </span><br><span class="line">  <span class="attribute">scroll-snap-type</span>: mandatory;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/* older spec implementation */</span></span><br><span class="line">  <span class="attribute">scroll-snap-destination</span>: <span class="number">0%</span> <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">scroll-snap-points-x</span>: <span class="built_in">repeat</span>(100%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>是不是相当的迷惑！接下来我们逐一进行破解。</p>
+<h4 id="目前-CSS-Scroll-Snap-属性"><a href="#目前-CSS-Scroll-Snap-属性" class="headerlink" title="目前 CSS Scroll Snap 属性"></a>目前 CSS Scroll Snap 属性</h4><h5 id="scroll-snap-type"><a href="#scroll-snap-type" class="headerlink" title="scroll-snap-type"></a>scroll-snap-type</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scroll-snap-type: none | mandatory | proximity;</span><br></pre></td></tr></table></figure>
+<p>你是不是迫切想要了解<code>mandatory</code>值的含义？这里是指当处于snap点时，甚至当前没有活动滚动焦点时，元素应该得以“休息”。当内容区域被更改或者更新时，页面重新获取snap点。</p>
+<p><code>proximity</code>值与<code>mandatory</code>十分相似，只是没有那么严格。改变浏览器的大小或者增加内容区，它可能会(或者而不会)重新获取snap点，取决于它与snap点间的距离。</p>
+<p>据我所知，目前因浏览器对<code>mandatory</code>值具有更好地支持性，所以其更常用。</p>
+<h5 id="scroll-snap-align"><a href="#scroll-snap-align" class="headerlink" title="scroll-snap-align"></a>scroll-snap-align</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scroll-snap-align: [none | start | end | center] [none | start | end | center];</span><br></pre></td></tr></table></figure>
+<p>此属性是关于元素相对于其父元素滚动容器的对齐方式。它具有两个值，x 和 y。如果你只使用其中的一个，另外一个值默认相同(这里类似于 <code>padding:10px;</code> 相等于 <code>padding: 10px 10px 10px 10px;</code>)。此属性不具有动画效果。</p>
+<p><img src="https://cdn.css-tricks.com/wp-content/uploads/2016/02/scroll-snap-align-1.jpg" alt="scroll-snap-align"></p>
+<h5 id="scroll-snap-padding"><a href="#scroll-snap-padding" class="headerlink" title="scroll-snap-padding"></a>scroll-snap-padding</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scroll-snap-padding: &lt;length&gt; | &lt;percentage&gt;;</span><br></pre></td></tr></table></figure>
+<p>此属性与视觉窗口的滚动容器有关。工作原理也相近与正常的内边距，值设置一致。例如，<code>scroll-snap-padding: 75px 0 0;</code>。顶部将具有<code>75px</code>的内边距，其余为<code>0px</code>。此属性具有动画效果，所以如果你想要对齐snap点进行滚动，这将是一个很好的而选择。</p>
+<h4 id="旧版-CSS-Scroll-Snap-属性"><a href="#旧版-CSS-Scroll-Snap-属性" class="headerlink" title="旧版 CSS Scroll Snap 属性"></a>旧版 CSS Scroll Snap 属性</h4><p>如上所述，此规范已经更改多次，有些属性也已经过时，但是从支持性角度去思考，还是要对其有一个了解。</p>
+<h5 id="scroll-snap-points"><a href="#scroll-snap-points" class="headerlink" title="scroll-snap-points"></a>scroll-snap-points</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scroll-snap-points-&lt;x or y&gt;: none | repeat(&lt;length&gt;);</span><br></pre></td></tr></table></figure>
+<p><code>scroll-snap-point</code>指定了滚动的方向轴。在第一个Pen中，我们看见这个属性被设置为了在x轴上，我们使用<code>scroll-snap-point-y: 100%;</code>可以将其设置为y轴(即为垂直方向)。这里的百分比是相对于你所定义的滚动容器的填充盒。</p>
+<p></p><p data-height="265" data-theme-id="0" data-slug-hash="jPKOrE" data-default-tab="css,result" data-user="SitePoint" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/SitePoint/pen/jPKOrE/" target="_blank" rel="external">CSS Scroll Snap Points</a> by SitePoint (<a href="http://codepen.io/SitePoint" target="_blank" rel="external">@SitePoint</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p><p></p>
+<script src="//assets.codepen.io/assets/embed/ei.js"></script>
+
+<h5 id="scroll-snap-destination"><a href="#scroll-snap-destination" class="headerlink" title="scroll-snap-destination"></a>scroll-snap-destination</h5><p>这个属性和<code>scroll-snap-coordinate</code>十分相近。<code>scroll-snap-destination</code>指父元素，而<code>scroll-snap-coordidate</code>指代元素本身。如果snap点仅仅是对元素本身而不是其所在的容器而言，仅仅需要使用<code>scroll-snap-destinate</code>属性。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scroll-snap-destination: &lt;position&gt;;</span><br></pre></td></tr></table></figure>
+<p>此属性允许你指定在视口之中滚动应该snap的点。如: 你想使用100px欺骗内容区，这样视口之中就会出现两个面板。下图所示，<code>scroll-snap-destination</code>将帮助你轻松管理这个参数。</p>
+<p><img src="https://cdn.css-tricks.com/wp-content/uploads/2016/02/ssd1.jpg" alt="scroll-snap-destination"></p>
+<p>当定义百分比时，点相对于滚动容器的宽度以及高度。</p>
+<h5 id="scroll-snap-coordinate"><a href="#scroll-snap-coordinate" class="headerlink" title="scroll-snap-coordinate"></a>scroll-snap-coordinate</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Scroll-snap-coordinate: none | &lt;position&gt;;</span><br></pre></td></tr></table></figure>
+<p>此属性允许你定义相对于一个元素的snap滚动。位置量参考于边框盒子。一般使用不到此属性，除非你想要添加一些特殊的效果。<code>scroll-snap-coordinate</code>是唯一一个可以应用到页面所有元素的属性，其余的滚动snap属性仅仅适用于滚动容器。</p>
+<p><img src="https://cdn.css-tricks.com/wp-content/uploads/2016/02/ssd.jpg" alt="scroll-snap-coordinate"></p>
+<p><code>scroll-snap-destinate</code>和<code>scroll-snap-coordinate</code>两个属性均具有动画效果，<code>scroll-snap-type</code>以及<code>scroll-snap-points</code>不具有。</p>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>写这篇文章时，规范是在一个多月之前更新的并且还在改动之中。还没有得到充分的支持，所以你仍旧需要使用polyfill以及一些旧版的属性。CSS是十分有趣的，尽管仍处于实验之中，你可以对其进行使用，这样子规范的制定者会发现此属性对大家的影响。不要再犹豫了，我已经在工作之中使用。事物的发展取决于大家对其的依赖程度，尽管polyfill可以起到很好的作用，我还是希望可以仅仅使用CSS就可以实现此功能。</p>
+<h4 id="扩展阅读"><a href="#扩展阅读" class="headerlink" title="扩展阅读"></a>扩展阅读</h4><ul>
+<li><a href="https://drafts.csswg.org/css-snappoints/" target="_blank" rel="external">CSS Scroll Snap Points 草案</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Scroll_Snap_Points" target="_blank" rel="external">MDN 参考</a></li>
+<li><a href="https://webkit.org/blog/4017/scroll-snapping-with-css-snap-points/" target="_blank" rel="external">WebKit 博客</a></li>
+<li><a href="http://codepen.io/collection/XjOwrq/" target="_blank" rel="external">CodePen 示例</a></li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSS/" rel="tag">#CSS</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/07/03/ES6-JavaScript-Destructuring-in-Depth/" rel="next" title="ES6 - 解构赋值">
+                <i class="fa fa-chevron-left"></i> ES6 - 解构赋值
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/07/13/introducing-CSS-scroll-snap-points/"
+           data-title="scroll-snap-type" data-url="http://yoursite.com/2016/07/13/introducing-CSS-scroll-snap-points/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/jingzi.png"
+               alt="静子" />
+          <p class="site-author-name" itemprop="name">静子</p>
+          <p class="site-description motion-element" itemprop="description">一个爱笑，喜欢前端，喜欢分享的女生~</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">19</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/xiao-jing" target="_blank" title="github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  github
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/jizhongjing" target="_blank" title="weibo">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#小序"><span class="nav-number">1.</span> <span class="nav-text">小序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Polyfilled-示例"><span class="nav-number">2.</span> <span class="nav-text">Polyfilled 示例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#目前-CSS-Scroll-Snap-属性"><span class="nav-number">3.</span> <span class="nav-text">目前 CSS Scroll Snap 属性</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#scroll-snap-type"><span class="nav-number">3.1.</span> <span class="nav-text">scroll-snap-type</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#scroll-snap-align"><span class="nav-number">3.2.</span> <span class="nav-text">scroll-snap-align</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#scroll-snap-padding"><span class="nav-number">3.3.</span> <span class="nav-text">scroll-snap-padding</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#旧版-CSS-Scroll-Snap-属性"><span class="nav-number">4.</span> <span class="nav-text">旧版 CSS Scroll Snap 属性</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#scroll-snap-points"><span class="nav-number">4.1.</span> <span class="nav-text">scroll-snap-points</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#scroll-snap-destination"><span class="nav-number">4.2.</span> <span class="nav-text">scroll-snap-destination</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#scroll-snap-coordinate"><span class="nav-number">4.3.</span> <span class="nav-text">scroll-snap-coordinate</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#总结"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#扩展阅读"><span class="nav-number">6.</span> <span class="nav-text">扩展阅读</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">静子</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"xiao-jinggithubio"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
