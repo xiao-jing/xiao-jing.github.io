@@ -1,0 +1,692 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="CSS," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/icon.png?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="小序今天呢，继续讲解一下CSS Scroll Snap Points新属性(＾－＾)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS Scroll Snap Points的思考">
+<meta property="og:url" content="http://yoursite.com/2016/07/20/CSS-Scroll-Snap-Points/index.html">
+<meta property="og:site_name" content="Sance's Blog">
+<meta property="og:description" content="小序今天呢，继续讲解一下CSS Scroll Snap Points新属性(＾－＾)">
+<meta property="og:image" content="http://blog.teamtreehouse.com/wp-content/uploads/2015/07/horz-scroll-snaps.gif">
+<meta property="og:image" content="http://blog.teamtreehouse.com/wp-content/uploads/2015/07/vertical-scroll-snaps.gif">
+<meta property="og:updated_time" content="2016-07-26T11:24:13.905Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS Scroll Snap Points的思考">
+<meta name="twitter:description" content="小序今天呢，继续讲解一下CSS Scroll Snap Points新属性(＾－＾)">
+<meta name="twitter:image" content="http://blog.teamtreehouse.com/wp-content/uploads/2015/07/horz-scroll-snaps.gif">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"right","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> CSS Scroll Snap Points的思考 | Sance's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Sance's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                CSS Scroll Snap Points的思考
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-20T16:15:02+08:00" content="2016-07-20">
+              2016-07-20
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/07/20/CSS-Scroll-Snap-Points/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/20/CSS-Scroll-Snap-Points/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="小序"><a href="#小序" class="headerlink" title="小序"></a>小序</h4><p>今天呢，继续讲解一下CSS Scroll Snap Points新属性(＾－＾)<br><a id="more"></a></p>
+<p><a href="http://blog.teamtreehouse.com/css-scroll-snap-points" target="_blank" rel="external">原文链接</a></p>
+<hr>
+<p>CSS最近介绍了一个关于<a href="http://www.w3.org/TR/css-snappoints-1/" target="_blank" rel="external">scroll snap points</a>的新功能，为触控以及输入设备的用户提供一个流式、精确的滚动体验。</p>
+<p>关于创建scroll snap效果，有许多<a href="http://projects.lukehaas.me/scrollify/#home" target="_blank" rel="external">jquery</a><a href="http://guidobouman.github.io/jquery-panelsnap/" target="_blank" rel="external">插件</a>可供你<a href="http://benoit.pointet.info/stuff/jquery-scrollsnap-plugin/" target="_blank" rel="external">选择</a>，但是我们今天所讲述的不是通过安装一个插件来控制滚动的行为，而是使用原生的CSS scroll snap points来实现。</p>
+<h2 id="Scroll-Snap-Points工作原理"><a href="#Scroll-Snap-Points工作原理" class="headerlink" title="Scroll Snap Points工作原理"></a>Scroll Snap Points工作原理</h2><p>通过在x以及y轴上定义“snap points”来控制<a href="http://www.w3.org/TR/css-snappoints-1/#scroll-container" target="_blank" rel="external">滚动容器</a>的滚动行为。当用户在水平或者垂直方向滚动时，利用snap点，滚动容器会snap到内容区域的某一点。</p>
+<h3 id="水平-Snap-Points"><a href="#水平-Snap-Points" class="headerlink" title="水平 Snap Points"></a>水平 Snap Points</h3><p>创建一个可滚动的图片画廊，用户可以滚动或滑动每幅图片。代码结构如下:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"gallery"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"1.jpg"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"2.jpg"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"3.jpg"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"4.jpg"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>首先，创建一个水平的滚动容器，在<code>.gallery</code>div容器上定义了<code>overflow</code>以及<code>white-space</code>样式:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.gallery</span> &#123;</span><br><span class="line">  <span class="attribute">overflow-x</span>: auto;</span><br><span class="line">  <span class="attribute">overflow-y</span>: hidden;</span><br><span class="line">  <span class="attribute">white-space</span>: nowrap;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">1000px</span>;  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">img</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>代码中的<code>.gallery</code>代表滚动容器；内部的水平滚动视口大小为<code>1000px</code>。</p>
+<p>接下来，我们先来认识几个定义水平scroll snap points的相关属性。</p>
+<p><strong>scroll-snap-points-x</strong></p>
+<p><code>scroll-snap-points-x</code>属性用来设置滚动容器内部水平的snap点。定义和<code>.gallery</code>一样宽度的snap点，用户可以滚动并且snap每一个图片:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.gallery &#123;</span><br><span class="line">  ...</span><br><span class="line">  width: 1000px;</span><br><span class="line">  scroll-snap-points-x: repeat(1000px);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>x轴设置snap点值为<code>repeat(1000px)</code>,始于0px并重复于1000px区间内，也就是滚动容器的宽度。现在需要启动snap点了。</p>
+<p><strong>scroll-snap-type</strong></p>
+<p><code>scroll-snap-type</code>属性用于启动滚动容器内所有的snap点。使用这个属性定义滚动容器内snap点的使用类型以及执行方式。</p>
+<p>精确获取画廊中每一个滚动图片的snap点:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.gallery &#123;</span><br><span class="line">  ...</span><br><span class="line">  scroll-snap-type: mandatory;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>mandatory</code>属性确保滚动操作完成时，内容区域总是<a href="http://blog.teamtreehouse.com/wp-content/uploads/2015/07/interval_snap_points.png" target="_blank" rel="external">可以位于snap点</a>。也就是说，每<code>1000px</code>，<code>.gallery</code>div就会<code>scroll-snap</code>到一点。</p>
+<p><a href="http://codepen.io/Guilh/full/OVEZgN/" target="_blank" rel="external">Try it on Codepen</a></p>
+<h2 id="水平流体Snap-Points"><a href="#水平流体Snap-Points" class="headerlink" title="水平流体Snap Points"></a>水平流体Snap Points</h2><p>也可以使用百分比来定义流式snap点。如，我们将滚动容器的宽度设为<code>90%</code>，并且<code>scroll-snap-points-x</code>设置为<code>repeat(100%)</code>。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.gallery &#123;</span><br><span class="line">  ...</span><br><span class="line">  width: 90%;</span><br><span class="line">  scroll-snap-points-x: repeat(100%);</span><br><span class="line">  scroll-snap-type: mandatory;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>将snap点沿x轴设置，始于0px并重复于滚动容器100%的宽度区间内。</p>
+<p><img src="http://blog.teamtreehouse.com/wp-content/uploads/2015/07/horz-scroll-snaps.gif" alt="horz-scroll-snaps.gif"></p>
+<p>水平scroll snap points示例。</p>
+<p><a href="http://codepen.io/Guilh/full/KpeNJj/" target="_blank" rel="external">Try it on Codepen</a></p>
+<h2 id="垂直流式Snap-Points"><a href="#垂直流式Snap-Points" class="headerlink" title="垂直流式Snap Points"></a>垂直流式Snap Points</h2><p>创建垂直snap点，我们将滚动容器的<code>overflow-y</code>设置为<code>auto</code>,<code>overflow-x</code>设置为<code>hidden</code>:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.gallery</span> &#123;</span><br><span class="line">  <span class="attribute">overflow-y</span>: auto;</span><br><span class="line">  <span class="attribute">overflow-x</span>: hidden;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">90%</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">48vw</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>scroll-snap-points-y</strong></p>
+<p>使用<code>scroll-snap-points-y</code>属性，设置滚动容器内部垂直的snap点。既然滚动容器有一个流式高度，我们可以沿y轴设置snap点，始于0px，重复于滚动容器100%高度区间内:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.gallery &#123;</span><br><span class="line">  ...</span><br><span class="line">  scroll-snap-type: mandatory;</span><br><span class="line">  scroll-snap-points-y: repeat(100%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>接下来，使用更多的<code>scroll-snap</code>属性设置垂直滚动容器内的对齐方式:<code>scroll-snap-coordinate</code>以及<code>scroll-snap-destination</code>。</p>
+<p><strong>scroll-snap-coordinate</strong></p>
+<p>在垂直滚动容器内将每一张图片水平居中,这时可以使用<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-snap-destination" target="_blank" rel="external">scroll-snap-coordinate</a>属性，并将值设置为<code>50% 50%</code>(center):</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">img &#123;</span><br><span class="line">  ...</span><br><span class="line">  scroll-snap-coordinate: 50% 50%;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>scroll-snap-destination</strong></p>
+<p><code>scroll-snap-destination</code>属性定义了滚动容器内的位置 - 定义的所有snap点的对齐方式。将每一个snap与<code>.gallery</code>容器的中心对齐，需要将值设置为<code>50% 50%</code>(center)：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.gallery &#123;</span><br><span class="line">  ...</span><br><span class="line">  scroll-snap-points-x: repeat(100%);</span><br><span class="line">  scroll-snap-type: mandatory;</span><br><span class="line">  scroll-snap-destination: 50% 50%;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="http://blog.teamtreehouse.com/wp-content/uploads/2015/07/vertical-scroll-snaps.gif" alt="vertical-scroll-snaps.gif"></p>
+<p>垂直scroll snap points的示例。</p>
+<p><a href="http://codepen.io/Guilh/full/YXvQYO/" target="_blank" rel="external">Try it on Codepen</a></p>
+<h2 id="浏览器的支持"><a href="#浏览器的支持" class="headerlink" title="浏览器的支持"></a>浏览器的支持</h2><p>目前为止，浏览器对CSS scroll snap points的支持限制在IE10+以及Firefox 39+。但是Safari 9好像也即将对其支持，你也可以在Chrome Candry内开启scroll snap points，Chrome浏览器允许在支持一些边缘属性前对其进行测试。</p>
+<p>查看浏览器对scroll snap points的<a href="http://caniuse.com/#search=snap" target="_blank" rel="external">兼容性表格</a>，获取浏览器的最新支持。</p>
+<h2 id="最后的一点想法"><a href="#最后的一点想法" class="headerlink" title="最后的一点想法"></a>最后的一点想法</h2><p>一旦浏览器可以稳定的支持CSS scroll snap points属性时，对于触控设备产生的意义将十分重大。如，我们可以在next/previous之间快速查看画廊中的每一张图片。</p>
+<p>使用CSS创建scroll snap points意味着不再需要使用JavaScript或者导入一个多余的库定义滚动行为。并且scroll snap points属于<a href="http://blog.teamtreehouse.com/increase-your-sites-performance-with-hardware-accelerated-css" target="_blank" rel="external">硬件加速</a>，保证了可以在浏览器中平滑的执行。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSS/" rel="tag">#CSS</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/07/13/introducing-CSS-scroll-snap-points/" rel="next" title="scroll-snap-type">
+                <i class="fa fa-chevron-left"></i> scroll-snap-type
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/07/20/CSS-Scroll-Snap-Points/"
+           data-title="CSS Scroll Snap Points的思考" data-url="http://yoursite.com/2016/07/20/CSS-Scroll-Snap-Points/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/jingzi.png"
+               alt="静子" />
+          <p class="site-author-name" itemprop="name">静子</p>
+          <p class="site-description motion-element" itemprop="description">一个爱笑，喜欢前端，喜欢分享的女生~</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">20</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/xiao-jing" target="_blank" title="github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  github
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/jizhongjing" target="_blank" title="weibo">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#小序"><span class="nav-number">1.</span> <span class="nav-text">小序</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Scroll-Snap-Points工作原理"><span class="nav-number"></span> <span class="nav-text">Scroll Snap Points工作原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#水平-Snap-Points"><span class="nav-number"></span> <span class="nav-text">水平 Snap Points</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#水平流体Snap-Points"><span class="nav-number"></span> <span class="nav-text">水平流体Snap Points</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#垂直流式Snap-Points"><span class="nav-number"></span> <span class="nav-text">垂直流式Snap Points</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#浏览器的支持"><span class="nav-number"></span> <span class="nav-text">浏览器的支持</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最后的一点想法"><span class="nav-number"></span> <span class="nav-text">最后的一点想法</span></a></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">静子</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"xiao-jinggithubio"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
